@@ -33,5 +33,15 @@ namespace demo.Forms
         {
             LoadTheme();
         }
+
+        private void buttonChinhsua_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonXoa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

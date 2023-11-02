@@ -10,17 +10,50 @@ namespace demo
 {
    public class Connection
     {
-        public SqlConnection cnn = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=ThietBiViTinh;Integrated Security=True");
-        public void myconnect()
+        SqlConnection cnn = new SqlConnection("Data Source=.;Initial Catalog=ThietBiViTinh;Persist Security Info=True;User ID=sa;Password=1234567890");
+        public SqlConnection getConnection
         {
-            cnn.Open();
+            get {
+                return cnn;
+            }
         }
-        public void myClose()
+        SqlConnection cnnAdmin = new SqlConnection("Data Source=.;Initial Catalog=ThietBiViTinh;Integrated Security=True");
+        public SqlConnection getConnectionAdmin
         {
-            cnn.Close();
+            get
+            {
+                return cnnAdmin;
+            }
         }
-
-        public DataTable taoBang(string sql)
+        public void openConnection()
+        {
+            if (cnn.State == ConnectionState.Closed)
+            {
+                cnn.Open();
+            }
+        }
+        public void openConnectionAdmin()
+        {
+            if (cnnAdmin.State == ConnectionState.Closed)
+            {
+                cnn.Open();
+            }
+        }
+        public void closeConnection()
+        {
+            if (cnn.State == ConnectionState.Open)
+            {
+                cnn.Close();
+            }
+        }
+        public void closeConnectionAdmin()
+        {
+            if (cnnAdmin.State == ConnectionState.Open)
+            {
+                cnn.Close();
+            }
+        }
+        public DataTable getTable(string sql)
         {
             DataTable dt = new DataTable();
             SqlDataAdapter ds = new SqlDataAdapter(sql, cnn);

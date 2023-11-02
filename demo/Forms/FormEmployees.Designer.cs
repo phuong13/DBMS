@@ -150,6 +150,7 @@
             this.dataGridViewEmployees.Size = new System.Drawing.Size(1400, 701);
             this.dataGridViewEmployees.TabIndex = 0;
             this.dataGridViewEmployees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmployees_CellClick);
+            this.dataGridViewEmployees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmployees_CellContentClick);
             // 
             // panelEdit
             // 
@@ -179,7 +180,7 @@
             // 
             this.textBoxMaNQL.Location = new System.Drawing.Point(286, 34);
             this.textBoxMaNQL.Name = "textBoxMaNQL";
-            this.textBoxMaNQL.Size = new System.Drawing.Size(140, 30);
+            this.textBoxMaNQL.Size = new System.Drawing.Size(140, 26);
             this.textBoxMaNQL.TabIndex = 14;
             this.textBoxMaNQL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -188,7 +189,7 @@
             this.labelMaNQL.AutoSize = true;
             this.labelMaNQL.Location = new System.Drawing.Point(216, 37);
             this.labelMaNQL.Name = "labelMaNQL";
-            this.labelMaNQL.Size = new System.Drawing.Size(86, 25);
+            this.labelMaNQL.Size = new System.Drawing.Size(72, 20);
             this.labelMaNQL.TabIndex = 13;
             this.labelMaNQL.Text = "Mã NQL";
             // 
@@ -196,7 +197,7 @@
             // 
             this.textBoxGioiTinh.Location = new System.Drawing.Point(73, 36);
             this.textBoxGioiTinh.Name = "textBoxGioiTinh";
-            this.textBoxGioiTinh.Size = new System.Drawing.Size(140, 30);
+            this.textBoxGioiTinh.Size = new System.Drawing.Size(140, 26);
             this.textBoxGioiTinh.TabIndex = 12;
             this.textBoxGioiTinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -205,7 +206,7 @@
             this.labelGioiTinh.AutoSize = true;
             this.labelGioiTinh.Location = new System.Drawing.Point(3, 39);
             this.labelGioiTinh.Name = "labelGioiTinh";
-            this.labelGioiTinh.Size = new System.Drawing.Size(90, 25);
+            this.labelGioiTinh.Size = new System.Drawing.Size(76, 20);
             this.labelGioiTinh.TabIndex = 11;
             this.labelGioiTinh.Text = "Giới Tính";
             // 
@@ -213,7 +214,7 @@
             // 
             this.textBoxNgaySinh.Location = new System.Drawing.Point(678, 0);
             this.textBoxNgaySinh.Name = "textBoxNgaySinh";
-            this.textBoxNgaySinh.Size = new System.Drawing.Size(140, 30);
+            this.textBoxNgaySinh.Size = new System.Drawing.Size(140, 26);
             this.textBoxNgaySinh.TabIndex = 10;
             this.textBoxNgaySinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -222,7 +223,7 @@
             this.labelngaySinh.AutoSize = true;
             this.labelngaySinh.Location = new System.Drawing.Point(578, -1);
             this.labelngaySinh.Name = "labelngaySinh";
-            this.labelngaySinh.Size = new System.Drawing.Size(103, 25);
+            this.labelngaySinh.Size = new System.Drawing.Size(85, 20);
             this.labelngaySinh.TabIndex = 9;
             this.labelngaySinh.Text = "Ngày Sinh";
             // 
@@ -230,7 +231,7 @@
             // 
             this.textBoxSDT.Location = new System.Drawing.Point(455, 1);
             this.textBoxSDT.Name = "textBoxSDT";
-            this.textBoxSDT.Size = new System.Drawing.Size(107, 30);
+            this.textBoxSDT.Size = new System.Drawing.Size(107, 26);
             this.textBoxSDT.TabIndex = 8;
             this.textBoxSDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -239,7 +240,7 @@
             this.labelsdt.AutoSize = true;
             this.labelsdt.Location = new System.Drawing.Point(408, -1);
             this.labelsdt.Name = "labelsdt";
-            this.labelsdt.Size = new System.Drawing.Size(53, 25);
+            this.labelsdt.Size = new System.Drawing.Size(43, 20);
             this.labelsdt.TabIndex = 7;
             this.labelsdt.Text = "SDT";
             // 
@@ -247,7 +248,7 @@
             // 
             this.textBoxHoTen.Location = new System.Drawing.Point(211, 1);
             this.textBoxHoTen.Name = "textBoxHoTen";
-            this.textBoxHoTen.Size = new System.Drawing.Size(191, 30);
+            this.textBoxHoTen.Size = new System.Drawing.Size(191, 26);
             this.textBoxHoTen.TabIndex = 6;
             this.textBoxHoTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -256,7 +257,7 @@
             this.labelHoTen.AutoSize = true;
             this.labelHoTen.Location = new System.Drawing.Point(137, 4);
             this.labelHoTen.Name = "labelHoTen";
-            this.labelHoTen.Size = new System.Drawing.Size(77, 25);
+            this.labelHoTen.Size = new System.Drawing.Size(64, 20);
             this.labelHoTen.TabIndex = 5;
             this.labelHoTen.Text = "Họ Tên";
             // 
@@ -264,7 +265,7 @@
             // 
             this.textBoxMaNV.Location = new System.Drawing.Point(64, 0);
             this.textBoxMaNV.Name = "textBoxMaNV";
-            this.textBoxMaNV.Size = new System.Drawing.Size(67, 30);
+            this.textBoxMaNV.Size = new System.Drawing.Size(67, 26);
             this.textBoxMaNV.TabIndex = 4;
             this.textBoxMaNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -274,13 +275,13 @@
             this.labelMaNV.Dock = System.Windows.Forms.DockStyle.Left;
             this.labelMaNV.Location = new System.Drawing.Point(0, 0);
             this.labelMaNV.Name = "labelMaNV";
-            this.labelMaNV.Size = new System.Drawing.Size(73, 25);
+            this.labelMaNV.Size = new System.Drawing.Size(60, 20);
             this.labelMaNV.TabIndex = 3;
             this.labelMaNV.Text = "Mã NV";
             // 
             // FormEmployees
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1400, 701);
             this.Controls.Add(this.panelEdit);

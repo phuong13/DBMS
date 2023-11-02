@@ -18,14 +18,14 @@ namespace demo.Forms
             InitializeComponent();
            
         }
-        Connection conn=new Connection();
+        Connection conn = new Connection();
 
         private void FormEmployees_Load(object sender, EventArgs e)
         {
             LoadTheme(panelEdit);
-            conn.myconnect();
+            conn.openConnection();
             string sql = "select * from NHAN_VIEN";
-            dataGridViewEmployees.DataSource = conn.taoBang(sql);
+            dataGridViewEmployees.DataSource = conn.getTable(sql);
         }
         private void LoadTheme(Panel p)
         {
@@ -68,6 +68,11 @@ namespace demo.Forms
         }
 
         private void buttonXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
