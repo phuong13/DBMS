@@ -47,7 +47,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Name = "FormAccount";
-            this.Text = "Accout";
+            this.Text = "Account";
             this.Load += new System.EventHandler(this.FormAccount_Load);
             this.ResumeLayout(false);
 

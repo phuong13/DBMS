@@ -53,17 +53,47 @@
     <Compile Include="FormMainMenu.Designer.cs">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\KhachHang\FormThemKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KhachHang\FormThemKhachHang.Designer.cs">
+      <DependentUpon>FormThemKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KhachHang\FormKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KhachHang\FormKhachHang.Designer.cs">
+      <DependentUpon>FormKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KhachHang\FormChinhSuaKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KhachHang\FormChinhSuaKhachHang.Designer.cs">
+      <DependentUpon>FormChinhSuaKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NhanVien\FormThemNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NhanVien\FormThemNhanVien.Designer.cs">
+      <DependentUpon>FormThemNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormDanhMuc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormDanhMuc.Designer.cs">
       <DependentUpon>FormDanhMuc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormEmployees.cs">
+    <Compile Include="Forms\NhanVien\FormChinhSuaNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormEmployees.Designer.cs">
-      <DependentUpon>FormEmployees.cs</DependentUpon>
+    <Compile Include="Forms\NhanVien\FormChinhSuaNhanVien.Designer.cs">
+      <DependentUpon>FormChinhSuaNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NhanVien\FormNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NhanVien\FormNhanVien.Designer.cs">
+      <DependentUpon>FormNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormHoaDon.cs">
       <SubType>Form</SubType>
@@ -89,11 +119,26 @@
     <EmbeddedResource Include="FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KhachHang\FormThemKhachHang.resx">
+      <DependentUpon>FormThemKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KhachHang\FormKhachHang.resx">
+      <DependentUpon>FormKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KhachHang\FormChinhSuaKhachHang.resx">
+      <DependentUpon>FormChinhSuaKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NhanVien\FormThemNhanVien.resx">
+      <DependentUpon>FormThemNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDanhMuc.resx">
       <DependentUpon>FormDanhMuc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormEmployees.resx">
-      <DependentUpon>FormEmployees.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\NhanVien\FormChinhSuaNhanVien.resx">
+      <DependentUpon>FormChinhSuaNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NhanVien\FormNhanVien.resx">
+      <DependentUpon>FormNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormHoaDon.resx">
       <DependentUpon>FormHoaDon.cs</DependentUpon>
@@ -128,7 +173,43 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Include="Resources\teamwork.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teamwork1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ready-stock %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\badge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-926686744-1024x1024.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-1335669510-1024x1024.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-1335669510-1024x10241.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

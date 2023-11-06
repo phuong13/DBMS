@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace demo
 {
+
     public partial class FormMainMenu : Form
     {
         private Button currentButton;
@@ -47,12 +48,12 @@ namespace demo
                     currentButton = (Button)btnSender;
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
-                    currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     panelTitleBar.BackColor = color;
                     panel_logo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                     ThemeColor.PrimaryColor = color;
                     ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);
-                 
+
                 }
             }
         }
@@ -64,7 +65,7 @@ namespace demo
                 {
                     previousBtn.BackColor = Color.FromArgb(51, 51, 76);
                     previousBtn.ForeColor = Color.Gainsboro;
-                    previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
         }
@@ -72,26 +73,27 @@ namespace demo
         {
             if (activeForm != null)
                 activeForm.Close();
+
             ActivateButton(btnSender);
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            this.panel_content.Controls.Add(childForm);
-            this.panel_content.Tag = childForm;
+            this.panel_childForm.Controls.Add(childForm);
+            this.panel_childForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
             lblTiltle.Text = childForm.Text;
-        }   
+
+        }
         private void button_danhmuc_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FormDanhMuc(), sender);
         }
 
-        private void button_receipt_Click(object sender, EventArgs e)
+        private void button_hoadon_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FormHoaDon(), sender);
-
         }
 
         private void button_kho_Click(object sender, EventArgs e)
@@ -100,18 +102,30 @@ namespace demo
 
         }
 
-        private void btn_employees_Click(object sender, EventArgs e)
+        private void btn_nhanvien_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormEmployees(), sender);
-           
+            OpenChildForm(new Forms.FormNhanVien(), sender);
+        }
 
+        private void button_khachhang_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.Customer.FormKhachHang(), sender);
         }
 
         private void button_account_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FormAccount(), sender);
+        }
 
+        private void FormMainMenu_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+            private void label1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
-    }
+}
 

@@ -150,7 +150,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FormDanhMuc";
-            this.Text = "DanhMuc";
+            this.Text = "Danh Mục Sản Phẩm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
