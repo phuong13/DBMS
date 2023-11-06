@@ -84,10 +84,10 @@ namespace demo.Forms
         }
         private void buttonXoa_Click(object sender, EventArgs e)
         {
-            string maNV = dataGridViewEmployees.CurrentRow.Cells[0].Value.ToString();
             Connection connection = new Connection();
             connection.getConnection.Open();
 
+            string maNV = dataGridViewEmployees.CurrentRow.Cells[0].Value.ToString();
             using (SqlCommand cmd = new SqlCommand("proc_XoaNhanVien", connection.getConnection))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
