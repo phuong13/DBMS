@@ -27,7 +27,9 @@ namespace demo.Forms
             { "doPhanGiai", "Độ phân giải" },
             { "tanSoQuet", "Tần số quét"},
             { "kichThuoc", "Kích thước"},
-            { "layout", "Layout"}
+            { "layout", "Layout"},
+            { "soLuong", "Số lượng"},
+            { "kieuTaiNghe", "Kiểu tai nghe" }
         };
         private void MappingCol(DataTable dt)
         {
@@ -35,6 +37,7 @@ namespace demo.Forms
             {
                 if (columnMapping.ContainsKey(column.ColumnName))
                 {
+                    if (column.ColumnName == "tenThietBi")
                     column.ColumnName = columnMapping[column.ColumnName];
                 }
             }
