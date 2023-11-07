@@ -1,4 +1,4 @@
-﻿namespace demo.Forms
+﻿namespace demo.Forms.DanhMucThietBi
 {
     partial class FormDanhMuc
     {
@@ -37,10 +37,15 @@
             this.buttonLapTop = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txt_searchProduct = new System.Windows.Forms.TextBox();
+            this.btn_suaThietBi = new System.Windows.Forms.Button();
+            this.btn_xoaThietBi = new System.Windows.Forms.Button();
+            this.btn_themThietBi = new System.Windows.Forms.Button();
             this.dg_DanhMucSanPham = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_DanhMucSanPham)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonDeskTop
@@ -49,7 +54,7 @@
             this.buttonDeskTop.Location = new System.Drawing.Point(156, 0);
             this.buttonDeskTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDeskTop.Name = "buttonDeskTop";
-            this.buttonDeskTop.Size = new System.Drawing.Size(159, 64);
+            this.buttonDeskTop.Size = new System.Drawing.Size(156, 64);
             this.buttonDeskTop.TabIndex = 2;
             this.buttonDeskTop.Text = "Máy tính bàn";
             this.buttonDeskTop.UseVisualStyleBackColor = true;
@@ -58,7 +63,7 @@
             // buttonBanPhim
             // 
             this.buttonBanPhim.Dock = System.Windows.Forms.DockStyle.Left;
-            this.buttonBanPhim.Location = new System.Drawing.Point(315, 0);
+            this.buttonBanPhim.Location = new System.Drawing.Point(312, 0);
             this.buttonBanPhim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBanPhim.Name = "buttonBanPhim";
             this.buttonBanPhim.Size = new System.Drawing.Size(156, 64);
@@ -70,10 +75,10 @@
             // buttonChuot
             // 
             this.buttonChuot.Dock = System.Windows.Forms.DockStyle.Left;
-            this.buttonChuot.Location = new System.Drawing.Point(471, 0);
+            this.buttonChuot.Location = new System.Drawing.Point(468, 0);
             this.buttonChuot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonChuot.Name = "buttonChuot";
-            this.buttonChuot.Size = new System.Drawing.Size(159, 64);
+            this.buttonChuot.Size = new System.Drawing.Size(156, 64);
             this.buttonChuot.TabIndex = 4;
             this.buttonChuot.Text = "Chuột";
             this.buttonChuot.UseVisualStyleBackColor = true;
@@ -82,10 +87,10 @@
             // buttonTaiNghe
             // 
             this.buttonTaiNghe.Dock = System.Windows.Forms.DockStyle.Left;
-            this.buttonTaiNghe.Location = new System.Drawing.Point(630, 0);
+            this.buttonTaiNghe.Location = new System.Drawing.Point(624, 0);
             this.buttonTaiNghe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonTaiNghe.Name = "buttonTaiNghe";
-            this.buttonTaiNghe.Size = new System.Drawing.Size(150, 64);
+            this.buttonTaiNghe.Size = new System.Drawing.Size(156, 64);
             this.buttonTaiNghe.TabIndex = 5;
             this.buttonTaiNghe.Text = "Tai Nghe";
             this.buttonTaiNghe.UseVisualStyleBackColor = true;
@@ -98,7 +103,7 @@
             this.buttonManHinh.Location = new System.Drawing.Point(780, 0);
             this.buttonManHinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonManHinh.Name = "buttonManHinh";
-            this.buttonManHinh.Size = new System.Drawing.Size(166, 64);
+            this.buttonManHinh.Size = new System.Drawing.Size(160, 64);
             this.buttonManHinh.TabIndex = 6;
             this.buttonManHinh.Text = "Màn Hình";
             this.buttonManHinh.UseVisualStyleBackColor = true;
@@ -146,12 +151,50 @@
             // 
             // txt_searchProduct
             // 
-            this.txt_searchProduct.Location = new System.Drawing.Point(11, 5);
+            this.txt_searchProduct.Location = new System.Drawing.Point(12, 5);
             this.txt_searchProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_searchProduct.Name = "txt_searchProduct";
-            this.txt_searchProduct.Size = new System.Drawing.Size(89, 22);
+            this.txt_searchProduct.Size = new System.Drawing.Size(247, 22);
             this.txt_searchProduct.TabIndex = 0;
             this.txt_searchProduct.Text = "Search";
+            // 
+            // btn_suaThietBi
+            // 
+            this.btn_suaThietBi.AutoSize = true;
+            this.btn_suaThietBi.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_suaThietBi.Enabled = false;
+            this.btn_suaThietBi.Location = new System.Drawing.Point(936, 0);
+            this.btn_suaThietBi.Name = "btn_suaThietBi";
+            this.btn_suaThietBi.Size = new System.Drawing.Size(81, 54);
+            this.btn_suaThietBi.TabIndex = 1;
+            this.btn_suaThietBi.Text = "Chỉnh sửa";
+            this.btn_suaThietBi.UseVisualStyleBackColor = true;
+            this.btn_suaThietBi.Click += new System.EventHandler(this.btn_suaThietBi_Click);
+            // 
+            // btn_xoaThietBi
+            // 
+            this.btn_xoaThietBi.AutoSize = true;
+            this.btn_xoaThietBi.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_xoaThietBi.Enabled = false;
+            this.btn_xoaThietBi.Location = new System.Drawing.Point(1017, 0);
+            this.btn_xoaThietBi.Name = "btn_xoaThietBi";
+            this.btn_xoaThietBi.Size = new System.Drawing.Size(75, 54);
+            this.btn_xoaThietBi.TabIndex = 2;
+            this.btn_xoaThietBi.Text = "Xóa";
+            this.btn_xoaThietBi.UseVisualStyleBackColor = true;
+            this.btn_xoaThietBi.Click += new System.EventHandler(this.btn_xoaThietBi_Click);
+            // 
+            // btn_themThietBi
+            // 
+            this.btn_themThietBi.AutoSize = true;
+            this.btn_themThietBi.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_themThietBi.Location = new System.Drawing.Point(1092, 0);
+            this.btn_themThietBi.Name = "btn_themThietBi";
+            this.btn_themThietBi.Size = new System.Drawing.Size(75, 54);
+            this.btn_themThietBi.TabIndex = 0;
+            this.btn_themThietBi.Text = "Thêm";
+            this.btn_themThietBi.UseVisualStyleBackColor = true;
+            this.btn_themThietBi.Click += new System.EventHandler(this.btn_themThietBi_Click);
             // 
             // dg_DanhMucSanPham
             // 
@@ -165,23 +208,39 @@
             this.dg_DanhMucSanPham.RowTemplate.Height = 24;
             this.dg_DanhMucSanPham.Size = new System.Drawing.Size(1167, 488);
             this.dg_DanhMucSanPham.TabIndex = 2;
+            this.dg_DanhMucSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_DanhMucSanPham_CellClick);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btn_suaThietBi);
+            this.panel3.Controls.Add(this.btn_xoaThietBi);
+            this.panel3.Controls.Add(this.btn_themThietBi);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 530);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1167, 54);
+            this.panel3.TabIndex = 3;
             // 
             // FormDanhMuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1167, 584);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.dg_DanhMucSanPham);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormDanhMuc";
             this.Text = "Danh Mục Sản Phẩm";
+            this.Load += new System.EventHandler(this.FormDanhMuc_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_DanhMucSanPham)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -197,5 +256,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txt_searchProduct;
         private System.Windows.Forms.DataGridView dg_DanhMucSanPham;
+        private System.Windows.Forms.Button btn_xoaThietBi;
+        private System.Windows.Forms.Button btn_suaThietBi;
+        private System.Windows.Forms.Button btn_themThietBi;
+        private System.Windows.Forms.Panel panel3;
     }
 }
