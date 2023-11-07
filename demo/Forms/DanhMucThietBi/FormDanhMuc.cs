@@ -45,6 +45,7 @@ namespace demo.Forms.DanhMucThietBi
             }
         }
         Connection conn = new Connection();
+        
         private void buttonLapTop_Click(object sender, EventArgs e)
         {
             string sql = "select * from V_DanhMucLaptop";
@@ -167,6 +168,12 @@ namespace demo.Forms.DanhMucThietBi
         private void FormDanhMuc_Load(object sender, EventArgs e)
         {
             dg_DanhMucSanPham.AllowUserToAddRows = false;
+        }
+
+        private void FormDanhMuc_Load(object sender, EventArgs e)
+        {
+            dg_DanhMucSanPham.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+
         }
     }
 }
