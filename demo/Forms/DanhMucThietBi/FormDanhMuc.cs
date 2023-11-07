@@ -100,12 +100,6 @@ namespace demo.Forms.DanhMucThietBi
             currentType = "manHinh";
         }
 
-        private void btn_themThietBi_Click(object sender, EventArgs e)
-        {
-            FormThemThietBi f = new FormThemThietBi();
-            f.ShowDialog();
-        }
-
         private void dg_DanhMucSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btn_suaThietBi.Enabled = true;
@@ -146,6 +140,22 @@ namespace demo.Forms.DanhMucThietBi
             }
         }
 
+        private void FormDanhMuc_Load(object sender, EventArgs e)
+        {
+            dg_DanhMucSanPham.AllowUserToAddRows = false;
+        }
+
+        private void FormDanhMuc_Load_1(object sender, EventArgs e)
+        {
+            dg_DanhMucSanPham.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+        }
+
+        private void btn_themThietBi_Click(object sender, EventArgs e)
+        {
+            FormThemThietBi f = new FormThemThietBi();
+            f.ShowDialog();
+        }
+
         private void btn_xoaThietBi_Click(object sender, EventArgs e)
         {
             conn.openConnection();
@@ -153,6 +163,7 @@ namespace demo.Forms.DanhMucThietBi
             SqlCommand cmd = new SqlCommand("proc_XoaThietBi", conn.getConnection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@maTB", maTB));
+            cmd.ExecuteNonQuery();
             try
             {
                 cmd.ExecuteNonQuery();
@@ -163,17 +174,7 @@ namespace demo.Forms.DanhMucThietBi
                 MessageBox.Show("Xóa thất bại" + maTB, "Falied!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             conn.closeConnection();
-        }
-
-        private void FormDanhMuc_Load(object sender, EventArgs e)
-        {
-            dg_DanhMucSanPham.AllowUserToAddRows = false;
-        }
-
-        private void FormDanhMuc_Load(object sender, EventArgs e)
-        {
-            dg_DanhMucSanPham.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
-
+            buttonLapTop_Click(sender, e);
         }
     }
 }

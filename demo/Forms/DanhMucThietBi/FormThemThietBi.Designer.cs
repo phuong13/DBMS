@@ -40,13 +40,13 @@ namespace demo.Forms.DanhMucThietBi
             // 
             this.panel_textBoxContainer.Location = new System.Drawing.Point(16, 63);
             this.panel_textBoxContainer.Name = "panel_textBoxContainer";
-            this.panel_textBoxContainer.Size = new System.Drawing.Size(592, 345);
+            this.panel_textBoxContainer.Size = new System.Drawing.Size(450, 339);
             this.panel_textBoxContainer.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(102, 26);
+            this.label1.Location = new System.Drawing.Point(67, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 17);
             this.label1.TabIndex = 1;
@@ -55,7 +55,7 @@ namespace demo.Forms.DanhMucThietBi
             // cbox_thietBi
             // 
             this.cbox_thietBi.FormattingEnabled = true;
-            this.cbox_thietBi.Location = new System.Drawing.Point(242, 23);
+            this.cbox_thietBi.Location = new System.Drawing.Point(207, 24);
             this.cbox_thietBi.Name = "cbox_thietBi";
             this.cbox_thietBi.Size = new System.Drawing.Size(122, 24);
             this.cbox_thietBi.TabIndex = 2;
@@ -64,7 +64,7 @@ namespace demo.Forms.DanhMucThietBi
             // btn_luu
             // 
             this.btn_luu.AutoSize = true;
-            this.btn_luu.Location = new System.Drawing.Point(440, 422);
+            this.btn_luu.Location = new System.Drawing.Point(299, 422);
             this.btn_luu.Name = "btn_luu";
             this.btn_luu.Size = new System.Drawing.Size(75, 27);
             this.btn_luu.TabIndex = 3;
@@ -75,7 +75,7 @@ namespace demo.Forms.DanhMucThietBi
             // btn_huy
             // 
             this.btn_huy.AutoSize = true;
-            this.btn_huy.Location = new System.Drawing.Point(533, 422);
+            this.btn_huy.Location = new System.Drawing.Point(391, 422);
             this.btn_huy.Name = "btn_huy";
             this.btn_huy.Size = new System.Drawing.Size(75, 27);
             this.btn_huy.TabIndex = 4;
@@ -87,7 +87,7 @@ namespace demo.Forms.DanhMucThietBi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 522);
+            this.ClientSize = new System.Drawing.Size(488, 483);
             this.Controls.Add(this.btn_huy);
             this.Controls.Add(this.btn_luu);
             this.Controls.Add(this.cbox_thietBi);
