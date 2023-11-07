@@ -27,7 +27,8 @@ namespace demo.Forms
             { "doPhanGiai", "Độ phân giải" },
             { "tanSoQuet", "Tần số quét"},
             { "kichThuoc", "Kích thước"},
-            { "layout", "Layout"}
+            { "layout", "Layout"},
+            {"soLuong","Số lượng" }
         };
         private void MappingCol(DataTable dt)
         {
@@ -40,6 +41,7 @@ namespace demo.Forms
             }
         }
         Connection conn = new Connection();
+        
         private void buttonLapTop_Click(object sender, EventArgs e)
         {
             string sql = "select * from V_DanhMucLaptop";
@@ -86,6 +88,12 @@ namespace demo.Forms
             DataTable dt = conn.getTable(sql);
             MappingCol(dt);
             dg_DanhMucSanPham.DataSource = dt;
+        }
+
+        private void FormDanhMuc_Load(object sender, EventArgs e)
+        {
+            dg_DanhMucSanPham.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
+
         }
     }
 }

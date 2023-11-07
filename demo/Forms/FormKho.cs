@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,15 +11,15 @@ using System.Windows.Forms;
 
 namespace demo.Forms
 {
-    public partial class FormStock : Form
+    public partial class FormKho : Form
     {
-        public FormStock()
+        public FormKho()
         {
             InitializeComponent();
         }
-        private void LoadTheme()
+        private void LoadTheme(Panel p)
         {
-            foreach (Control btns in this.Controls)
+            foreach (Control btns in p.Controls)
             {
                 if (btns.GetType() == typeof(Button))
                 {
@@ -29,9 +30,44 @@ namespace demo.Forms
                 }
             }
         }
+        Connection conn =new Connection();
+        private void load_data_phieuNhap()
+        {
+            string sql = "select * from PHIEU_NHAP_TB";
+            DataTable dt = conn.getTable(sql);
+            dataGridViewKho.DataSource = dt;
+        }
         private void FormStock_Load(object sender, EventArgs e)
         {
-            LoadTheme();
+            LoadTheme(panelEdit);
+            load_data_phieuNhap();
+        }
+
+        private void dataGridViewKho_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            dataGridViewKho.Rows[rowIndex].Selected = true;
+        }
+
+        private void dataGridViewKho_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Connection connection = new Connection();
+            connection.getConnection.Open();
+            string maPhieuNhap = dataGridViewKho.CurrentRow.Cells[0].Value.ToString();
+            using (SqlCommand cmd = new SqlCommand("select * from func_XemPhieuNhapThietBi(@maPhieuNhap)", connection.getConnection))
+            {
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add(new SqlParameter("@maPhieuNhap", maPhieuNhap));
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                DataTable dataTable = new DataTable();
+                dataTable.Load(reader);
+                dataGridViewKho.DataSource=dataTable;
+            }           
+        }
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            load_data_phieuNhap();
         }
     }
 }

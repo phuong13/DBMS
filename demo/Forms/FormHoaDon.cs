@@ -16,9 +16,9 @@ namespace demo.Forms
         {
             InitializeComponent();
         }
-        private void LoadTheme()
+        private void LoadTheme(Panel p)
         {
-            foreach (Control btns in this.Controls)
+            foreach (Control btns in p.Controls)
             {
                 if (btns.GetType() == typeof(Button))
                 {
@@ -29,19 +29,23 @@ namespace demo.Forms
                 }
             }
         }
+        Connection conn =new Connection();
+        void load_data_hoadon()
+        {
+            string sql = "select * from V_XemHoaDon";
+            DataTable dt = conn.getTable(sql);        
+            dataGridViewHoaDon.DataSource = dt;
+        }
         private void FormHoaDon_Load(object sender, EventArgs e)
         {
-            LoadTheme();
+            LoadTheme(panelEdit);
+            load_data_hoadon();
         }
 
-        private void buttonChinhsua_Click(object sender, EventArgs e)
+        private void dataGridViewHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-        private void buttonXoa_Click(object sender, EventArgs e)
-        {
-
+            int rowIndex = e.RowIndex;
+            dataGridViewHoaDon.Rows[rowIndex].Selected = true;
         }
     }
 }
