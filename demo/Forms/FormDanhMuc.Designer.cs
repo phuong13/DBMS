@@ -157,6 +157,7 @@
             // dg_DanhMucSanPham
             // 
             this.dg_DanhMucSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dg_DanhMucSanPham.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dg_DanhMucSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_DanhMucSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dg_DanhMucSanPham.Location = new System.Drawing.Point(0, 115);
