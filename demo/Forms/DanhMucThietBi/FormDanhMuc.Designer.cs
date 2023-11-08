@@ -52,6 +52,7 @@
             // buttonDeskTop
             // 
             this.buttonDeskTop.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonDeskTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDeskTop.Location = new System.Drawing.Point(156, 0);
             this.buttonDeskTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDeskTop.Name = "buttonDeskTop";
@@ -64,6 +65,7 @@
             // buttonBanPhim
             // 
             this.buttonBanPhim.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonBanPhim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBanPhim.Location = new System.Drawing.Point(312, 0);
             this.buttonBanPhim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBanPhim.Name = "buttonBanPhim";
@@ -76,6 +78,7 @@
             // buttonChuot
             // 
             this.buttonChuot.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonChuot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonChuot.Location = new System.Drawing.Point(468, 0);
             this.buttonChuot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonChuot.Name = "buttonChuot";
@@ -88,6 +91,7 @@
             // buttonTaiNghe
             // 
             this.buttonTaiNghe.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonTaiNghe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTaiNghe.Location = new System.Drawing.Point(624, 0);
             this.buttonTaiNghe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonTaiNghe.Name = "buttonTaiNghe";
@@ -101,6 +105,7 @@
             // 
             this.buttonManHinh.AutoSize = true;
             this.buttonManHinh.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonManHinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonManHinh.Location = new System.Drawing.Point(780, 0);
             this.buttonManHinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonManHinh.Name = "buttonManHinh";
@@ -130,6 +135,7 @@
             // 
             this.buttonLapTop.BackColor = System.Drawing.Color.Transparent;
             this.buttonLapTop.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonLapTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLapTop.Location = new System.Drawing.Point(0, 0);
             this.buttonLapTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLapTop.Name = "buttonLapTop";
@@ -181,18 +187,19 @@
             this.panel3.Controls.Add(this.btn_suaThietBi);
             this.panel3.Controls.Add(this.btn_themThietBi);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 527);
+            this.panel3.Location = new System.Drawing.Point(0, 504);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1167, 57);
+            this.panel3.Size = new System.Drawing.Size(1167, 80);
             this.panel3.TabIndex = 3;
             // 
             // btn_xoaThietBi
             // 
             this.btn_xoaThietBi.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_xoaThietBi.Enabled = false;
-            this.btn_xoaThietBi.Location = new System.Drawing.Point(942, 0);
+            this.btn_xoaThietBi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_xoaThietBi.Location = new System.Drawing.Point(882, 0);
             this.btn_xoaThietBi.Name = "btn_xoaThietBi";
-            this.btn_xoaThietBi.Size = new System.Drawing.Size(75, 57);
+            this.btn_xoaThietBi.Size = new System.Drawing.Size(95, 80);
             this.btn_xoaThietBi.TabIndex = 2;
             this.btn_xoaThietBi.Text = "Xóa";
             this.btn_xoaThietBi.UseVisualStyleBackColor = true;
@@ -203,9 +210,10 @@
             this.btn_suaThietBi.AutoSize = true;
             this.btn_suaThietBi.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_suaThietBi.Enabled = false;
-            this.btn_suaThietBi.Location = new System.Drawing.Point(1017, 0);
+            this.btn_suaThietBi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_suaThietBi.Location = new System.Drawing.Point(977, 0);
             this.btn_suaThietBi.Name = "btn_suaThietBi";
-            this.btn_suaThietBi.Size = new System.Drawing.Size(75, 57);
+            this.btn_suaThietBi.Size = new System.Drawing.Size(95, 80);
             this.btn_suaThietBi.TabIndex = 1;
             this.btn_suaThietBi.Text = "Sửa";
             this.btn_suaThietBi.UseVisualStyleBackColor = true;
@@ -213,9 +221,10 @@
             // btn_themThietBi
             // 
             this.btn_themThietBi.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_themThietBi.Location = new System.Drawing.Point(1092, 0);
+            this.btn_themThietBi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_themThietBi.Location = new System.Drawing.Point(1072, 0);
             this.btn_themThietBi.Name = "btn_themThietBi";
-            this.btn_themThietBi.Size = new System.Drawing.Size(75, 57);
+            this.btn_themThietBi.Size = new System.Drawing.Size(95, 80);
             this.btn_themThietBi.TabIndex = 0;
             this.btn_themThietBi.Text = "Thêm";
             this.btn_themThietBi.UseVisualStyleBackColor = true;

@@ -127,14 +127,19 @@ namespace demo.Forms.DanhMucThietBi
                     cmd.Parameters.Add(new SqlParameter("@cauHinh", cauHinh));
                     cmd.Parameters.Add(new SqlParameter("@trongLuong", trongLuong));
                     cmd.Parameters.Add(new SqlParameter("@mauSac", mauSac));
-                    try
+                    DialogResult rs = MessageBox.Show("Bạn có muốn thêm?", "Lưu ý", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (rs == DialogResult.OK)
                     {
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Thêm thành công", "Successfull", MessageBoxButtons.OK);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Thêm thất bại", "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Thêm thành công", "Successfull", MessageBoxButtons.OK);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail!!");
+                        }
                     }
                     break;
                 case "desktop":
@@ -145,14 +150,19 @@ namespace demo.Forms.DanhMucThietBi
                     cmd.Parameters.Add(new SqlParameter("@cauHinh", cauHinh));
                     cmd.Parameters.Add(new SqlParameter("@trongLuong", trongLuong));
                     cmd.Parameters.Add(new SqlParameter("@mauSac", mauSac));
-                    try
+                    rs = MessageBox.Show("Bạn có muốn thêm?", "Lưu ý", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (rs == DialogResult.OK)
                     {
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Thêm thành công", "Successfull", MessageBoxButtons.OK);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Thêm thất bại", "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Thêm thành công", "Successfull", MessageBoxButtons.OK);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail!!");
+                        }
                     }
                     break;
                 case "banPhim":
@@ -163,14 +173,19 @@ namespace demo.Forms.DanhMucThietBi
                     cmd.Parameters.Add(new SqlParameter("@kieuKetNoi", kieuKetNoi));
                     cmd.Parameters.Add(new SqlParameter("@layout", layout));
                     cmd.Parameters.Add(new SqlParameter("@mauSac", mauSac));
-                    try
+                    rs = MessageBox.Show("Bạn có muốn thêm?", "Lưu ý", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (rs == DialogResult.OK)
                     {
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Thêm thành công", "Successfull", MessageBoxButtons.OK);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Thêm thất bại", "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Thêm thành công", "Successfull", MessageBoxButtons.OK);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail!!");
+                        }
                     }
                     break;
                 case "chuot":
@@ -181,14 +196,19 @@ namespace demo.Forms.DanhMucThietBi
                     cmd.Parameters.Add(new SqlParameter("@kieuKetNoi", kieuKetNoi));
                     cmd.Parameters.Add(new SqlParameter("@trongLuong", trongLuong));
                     cmd.Parameters.Add(new SqlParameter("@mauSac", mauSac));
-                    try
+                    rs = MessageBox.Show("Bạn có muốn thêm?", "Lưu ý", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (rs == DialogResult.OK)
                     {
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Thêm thành công", "Successfull", MessageBoxButtons.OK);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Thêm thất bại", "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Thêm thành công", "Successfull", MessageBoxButtons.OK);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail!!");
+                        }
                     }
                     break;
                 case "taiNghe":
@@ -199,14 +219,19 @@ namespace demo.Forms.DanhMucThietBi
                     cmd.Parameters.Add(new SqlParameter("@kieuKetNoi", kieuKetNoi));
                     cmd.Parameters.Add(new SqlParameter("@kieuTaiNghe", kieuTaiNghe));
                     cmd.Parameters.Add(new SqlParameter("@mauSac", mauSac));
-                    try
+                    rs = MessageBox.Show("Bạn có muốn thêm?", "Lưu ý", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (rs == DialogResult.OK)
                     {
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Thêm thành công", "Successfull", MessageBoxButtons.OK);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Thêm thất bại", "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Thêm thành công", "Successfull", MessageBoxButtons.OK);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail!!");
+                        }
                     }
                     break;
                 case "manHinh":
@@ -221,14 +246,18 @@ namespace demo.Forms.DanhMucThietBi
                     cmd.Parameters.Add(new SqlParameter("@tanSoQuet", tanSoQuet));
                     cmd.Parameters.Add(new SqlParameter("@kichThuoc", kichThuoc));
                     cmd.Parameters.Add(new SqlParameter("@mauSac", mauSac));
-                    try
+                    rs = MessageBox.Show("Bạn có muốn thêm?", "Lưu ý", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (rs == DialogResult.OK)
                     {
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Thêm thành công", "Successfull", MessageBoxButtons.OK);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Thêm thất bại", "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0) { 
+                            MessageBox.Show("Thêm thành công", "Successfull", MessageBoxButtons.OK);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail!!");
+                        }
                     }
                     break;
             }

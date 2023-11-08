@@ -10,7 +10,7 @@ namespace demo
 {
    public class Connection
     {
-        SqlConnection cnn = new SqlConnection("Data Source=.;Initial Catalog=ThietBiViTinh;Persist Security Info=True;User ID=sa;Password=0898419007");
+        SqlConnection cnn = new SqlConnection("Data Source=.;Initial Catalog=ThietBiViTinh;Persist Security Info=True;User ID=sa;Password=1234567890");
         public SqlConnection getConnection
         {
             get {
