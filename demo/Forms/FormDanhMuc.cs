@@ -28,8 +28,8 @@ namespace demo.Forms
             { "tanSoQuet", "Tần số quét"},
             { "kichThuoc", "Kích thước"},
             { "layout", "Layout"},
-            { "soLuong", "Số lượng"},
-            { "kieuTaiNghe", "Kiểu tai nghe" }
+            {"soLuong","Số lượng" },
+            {"kieuTaiNghe" ,"Kiểu tai nghe"}
         };
         private void MappingCol(DataTable dt)
         {
@@ -37,13 +37,12 @@ namespace demo.Forms
             {
                 if (columnMapping.ContainsKey(column.ColumnName))
                 {
-                    if (column.ColumnName == "tenThietBi")
                     column.ColumnName = columnMapping[column.ColumnName];
                 }
             }
         }
         Connection conn = new Connection();
-        
+
         private void buttonLapTop_Click(object sender, EventArgs e)
         {
             string sql = "select * from V_DanhMucLaptop";

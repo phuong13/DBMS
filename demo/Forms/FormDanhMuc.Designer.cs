@@ -161,8 +161,9 @@
             this.dg_DanhMucSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_DanhMucSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dg_DanhMucSanPham.Location = new System.Drawing.Point(0, 115);
-            this.dg_DanhMucSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dg_DanhMucSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.dg_DanhMucSanPham.Name = "dg_DanhMucSanPham";
+            this.dg_DanhMucSanPham.ReadOnly = true;
             this.dg_DanhMucSanPham.RowHeadersWidth = 51;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dg_DanhMucSanPham.RowsDefaultCellStyle = dataGridViewCellStyle1;
