@@ -47,10 +47,10 @@
             // 
             this.buttonThem.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonThem.Location = new System.Drawing.Point(816, 0);
-            this.buttonThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonThem.Location = new System.Drawing.Point(978, 0);
+            this.buttonThem.Margin = new System.Windows.Forms.Padding(2);
             this.buttonThem.Name = "buttonThem";
-            this.buttonThem.Size = new System.Drawing.Size(108, 82);
+            this.buttonThem.Size = new System.Drawing.Size(130, 98);
             this.buttonThem.TabIndex = 2;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
@@ -61,10 +61,10 @@
             this.buttonChinhsua.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonChinhsua.Enabled = false;
             this.buttonChinhsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonChinhsua.Location = new System.Drawing.Point(924, 0);
-            this.buttonChinhsua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonChinhsua.Location = new System.Drawing.Point(1108, 0);
+            this.buttonChinhsua.Margin = new System.Windows.Forms.Padding(2);
             this.buttonChinhsua.Name = "buttonChinhsua";
-            this.buttonChinhsua.Size = new System.Drawing.Size(133, 82);
+            this.buttonChinhsua.Size = new System.Drawing.Size(160, 98);
             this.buttonChinhsua.TabIndex = 1;
             this.buttonChinhsua.Text = "Chỉnh sửa";
             this.buttonChinhsua.UseVisualStyleBackColor = true;
@@ -75,10 +75,10 @@
             this.buttonXoa.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonXoa.Enabled = false;
             this.buttonXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonXoa.Location = new System.Drawing.Point(1057, 0);
-            this.buttonXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonXoa.Location = new System.Drawing.Point(1268, 0);
+            this.buttonXoa.Margin = new System.Windows.Forms.Padding(2);
             this.buttonXoa.Name = "buttonXoa";
-            this.buttonXoa.Size = new System.Drawing.Size(108, 82);
+            this.buttonXoa.Size = new System.Drawing.Size(130, 98);
             this.buttonXoa.TabIndex = 0;
             this.buttonXoa.Text = "Xóa";
             this.buttonXoa.UseVisualStyleBackColor = true;
@@ -91,10 +91,10 @@
             this.panelEdit.Controls.Add(this.buttonChinhsua);
             this.panelEdit.Controls.Add(this.buttonXoa);
             this.panelEdit.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelEdit.Location = new System.Drawing.Point(0, 500);
-            this.panelEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelEdit.Location = new System.Drawing.Point(0, 601);
+            this.panelEdit.Margin = new System.Windows.Forms.Padding(2);
             this.panelEdit.Name = "panelEdit";
-            this.panelEdit.Size = new System.Drawing.Size(1167, 84);
+            this.panelEdit.Size = new System.Drawing.Size(1400, 100);
             this.panelEdit.TabIndex = 1;
             // 
             // dataGridViewCustomer
@@ -124,10 +124,12 @@
             this.dataGridViewCustomer.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewCustomer.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
+            this.dataGridViewCustomer.ReadOnly = true;
             this.dataGridViewCustomer.RowHeadersWidth = 62;
             this.dataGridViewCustomer.RowTemplate.Height = 28;
-            this.dataGridViewCustomer.Size = new System.Drawing.Size(1167, 584);
+            this.dataGridViewCustomer.Size = new System.Drawing.Size(1400, 701);
             this.dataGridViewCustomer.TabIndex = 2;
             this.dataGridViewCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellClick);
             this.dataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentClick);
@@ -168,12 +170,12 @@
             // 
             // FormKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1167, 584);
+            this.ClientSize = new System.Drawing.Size(1400, 701);
             this.Controls.Add(this.panelEdit);
             this.Controls.Add(this.dataGridViewCustomer);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormKhachHang";
             this.Text = "Khách hàng";
             this.Load += new System.EventHandler(this.FormCustomer_Load);

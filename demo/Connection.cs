@@ -10,53 +10,35 @@ namespace demo
 {
    public class Connection
     {
-        SqlConnection cnn = new SqlConnection("Data Source=.;Initial Catalog=ThietBiViTinh;Persist Security Info=True;User ID=sa;Password=1234567890");
+
+        SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=ThietBiViTinh;Integrated Security=True");
         public SqlConnection getConnection
-        {
-            get {
-                return cnn;
-            }
-        }
-        SqlConnection cnnAdmin = new SqlConnection("Data Source=.;Initial Catalog=ThietBiViTinh;Integrated Security=True");
-        public SqlConnection getConnectionAdmin
         {
             get
             {
-                return cnnAdmin;
+                return conn;
             }
         }
+
         public void openConnection()
         {
-            if (cnn.State == ConnectionState.Closed)
+            if (conn.State == ConnectionState.Closed)
             {
-                cnn.Open();
+                conn.Open();
             }
         }
-        public void openConnectionAdmin()
-        {
-            if (cnnAdmin.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
-        }
+
         public void closeConnection()
         {
-            if (cnn.State == ConnectionState.Open)
+            if (conn.State == ConnectionState.Open)
             {
-                cnn.Close();
-            }
-        }
-        public void closeConnectionAdmin()
-        {
-            if (cnnAdmin.State == ConnectionState.Open)
-            {
-                cnn.Close();
+                conn.Close();
             }
         }
         public DataTable getTable(string sql)
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter ds = new SqlDataAdapter(sql, cnn);
+            SqlDataAdapter ds = new SqlDataAdapter(sql, conn);
             ds.Fill(dt);
             return dt;
         }

@@ -49,6 +49,10 @@ namespace demo.Forms.Customer
             buttonChinhsua.Font = new Font(buttonChinhsua.Font, FontStyle.Bold);
             buttonXoa.Enabled = true;
             buttonXoa.Font = new Font(buttonXoa.Font, FontStyle.Bold);
+          
+            int rowIndex = e.RowIndex;
+            dataGridViewCustomer.Rows[rowIndex].Selected = true;
+            
         }
 
         private void buttonThem_Click(object sender, EventArgs e)
@@ -81,10 +85,10 @@ namespace demo.Forms.Customer
         }
         private void buttonXoa_Click(object sender, EventArgs e)
         {
-            string maKH = dataGridViewCustomer.CurrentRow.Cells[0].Value.ToString();
             Connection connection = new Connection();
             connection.getConnection.Open();
 
+            string maKH = dataGridViewCustomer.CurrentRow.Cells[0].Value.ToString();
             using (SqlCommand cmd = new SqlCommand("proc_XoaKhachHang", connection.getConnection))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
