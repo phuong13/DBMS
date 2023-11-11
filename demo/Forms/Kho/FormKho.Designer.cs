@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewKho = new System.Windows.Forms.DataGridView();
             this.buttonThem = new System.Windows.Forms.Button();
-            this.buttonChinhsua = new System.Windows.Forms.Button();
-            this.buttonXoa = new System.Windows.Forms.Button();
             this.panelEdit = new System.Windows.Forms.Panel();
             this.button_back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKho)).BeginInit();
@@ -43,23 +41,23 @@
             // dataGridViewKho
             // 
             this.dataGridViewKho.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewKho.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewKho.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewKho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewKho.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewKho.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewKho.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewKho.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewKho.Margin = new System.Windows.Forms.Padding(4);
@@ -76,47 +74,20 @@
             // 
             this.buttonThem.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonThem.Location = new System.Drawing.Point(729, 0);
+            this.buttonThem.Location = new System.Drawing.Point(1019, 0);
             this.buttonThem.Margin = new System.Windows.Forms.Padding(2);
             this.buttonThem.Name = "buttonThem";
             this.buttonThem.Size = new System.Drawing.Size(130, 98);
             this.buttonThem.TabIndex = 2;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
-            // 
-            // buttonChinhsua
-            // 
-            this.buttonChinhsua.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonChinhsua.Enabled = false;
-            this.buttonChinhsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonChinhsua.Location = new System.Drawing.Point(859, 0);
-            this.buttonChinhsua.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonChinhsua.Name = "buttonChinhsua";
-            this.buttonChinhsua.Size = new System.Drawing.Size(160, 98);
-            this.buttonChinhsua.TabIndex = 1;
-            this.buttonChinhsua.Text = "Chỉnh sửa";
-            this.buttonChinhsua.UseVisualStyleBackColor = true;
-            // 
-            // buttonXoa
-            // 
-            this.buttonXoa.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonXoa.Enabled = false;
-            this.buttonXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonXoa.Location = new System.Drawing.Point(1019, 0);
-            this.buttonXoa.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonXoa.Name = "buttonXoa";
-            this.buttonXoa.Size = new System.Drawing.Size(130, 98);
-            this.buttonXoa.TabIndex = 0;
-            this.buttonXoa.Text = "Xóa";
-            this.buttonXoa.UseVisualStyleBackColor = true;
+            this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
             // 
             // panelEdit
             // 
             this.panelEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelEdit.Controls.Add(this.button_back);
             this.panelEdit.Controls.Add(this.buttonThem);
-            this.panelEdit.Controls.Add(this.buttonChinhsua);
-            this.panelEdit.Controls.Add(this.buttonXoa);
             this.panelEdit.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelEdit.Location = new System.Drawing.Point(0, 586);
             this.panelEdit.Margin = new System.Windows.Forms.Padding(2);
@@ -158,8 +129,6 @@
 
         private System.Windows.Forms.DataGridView dataGridViewKho;
         private System.Windows.Forms.Button buttonThem;
-        private System.Windows.Forms.Button buttonChinhsua;
-        private System.Windows.Forms.Button buttonXoa;
         private System.Windows.Forms.Panel panelEdit;
         private System.Windows.Forms.Button button_back;
     }

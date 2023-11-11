@@ -88,7 +88,7 @@ namespace demo
         }
         private void button_danhmuc_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormDanhMuc(), sender);
+            OpenChildForm(new Forms.DanhMucThietBi.FormDanhMuc(), sender);
         }
 
         private void button_hoadon_Click(object sender, EventArgs e)

@@ -53,6 +53,18 @@
     <Compile Include="FormMainMenu.Designer.cs">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DanhMucThietBi\FormSuaThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DanhMucThietBi\FormSuaThietBi.Designer.cs">
+      <DependentUpon>FormSuaThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DanhMucThietBi\FormThemThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DanhMucThietBi\FormThemThietBi.Designer.cs">
+      <DependentUpon>FormThemThietBi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\KhachHang\FormThemKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,16 +83,22 @@
     <Compile Include="Forms\KhachHang\FormChinhSuaKhachHang.Designer.cs">
       <DependentUpon>FormChinhSuaKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Kho\FormThemPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kho\FormThemPhieuNhap.Designer.cs">
+      <DependentUpon>FormThemPhieuNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NhanVien\FormThemNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\NhanVien\FormThemNhanVien.Designer.cs">
       <DependentUpon>FormThemNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormDanhMuc.cs">
+    <Compile Include="Forms\DanhMucThietBi\FormDanhMuc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormDanhMuc.Designer.cs">
+    <Compile Include="Forms\DanhMucThietBi\FormDanhMuc.Designer.cs">
       <DependentUpon>FormDanhMuc.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\NhanVien\FormChinhSuaNhanVien.cs">
@@ -101,10 +119,10 @@
     <Compile Include="Forms\FormHoaDon.Designer.cs">
       <DependentUpon>FormHoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormKho.cs">
+    <Compile Include="Forms\Kho\FormKho.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormKho.Designer.cs">
+    <Compile Include="Forms\Kho\FormKho.Designer.cs">
       <DependentUpon>FormKho.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormAccount.cs">
@@ -124,6 +142,12 @@
     <EmbeddedResource Include="FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DanhMucThietBi\FormSuaThietBi.resx">
+      <DependentUpon>FormSuaThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DanhMucThietBi\FormThemThietBi.resx">
+      <DependentUpon>FormThemThietBi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\KhachHang\FormThemKhachHang.resx">
       <DependentUpon>FormThemKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,10 +157,13 @@
     <EmbeddedResource Include="Forms\KhachHang\FormChinhSuaKhachHang.resx">
       <DependentUpon>FormChinhSuaKhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kho\FormThemPhieuNhap.resx">
+      <DependentUpon>FormThemPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NhanVien\FormThemNhanVien.resx">
       <DependentUpon>FormThemNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormDanhMuc.resx">
+    <EmbeddedResource Include="Forms\DanhMucThietBi\FormDanhMuc.resx">
       <DependentUpon>FormDanhMuc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NhanVien\FormChinhSuaNhanVien.resx">
@@ -148,7 +175,7 @@
     <EmbeddedResource Include="Forms\FormHoaDon.resx">
       <DependentUpon>FormHoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormKho.resx">
+    <EmbeddedResource Include="Forms\Kho\FormKho.resx">
       <DependentUpon>FormKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAccount.resx">

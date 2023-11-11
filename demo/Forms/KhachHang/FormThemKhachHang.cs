@@ -61,14 +61,15 @@ namespace demo.Forms.Customer
                 DialogResult rs = MessageBox.Show("Are you sure??", "Add Customer", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (rs == DialogResult.OK)
                 {
-                    if (rowsAffected > 0)
+                    try
                     {
-                        MessageBox.Show("Successful!!");
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Thêm thành công", "Successfull", MessageBoxButtons.OK);
                         this.Close();
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Fail!!");
+                        MessageBox.Show("Thêm thất bại!\n Lỗi" + ex.Message, "Fail!!");
                     }
                 }
             }

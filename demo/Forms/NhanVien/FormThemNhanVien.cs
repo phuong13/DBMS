@@ -75,18 +75,19 @@ namespace demo.Forms
                 cmd.Parameters.Add(new SqlParameter("@ngaySinh", ngaySinhValue));
                 cmd.Parameters.Add(new SqlParameter("@gioiTinh", gioiTinhValue));
                 cmd.Parameters.Add(new SqlParameter("@maNQL", maNQLValue));
-                int rowsAffected = cmd.ExecuteNonQuery();
+                //int rowsAffected = cmd.ExecuteNonQuery();
                 DialogResult rs = MessageBox.Show("Are you sure??", "Add Employee", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (rs == DialogResult.OK)
                 {
-                    if (rowsAffected > 0)
+                    try
                     {
-                        MessageBox.Show("Successful!!");
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Thêm thành công", "Successfull", MessageBoxButtons.OK);
                         this.Close();
                     }
-                    else
+                    catch (SqlException ex)
                     {
-                        MessageBox.Show("Fail!!");
+                        MessageBox.Show("Thêm thất bại!\n" + ex.Message, "Fail!!");
                     }
                 }
             }

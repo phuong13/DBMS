@@ -1,4 +1,6 @@
-﻿using System;
+﻿using demo.Forms.Customer;
+using demo.Forms.Kho;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,7 +35,7 @@ namespace demo.Forms
         Connection conn =new Connection();
         private void load_data_phieuNhap()
         {
-            string sql = "select * from PHIEU_NHAP_TB";
+            string sql = "select * from V_Kho";
             DataTable dt = conn.getTable(sql);
             dataGridViewKho.DataSource = dt;
         }
@@ -68,6 +70,22 @@ namespace demo.Forms
         private void button_back_Click(object sender, EventArgs e)
         {
             load_data_phieuNhap();
+        }
+
+        private void buttonThem_Click(object sender, EventArgs e)
+        {
+            FormThemPhieuNhap f = new FormThemPhieuNhap();
+            f.FormClosed += new FormClosedEventHandler(FormThem_PhieuNhapClosed);
+            f.ShowDialog();
+        }
+        private void FormThem_PhieuNhapClosed(object sender, FormClosedEventArgs e)
+        {
+            load_data_phieuNhap();
+        }
+
+        private void buttonXoa_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

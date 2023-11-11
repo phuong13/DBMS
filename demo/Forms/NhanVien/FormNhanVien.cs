@@ -39,7 +39,6 @@ namespace demo.Forms
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
                 }
             }
-
         }
         private void dataGridViewEmployees_CellClick(object sender, DataGridViewCellEventArgs e)
         {
