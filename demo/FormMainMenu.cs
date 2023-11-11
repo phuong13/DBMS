@@ -98,7 +98,7 @@ namespace demo
 
         private void button_kho_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormKho(), sender);
+            OpenChildForm(new Forms.FormStock(), sender);
 
         }
 

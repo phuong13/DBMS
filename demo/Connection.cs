@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace demo
 {
-   public class Connection
+    public class Connection
     {
         SqlConnection cnn = new SqlConnection("Data Source=.;Initial Catalog=ThietBiViTinh;Persist Security Info=True;User ID=sa;Password=0898419007");
         public SqlConnection getConnection
         {
-            get {
+            get
+            {
                 return cnn;
             }
         }
@@ -25,6 +26,7 @@ namespace demo
                 return cnnAdmin;
             }
         }
+
         public void openConnection()
         {
             if (cnn.State == ConnectionState.Closed)
@@ -36,9 +38,10 @@ namespace demo
         {
             if (cnnAdmin.State == ConnectionState.Closed)
             {
-                cnn.Open();
+                cnnAdmin.Open();
             }
         }
+
         public void closeConnection()
         {
             if (cnn.State == ConnectionState.Open)
@@ -50,7 +53,7 @@ namespace demo
         {
             if (cnnAdmin.State == ConnectionState.Open)
             {
-                cnn.Close();
+                cnnAdmin.Close();
             }
         }
         public DataTable getTable(string sql)
@@ -62,4 +65,3 @@ namespace demo
         }
     }
 }
-
