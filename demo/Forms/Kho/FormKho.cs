@@ -19,6 +19,7 @@ namespace demo.Forms
         {
             InitializeComponent();
         }
+
         private void LoadTheme(Panel p)
         {
             foreach (Control btns in p.Controls)

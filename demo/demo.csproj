@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.5\lib\net472\Guna.UI2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -83,6 +87,12 @@
     <Compile Include="Forms\KhachHang\FormChinhSuaKhachHang.Designer.cs">
       <DependentUpon>FormChinhSuaKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Kho\FormKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kho\FormKho.Designer.cs">
+      <DependentUpon>FormKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Kho\FormThemPhieuNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,12 +129,6 @@
     <Compile Include="Forms\FormHoaDon.Designer.cs">
       <DependentUpon>FormHoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormKho.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormKho.Designer.cs">
-      <DependentUpon>FormKho.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +161,9 @@
     <EmbeddedResource Include="Forms\KhachHang\FormChinhSuaKhachHang.resx">
       <DependentUpon>FormChinhSuaKhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kho\FormKho.resx">
+      <DependentUpon>FormKho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NhanVien\FormThemNhanVien.resx">
       <DependentUpon>FormThemNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,9 +178,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormHoaDon.resx">
       <DependentUpon>FormHoaDon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormKho.resx">
-      <DependentUpon>FormKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAccount.resx">
       <DependentUpon>FormAccount.cs</DependentUpon>
