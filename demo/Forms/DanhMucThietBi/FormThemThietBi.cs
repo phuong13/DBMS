@@ -67,6 +67,12 @@ namespace demo.Forms.DanhMucThietBi
             {
                 AddTextBox(columnMapping[value], $"txt_{value}");
             }
+            conn.openConnection();
+            SqlCommand cmd = new SqlCommand($"SELECT [dbo].[func_GetAndIncrementMaTB]()", conn.getConnection);
+            cmd.CommandType = CommandType.Text;
+            string maTB = cmd.ExecuteScalar().ToString();
+            (this.FindForm().Controls.Find("txt_maTB", true).FirstOrDefault() as TextBox).Text = maTB;
+            conn.closeConnection();
         }
         private void AddTextBox(string labelText, string textboxName)
         {
@@ -93,6 +99,7 @@ namespace demo.Forms.DanhMucThietBi
         {
             conn.openConnection();
             var parent = this.FindForm();
+
             string tenTB = (parent.Controls.Find("txt_tenThietBi", true).FirstOrDefault() as TextBox).Text;
             string maTB = (parent.Controls.Find("txt_maTB", true).FirstOrDefault() as TextBox).Text;
             string tgbh = (parent.Controls.Find("txt_tgbh", true).FirstOrDefault() as TextBox).Text;
@@ -138,7 +145,7 @@ namespace demo.Forms.DanhMucThietBi
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Thêm thất bại!\n Lỗi" + ex.Message, "Fail!!");
+                            MessageBox.Show("Thêm thất bại!\nLỗi: " + ex.Message, "Fail!!");
                         }
 
                     }
@@ -162,7 +169,7 @@ namespace demo.Forms.DanhMucThietBi
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Thêm thất bại!\n Lỗi" + ex.Message, "Fail!!");
+                            MessageBox.Show("Thêm thất bại!\nLỗi: " + ex.Message, "Fail!!");
                         }
                     }
                     break;
@@ -185,7 +192,7 @@ namespace demo.Forms.DanhMucThietBi
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Thêm thất bại!\n Lỗi" + ex.Message, "Fail!!");
+                            MessageBox.Show("Thêm thất bại!\nLỗi: " + ex.Message, "Fail!!");
                         }
                     }
                     break;
@@ -208,7 +215,7 @@ namespace demo.Forms.DanhMucThietBi
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Thêm thất bại!\n Lỗi" + ex.Message, "Fail!!");
+                            MessageBox.Show("Thêm thất bại!\nLỗi: " + ex.Message, "Fail!!");
                         }
                     }
                     break;
@@ -231,7 +238,7 @@ namespace demo.Forms.DanhMucThietBi
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Thêm thất bại!\n Lỗi" + ex.Message, "Fail!!");
+                            MessageBox.Show("Thêm thất bại!\nLỗi: " + ex.Message, "Fail!!");
                         }
                     }
                     break;
@@ -258,7 +265,7 @@ namespace demo.Forms.DanhMucThietBi
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Thêm thất bại!\n Lỗi" + ex.Message, "Fail!!");
+                            MessageBox.Show("Thêm thất bại!\nLỗi: " + ex.Message, "Fail!!");
                         }
                     }
                     break;
