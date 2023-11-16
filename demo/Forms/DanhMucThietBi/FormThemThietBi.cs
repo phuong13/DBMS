@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace demo.Forms.DanhMucThietBi
 {
@@ -67,6 +68,12 @@ namespace demo.Forms.DanhMucThietBi
             {
                 AddTextBox(columnMapping[value], $"txt_{value}");
             }
+            conn.openConnection();
+            SqlCommand cmd = new SqlCommand($"SELECT [dbo].[func_GetAndIncrementMaTB]()", conn.getConnection);
+            cmd.CommandType = CommandType.Text;
+            string maTB = cmd.ExecuteScalar().ToString();
+            (this.FindForm().Controls.Find("txt_maTB", true).FirstOrDefault() as TextBox).Text = maTB;
+            conn.closeConnection();
         }
         private void AddTextBox(string labelText, string textboxName)
         {
@@ -93,11 +100,19 @@ namespace demo.Forms.DanhMucThietBi
         {
             conn.openConnection();
             var parent = this.FindForm();
+
             string tenTB = (parent.Controls.Find("txt_tenThietBi", true).FirstOrDefault() as TextBox).Text;
             string maTB = (parent.Controls.Find("txt_maTB", true).FirstOrDefault() as TextBox).Text;
             string tgbh = (parent.Controls.Find("txt_tgbh", true).FirstOrDefault() as TextBox).Text;
             int soLuong = Convert.ToInt32((parent.Controls.Find("txt_soLuong", true).FirstOrDefault() as TextBox).Text);
             int donGia = Convert.ToInt32((parent.Controls.Find("txt_donGia", true).FirstOrDefault() as TextBox).Text);
+            string imageLink = txt_anhThietBi.Text;
+            byte[] imageData = null;
+            using (FileStream fileStream = new FileStream(imageLink, FileMode.Open, FileAccess.Read))
+            {
+                imageData = new Byte[fileStream.Length];
+                fileStream.Read(imageData, 0, (int)fileStream.Length);
+            }
             string[] values = ((KeyValuePair<string, string[]>)cbox_thietBi.SelectedItem).Value;
             string key = ((KeyValuePair<string, string[]>)cbox_thietBi.SelectedItem).Key;
             SqlCommand cmd = new SqlCommand();
@@ -108,6 +123,7 @@ namespace demo.Forms.DanhMucThietBi
             cmd.Parameters.Add(new SqlParameter("@tgbh", tgbh));
             cmd.Parameters.Add(new SqlParameter("@soLuong", soLuong));
             cmd.Parameters.Add(new SqlParameter("@donGia", donGia));
+            cmd.Parameters.Add(new SqlParameter("@anhThietBi", imageData));
             string cauHinh;
             string trongLuong;
             string mauSac;
@@ -138,7 +154,7 @@ namespace demo.Forms.DanhMucThietBi
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Thêm thất bại!\n Lỗi" + ex.Message, "Fail!!");
+                            MessageBox.Show("Thêm thất bại!\nLỗi: " + ex.Message, "Fail!!");
                         }
 
                     }
@@ -162,7 +178,7 @@ namespace demo.Forms.DanhMucThietBi
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Thêm thất bại!\n Lỗi" + ex.Message, "Fail!!");
+                            MessageBox.Show("Thêm thất bại!\nLỗi: " + ex.Message, "Fail!!");
                         }
                     }
                     break;
@@ -185,7 +201,7 @@ namespace demo.Forms.DanhMucThietBi
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Thêm thất bại!\n Lỗi" + ex.Message, "Fail!!");
+                            MessageBox.Show("Thêm thất bại!\nLỗi: " + ex.Message, "Fail!!");
                         }
                     }
                     break;
@@ -208,7 +224,7 @@ namespace demo.Forms.DanhMucThietBi
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Thêm thất bại!\n Lỗi" + ex.Message, "Fail!!");
+                            MessageBox.Show("Thêm thất bại!\nLỗi: " + ex.Message, "Fail!!");
                         }
                     }
                     break;
@@ -231,7 +247,7 @@ namespace demo.Forms.DanhMucThietBi
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Thêm thất bại!\n Lỗi" + ex.Message, "Fail!!");
+                            MessageBox.Show("Thêm thất bại!\nLỗi: " + ex.Message, "Fail!!");
                         }
                     }
                     break;
@@ -258,12 +274,30 @@ namespace demo.Forms.DanhMucThietBi
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Thêm thất bại!\n Lỗi" + ex.Message, "Fail!!");
+                            MessageBox.Show("Thêm thất bại!\nLỗi: " + ex.Message, "Fail!!");
                         }
                     }
                     break;
             }
             conn.closeConnection();
+        }
+
+        private void btn_chonAnh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                imageFileDialog.Title = "Open Image";
+                imageFileDialog.Filter = "Image file (*.jpeg; *.jpg; *.png)|*.jpeg; *.jpg; *.png";
+                if (imageFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    txt_anhThietBi.Text = imageFileDialog.FileName;
+                    pictureBox_anhThietBi.ImageLocation = imageFileDialog.FileName;
+                    imageFileDialog.Dispose();
+                }
+            } catch(Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
         }
     }
 }
