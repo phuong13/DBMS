@@ -34,7 +34,11 @@ namespace demo.Forms
         Connection conn =new Connection();
         void load_data_hoadon()
         {
+            button_Xoa.Enabled = true;
+            button_xoaTB.Visible = false;
+            button_ThemTB.Visible = false;
             button_Thanhtoan.Visible = true;
+            button_them.Visible = true;
             string sql = "select * from V_XemHoaDon";
             DataTable dt = conn.getTable(sql);        
             dataGridViewHoaDon.DataSource = dt;
@@ -76,7 +80,9 @@ namespace demo.Forms
             button_ThemTB.Visible = true;
             button_them.Visible = false;
             button_Thanhtoan.Visible = false;
-            button_Xoa.Enabled = true;
+            button_xoaTB.Visible = true;
+            button_Xoa.Visible = false;
+       
             Connection connection = new Connection();
             connection.getConnection.Open();
             string maHD = dataGridViewHoaDon.CurrentRow.Cells[0].Value.ToString();
@@ -97,13 +103,11 @@ namespace demo.Forms
             connection.getConnection.Open();
 
             string maHD = dataGridViewHoaDon.CurrentRow.Cells[0].Value.ToString();
-            string maTB = dataGridViewHoaDon.CurrentRow.Cells[2].Value.ToString();
-            using (SqlCommand cmd = new SqlCommand("proc_XoaThietBiTrongHoaDon", connection.getConnection))
+            
+            using (SqlCommand cmd = new SqlCommand("proc_XoaHoaDon", connection.getConnection))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@maHD", maHD));
-                cmd.Parameters.Add(new SqlParameter("@maTB", maTB));
-
 
                 DialogResult rs = MessageBox.Show("Are you sure??", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (rs == DialogResult.OK)
@@ -112,8 +116,7 @@ namespace demo.Forms
                     {
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Xóa thành công", "Successfull", MessageBoxButtons.OK);
-                        load_data_CTHD();
-
+                        load_data_hoadon();
                     }
                     catch (Exception ex)
                     {
@@ -152,14 +155,14 @@ namespace demo.Forms
                     {
                         MessageBox.Show("Thanh toán thất bại!\n" + ex.Message, "Fail!!");
                     }
-
                 }
             }
         }
 
         private void button_ThemTB_Click(object sender, EventArgs e)
         {
-            string maHD = dataGridViewHoaDon.CurrentRow.Cells[0].Value.ToString();
+            string maHD=dataGridViewHoaDon.CurrentRow.Cells[0].Value.ToString();    
+            
             FormThemThietBiVaoHoaDon f = new FormThemThietBiVaoHoaDon();
             f.FormClosed += new FormClosedEventHandler(FormADD_ThietBiVaoHoaDonClosed);
             f.set_maHD(maHD);
@@ -168,6 +171,39 @@ namespace demo.Forms
         private void FormADD_ThietBiVaoHoaDonClosed(object sender, FormClosedEventArgs e)
         {
             load_data_CTHD();
+        }
+
+        private void button_xoaTB_Click(object sender, EventArgs e)
+        {
+            Connection connection = new Connection();
+            connection.getConnection.Open();
+
+            string maHD = dataGridViewHoaDon.CurrentRow.Cells[0].Value.ToString();
+            string maTB = dataGridViewHoaDon.CurrentRow.Cells[2].Value.ToString();
+            using (SqlCommand cmd = new SqlCommand("proc_XoaThietBiTrongHoaDon", connection.getConnection))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@maHD", maHD));
+                cmd.Parameters.Add(new SqlParameter("@maTB", maTB));
+
+
+                DialogResult rs = MessageBox.Show("Are you sure??", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (rs == DialogResult.OK)
+                {
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Xóa thành công", "Successfull", MessageBoxButtons.OK);
+                        load_data_CTHD();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Xóa thất bại!\n" + ex.Message, "Fail!!");
+                    }
+
+                }
+            }
         }
     }
 }

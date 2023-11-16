@@ -45,7 +45,7 @@ namespace demo.Forms.HoaDon
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Thêm thất bại!\n Lỗi" + ex.Message, "Fail!!");
+                        MessageBox.Show("Thêm thất bại!\n" + ex.Message, "Fail!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

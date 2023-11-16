@@ -86,7 +86,21 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
 
         private void btn_chonAnh_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                imageFileDialog.Title = "Open Image";
+                imageFileDialog.Filter = "Image file (*.jpeg; *.jpg; *.png)|*.jpeg; *.jpg; *.png";
+                if (imageFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    txt_anhThietBi.Text = imageFileDialog.FileName;
+                    pictureBox_anhThietBi.ImageLocation = imageFileDialog.FileName;
+                    imageFileDialog.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
         }
 
         private void FormChinhSuaThietBiTaiNghe_Load(object sender, EventArgs e)

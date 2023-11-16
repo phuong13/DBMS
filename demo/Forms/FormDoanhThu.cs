@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -34,6 +35,20 @@ namespace demo.Forms
             LoadTheme();
         }
 
-      
+        private void btn_XemDoanhThu_Click(object sender, EventArgs e)
+        {
+            Connection connection = new Connection();
+            connection.getConnection.Open();
+            DateTime startDate = dateTimePicker_start.Value;
+            DateTime endDate = dateTimePicker_end.Value;
+            using (SqlCommand command = new SqlCommand("SELECT dbo.func_DoanhThu(@startDate, @endDate)", connection.getConnection))
+            {
+                command.Parameters.AddWithValue("@startDate", startDate);
+                command.Parameters.AddWithValue("@endDate", endDate);
+                decimal result = Convert.ToDecimal(command.ExecuteScalar());
+                textbox_doanhthu.Text = result.ToString();
+            }
+
+        }
     }
 }
