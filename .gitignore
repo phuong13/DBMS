@@ -4,7 +4,7 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 # Connection.cs
-demo/Connection.cs
+/demo/Connection.cs
 
 # User-specific files
 *.rsuser
