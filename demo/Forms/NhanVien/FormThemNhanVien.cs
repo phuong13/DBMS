@@ -23,47 +23,22 @@ namespace demo.Forms
         {
             conn.openConnection();
             comboBox_gioitinh.SelectedIndex = 0;
+            string sql = "select maNV from NHAN_VIEN";
+            comboBox_maNQL.DataSource = conn.getTable(sql);
+            comboBox_maNQL.DisplayMember = "maNV";
         }
-        private bool IsAllDigits(string input)
-        {
-            foreach (char c in input)
-            {
-                if (!char.IsDigit(c))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
+  
         //SAVE Button
         private void button_save_Click(object sender, EventArgs e)
         {
             Connection connection = new Connection();
             connection.getConnection.Open();
-            //check sdt 10 so 
-            if (textBoxSDT.Text.Length != 10 || !IsAllDigits(textBoxSDT.Text))
-            {
-                MessageBox.Show("Số điện thoại không hợp lệ. Vui lòng nhập 10 số.");
-                return;
-            }
-
-            // Kiểm tra tuổi
-            int age = DateTime.Now.Year - dateTimePicker_ngaysinh.Value.Year;
-            if (dateTimePicker_ngaysinh.Value > DateTime.Now.AddYears(-age))
-            {
-                age--;
-            }
-            if (age < 18)
-            {
-                MessageBox.Show("Bạn phải ít nhất 18 tuổi để thực hiện thao tác này.");
-                return;
-            }
 
             string maNV = textBoxMaNV.Text.Trim();
             string hoTen = textBoxHoTen.Text.Trim();
             string sdt = textBoxSDT.Text.Trim();
             string gioiTinhValue = comboBox_gioitinh.SelectedItem.ToString();
-            string maNQLValue = textBoxmaNQL.Text.Trim();
+            string maNQLValue = comboBox_maNQL.Text.Trim();
             DateTime ngaySinhValue = dateTimePicker_ngaysinh.Value;
 
             using (SqlCommand cmd = new SqlCommand("proc_ThemNhanVien", connection.getConnection))
@@ -75,7 +50,7 @@ namespace demo.Forms
                 cmd.Parameters.Add(new SqlParameter("@ngaySinh", ngaySinhValue));
                 cmd.Parameters.Add(new SqlParameter("@gioiTinh", gioiTinhValue));
                 cmd.Parameters.Add(new SqlParameter("@maNQL", maNQLValue));
-                //int rowsAffected = cmd.ExecuteNonQuery();
+               
                 DialogResult rs = MessageBox.Show("Are you sure??", "Add Employee", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (rs == DialogResult.OK)
                 {

@@ -84,7 +84,7 @@ namespace demo.Forms
             load_data_phieuNhap();
         }
 
-        private void buttonXoa_Click(object sender, EventArgs e)
+        private void button_xoa_Click(object sender, EventArgs e)
         {
 
         }

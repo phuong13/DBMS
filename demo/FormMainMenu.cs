@@ -112,9 +112,9 @@ namespace demo
             OpenChildForm(new Forms.Customer.FormKhachHang(), sender);
         }
 
-        private void button_account_Click(object sender, EventArgs e)
+        private void button_doanhthu_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormAccount(), sender);
+            OpenChildForm(new Forms.FormDoanhThu(), sender);
         }
 
         private void FormMainMenu_Load(object sender, EventArgs e)

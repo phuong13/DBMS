@@ -57,20 +57,22 @@ namespace demo.Forms
                 cmd.Parameters.Add(new SqlParameter("@ngaySinh", ngaySinhValue)); // Sử dụng ngaySinhValue đã lấy ở trên
                 cmd.Parameters.Add(new SqlParameter("@gioiTinh", gioiTinhValue)); // Sử dụng gioiTinhValue đã lấy ở trên
                 cmd.Parameters.Add(new SqlParameter("@maNQL", maNQLValue)); // Sử dụng maNQLValue đã lấy ở trên
-                int rowsAffected = cmd.ExecuteNonQuery();
+                
                 DialogResult rs = MessageBox.Show("Are you sure??", "Edit Employee", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (rs == DialogResult.OK)
                 {
-                    if (rowsAffected > 0)
+                    try
                     {
-                        MessageBox.Show("Successful!!", "Edit Nhân Viên");
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Chỉnh sửa thành công", "Successfull", MessageBoxButtons.OK);
                         this.Close();
                     }
-                    else
+                    catch (SqlException ex)
                     {
-                        MessageBox.Show("Fail!!");
+                        MessageBox.Show("Chỉnh sửa thất bại!\n" + ex.Message, "Fail!!");
                     }
                 }
+            
             }
         }
 

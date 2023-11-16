@@ -39,11 +39,6 @@ namespace demo.Forms.Customer
         {
             Connection connection = new Connection();
             connection.getConnection.Open();
-            if (textBoxSDT.Text.Length != 10 || !IsAllDigits(textBoxSDT.Text))
-            {
-                MessageBox.Show("Số điện thoại không hợp lệ. Vui lòng nhập 10 số.");
-                return;
-            }
             string maNV = textBoxMaKH.Text.Trim();
             string hoTen = textBoxHoTen.Text.Trim();
             string sdt = textBoxSDT.Text.Trim();
@@ -57,7 +52,7 @@ namespace demo.Forms.Customer
                 cmd.Parameters.Add(new SqlParameter("@sdt", sdt));
                 cmd.Parameters.Add(new SqlParameter("@ngaySinh", ngaySinhValue));
 
-                int rowsAffected = cmd.ExecuteNonQuery();
+               
                 DialogResult rs = MessageBox.Show("Are you sure??", "Add Customer", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (rs == DialogResult.OK)
                 {
@@ -69,7 +64,7 @@ namespace demo.Forms.Customer
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Thêm thất bại!\n Lỗi" + ex.Message, "Fail!!");
+                        MessageBox.Show("Thêm thất bại!\n" + ex.Message, "Fail!!");
                     }
                 }
             }

@@ -69,6 +69,18 @@
     <Compile Include="Forms\DanhMucThietBi\FormThemThietBi.Designer.cs">
       <DependentUpon>FormThemThietBi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HoaDon\FormThemHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HoaDon\FormThemHoaDon.Designer.cs">
+      <DependentUpon>FormThemHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HoaDon\FormThemThietBiVaoHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HoaDon\FormThemThietBiVaoHoaDon.Designer.cs">
+      <DependentUpon>FormThemThietBiVaoHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\KhachHang\FormThemKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,17 +135,17 @@
     <Compile Include="Forms\NhanVien\FormNhanVien.Designer.cs">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormHoaDon.cs">
+    <Compile Include="Forms\HoaDon\FormHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormHoaDon.Designer.cs">
+    <Compile Include="Forms\HoaDon\FormHoaDon.Designer.cs">
       <DependentUpon>FormHoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormAccount.cs">
+    <Compile Include="Forms\FormDoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormAccount.Designer.cs">
-      <DependentUpon>FormAccount.cs</DependentUpon>
+    <Compile Include="Forms\FormDoanhThu.Designer.cs">
+      <DependentUpon>FormDoanhThu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -152,6 +164,12 @@
     <EmbeddedResource Include="Forms\DanhMucThietBi\FormThemThietBi.resx">
       <DependentUpon>FormThemThietBi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HoaDon\FormThemHoaDon.resx">
+      <DependentUpon>FormThemHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HoaDon\FormThemThietBiVaoHoaDon.resx">
+      <DependentUpon>FormThemThietBiVaoHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\KhachHang\FormThemKhachHang.resx">
       <DependentUpon>FormThemKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Kho\FormKho.resx">
       <DependentUpon>FormKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kho\FormThemPhieuNhap.resx">
+      <DependentUpon>FormThemPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NhanVien\FormThemNhanVien.resx">
       <DependentUpon>FormThemNhanVien.cs</DependentUpon>
@@ -176,11 +197,11 @@
     <EmbeddedResource Include="Forms\NhanVien\FormNhanVien.resx">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormHoaDon.resx">
+    <EmbeddedResource Include="Forms\HoaDon\FormHoaDon.resx">
       <DependentUpon>FormHoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormAccount.resx">
-      <DependentUpon>FormAccount.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormDoanhThu.resx">
+      <DependentUpon>FormDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

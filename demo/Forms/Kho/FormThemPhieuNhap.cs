@@ -21,6 +21,13 @@ namespace demo.Forms.Kho
         private void FormThemPhieuNhap_Load(object sender, EventArgs e)
         {
             conn.openConnection();
+            string sql = "select * from THIET_BI ";
+            comboBox_maTB.DataSource = conn.getTable(sql);
+            comboBox_maTB.DisplayMember = "maTB";
+
+            string sql2 = "select * from NHA_CUNG_CAP";
+            comboBox_maNCC.DataSource = conn.getTable(sql2);
+            comboBox_maNCC.DisplayMember = "maNCC";
         }
 
         private void Save_button_Click(object sender, EventArgs e)
@@ -28,16 +35,13 @@ namespace demo.Forms.Kho
             Connection connection = new Connection();
             connection.getConnection.Open();
 
-            if (int.TryParse(textBox6.Text, out int soLuong) && soLuong <= 0)
-            {
-                MessageBox.Show("Số Lượng phải lớn hơn 0!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            string maPhieuNhap = textBox1.Text.Trim();
-            string maTB = textBox2.Text.Trim();
-            string maNCC = textBox3.Text.Trim();
-            int soLuongValue = int.Parse(textBox6.Text);
+           
+            string maPhieuNhap = textBox_maPN.Text.Trim();
+            string maTB = comboBox_maTB.Text.Trim();
+            string maNCC = comboBox_maNCC.Text.Trim();
+            string tenNCC =textBox_TenNCC.Text.Trim();
+            string xuatXu =textBox_Xuatxu.Text.Trim();
+            int soLuongValue = int.Parse(textBox_soLuong.Text);
 
 
             using (SqlCommand cmd = new SqlCommand("proc_AddStock", connection.getConnection))
@@ -46,9 +50,11 @@ namespace demo.Forms.Kho
                 cmd.Parameters.Add(new SqlParameter("@maPhieuNhap", maPhieuNhap));
                 cmd.Parameters.Add(new SqlParameter("@maTB", maTB));
                 cmd.Parameters.Add(new SqlParameter("@maNCC", maNCC));
+                cmd.Parameters.Add(new SqlParameter("@tenNCC", tenNCC));
+                cmd.Parameters.Add(new SqlParameter("@xuatXu", xuatXu));    
                 cmd.Parameters.Add(new SqlParameter("@soLuong", soLuongValue));
-
-                int rowsAffected = cmd.ExecuteNonQuery();
+                
+             
                 DialogResult rs = MessageBox.Show("Bạn có chắc muốn thêm phiếu nhập ?", "Thêm phiếu nhập", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (rs == DialogResult.OK)
                 {
@@ -69,6 +75,25 @@ namespace demo.Forms.Kho
         private void Cancel_button_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void comboBox_maTB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sql = "select * from THIET_BI where maTB = '" + comboBox_maTB.Text + "'";
+            DataTable dt = conn.getTable(sql);
+            foreach (DataRow hang in dt.Rows)
+                textBox_TenTB.Text = hang["tenThietBi"].ToString();
+           
+        }
+
+        private void comboBox_maNCC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sql = "select * from NHA_CUNG_CAP where maNCC = '" + comboBox_maNCC.Text + "'";
+            DataTable dt = conn.getTable(sql);
+            foreach (DataRow hang in dt.Rows)
+                textBox_TenNCC.Text = hang["tenNCC"].ToString();
+            foreach (DataRow hang in dt.Rows)
+                textBox_Xuatxu.Text = hang["xuatXu"].ToString();
         }
     }
 }

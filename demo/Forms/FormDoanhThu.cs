@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace demo.Forms
 {
-    public partial class FormAccount : Form
+    public partial class FormDoanhThu : Form
     {
-        public FormAccount()
+        public FormDoanhThu()
         {
             InitializeComponent();
         }
@@ -33,5 +33,7 @@ namespace demo.Forms
         {
             LoadTheme();
         }
+
+      
     }
 }

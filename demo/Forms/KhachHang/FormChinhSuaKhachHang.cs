@@ -24,12 +24,22 @@ namespace demo.Forms.Customer
             textBoxMaKH.ReadOnly = true;
         }
 
-        public void SetData(string maNV, string hoTen, string sdt, DateTime ngaySinh)
+        public void SetData(string maNV, string hoTen, string sdt, DateTime? ngaySinh)
         {
             textBoxMaKH.Text = maNV;
             textBoxHoTen.Text = hoTen;
             textBoxSDT.Text = sdt;
-            dateTimePicker_ngaysinh.Value = ngaySinh;
+            if (ngaySinh.HasValue && ngaySinh.Value != DateTime.MinValue)
+            {
+                dateTimePicker_ngaysinh.Value = ngaySinh.Value;
+            }
+            else
+            {
+                // Handle the case where ngaySinh is null or DateTime.MinValue
+                // For example, you can set it to MinDate of the DateTimePicker
+                dateTimePicker_ngaysinh.Value = dateTimePicker_ngaysinh.MinDate;
+            }
+            // EdateTimePicker_ngaysinh.Value = ngaySinh;
         }
         private void button_save_Click(object sender, EventArgs e)
         {
@@ -49,18 +59,19 @@ namespace demo.Forms.Customer
                 cmd.Parameters.Add(new SqlParameter("@sdt", sdt));
                 cmd.Parameters.Add(new SqlParameter("@ngaySinh", ngaySinhValue)); // Sử dụng ngaySinhValue đã lấy ở trên
 
-                int rowsAffected = cmd.ExecuteNonQuery();
+               
                 DialogResult rs = MessageBox.Show("Are you sure??", "Edit Customer", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (rs == DialogResult.OK)
                 {
-                    if (rowsAffected > 0)
+                    try
                     {
-                        MessageBox.Show("Successful!!", "Edit Customer");
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Chỉnh sửa  thành công", "Successfull", MessageBoxButtons.OK);
                         this.Close();
                     }
-                    else
+                    catch (SqlException ex)
                     {
-                        MessageBox.Show("Fail!!");
+                        MessageBox.Show("Chỉnh sửa thất bại!\n" + ex.Message, "Fail!!");
                     }
                 }
             }

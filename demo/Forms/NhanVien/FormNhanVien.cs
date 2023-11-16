@@ -94,18 +94,19 @@ namespace demo.Forms
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@MaNV", maNV));
 
-                int rowsAffected = cmd.ExecuteNonQuery();
+               
                 DialogResult rs = MessageBox.Show("Are you sure??", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (rs == DialogResult.OK)
                 {
-                    if (rowsAffected > 0)
+                    try
                     {
-                        MessageBox.Show("Successful!!");
-                        load_data_employ();
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Xóa thành công", "Successfull", MessageBoxButtons.OK);
+                        
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Fail!!");
+                        MessageBox.Show("Xóa thất bại!\n" + ex.Message, "Fail!!");
                     }
 
                 }

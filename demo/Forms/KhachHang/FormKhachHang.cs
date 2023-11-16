@@ -72,10 +72,15 @@ namespace demo.Forms.Customer
             string maNV = dataGridViewCustomer.CurrentRow.Cells[0].Value.ToString();
             string hoTen = dataGridViewCustomer.CurrentRow.Cells[1].Value.ToString();
             string sdt = dataGridViewCustomer.CurrentRow.Cells[3].Value.ToString();
-            DateTime ngaySinh = Convert.ToDateTime(dataGridViewCustomer.CurrentRow.Cells[2].Value);
+            DateTime? ngaySinh = null;
+            object ngaySinhValue = dataGridViewCustomer.CurrentRow.Cells[2].Value;
+            if (ngaySinhValue != null && ngaySinhValue != DBNull.Value)
+            {
+                ngaySinh = Convert.ToDateTime(ngaySinhValue);
+            }
 
             FormChinhSuaKhachHang f = new FormChinhSuaKhachHang();
-            f.SetData(maNV, hoTen, sdt, ngaySinh);
+            f.SetData(maNV, hoTen, sdt, ngaySinh ?? DateTime.MinValue);
             f.FormClosed += new FormClosedEventHandler(FormEDIT_CustomerClosed);
             f.ShowDialog();
         }
@@ -94,18 +99,19 @@ namespace demo.Forms.Customer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@maKH", maKH));
 
-                int rowsAffected = cmd.ExecuteNonQuery();
+       
                 DialogResult rs = MessageBox.Show("Are you sure??", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (rs == DialogResult.OK)
                 {
-                    if (rowsAffected > 0)
+                    try
                     {
-                        MessageBox.Show("Successful!!");
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Xóa  thành công", "Successfull", MessageBoxButtons.OK);
                         load_data_customer();
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Fail!!");
+                        MessageBox.Show("Xóa thất bại!\n" + ex.Message, "Fail!!");
                     }
                 }
             }

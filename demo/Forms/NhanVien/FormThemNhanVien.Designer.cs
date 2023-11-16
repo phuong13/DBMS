@@ -41,8 +41,8 @@
             this.button_save = new System.Windows.Forms.Button();
             this.button_huy = new System.Windows.Forms.Button();
             this.comboBox_gioitinh = new System.Windows.Forms.ComboBox();
-            this.textBoxmaNQL = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox_maNQL = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // dateTimePicker_ngaysinh
@@ -51,7 +51,7 @@
             this.dateTimePicker_ngaysinh.Location = new System.Drawing.Point(172, 231);
             this.dateTimePicker_ngaysinh.Name = "dateTimePicker_ngaysinh";
             this.dateTimePicker_ngaysinh.Size = new System.Drawing.Size(246, 26);
-            this.dateTimePicker_ngaysinh.TabIndex = 27;
+            this.dateTimePicker_ngaysinh.TabIndex = 23;
             this.dateTimePicker_ngaysinh.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // labelMaNQL
@@ -60,7 +60,7 @@
             this.labelMaNQL.Location = new System.Drawing.Point(44, 332);
             this.labelMaNQL.Name = "labelMaNQL";
             this.labelMaNQL.Size = new System.Drawing.Size(67, 20);
-            this.labelMaNQL.TabIndex = 25;
+            this.labelMaNQL.TabIndex = 26;
             this.labelMaNQL.Text = "Mã NQL";
             // 
             // labelGioiTinh
@@ -69,7 +69,7 @@
             this.labelGioiTinh.Location = new System.Drawing.Point(44, 288);
             this.labelGioiTinh.Name = "labelGioiTinh";
             this.labelGioiTinh.Size = new System.Drawing.Size(71, 20);
-            this.labelGioiTinh.TabIndex = 23;
+            this.labelGioiTinh.TabIndex = 24;
             this.labelGioiTinh.Text = "Giới Tính";
             // 
             // labelngaySinh
@@ -158,14 +158,7 @@
             this.comboBox_gioitinh.Location = new System.Drawing.Point(172, 280);
             this.comboBox_gioitinh.Name = "comboBox_gioitinh";
             this.comboBox_gioitinh.Size = new System.Drawing.Size(176, 28);
-            this.comboBox_gioitinh.TabIndex = 30;
-            // 
-            // textBoxmaNQL
-            // 
-            this.textBoxmaNQL.Location = new System.Drawing.Point(172, 326);
-            this.textBoxmaNQL.Name = "textBoxmaNQL";
-            this.textBoxmaNQL.Size = new System.Drawing.Size(246, 26);
-            this.textBoxmaNQL.TabIndex = 32;
+            this.comboBox_gioitinh.TabIndex = 25;
             // 
             // label1
             // 
@@ -177,13 +170,24 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "Nhân Viên";
             // 
+            // comboBox_maNQL
+            // 
+            this.comboBox_maNQL.FormattingEnabled = true;
+            this.comboBox_maNQL.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.comboBox_maNQL.Location = new System.Drawing.Point(172, 329);
+            this.comboBox_maNQL.Name = "comboBox_maNQL";
+            this.comboBox_maNQL.Size = new System.Drawing.Size(176, 28);
+            this.comboBox_maNQL.TabIndex = 34;
+            // 
             // FormThemNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 505);
+            this.Controls.Add(this.comboBox_maNQL);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxmaNQL);
             this.Controls.Add(this.comboBox_gioitinh);
             this.Controls.Add(this.button_huy);
             this.Controls.Add(this.button_save);
@@ -221,7 +225,7 @@
         private System.Windows.Forms.Button button_save;
         private System.Windows.Forms.Button button_huy;
         private System.Windows.Forms.ComboBox comboBox_gioitinh;
-        private System.Windows.Forms.TextBox textBoxmaNQL;
         protected System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox_maNQL;
     }
 }

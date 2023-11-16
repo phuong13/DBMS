@@ -1,6 +1,6 @@
 ﻿namespace demo.Forms
 {
-    partial class FormAccount
+    partial class FormDoanhThu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(231, 157);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(316, 81);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // FormAccount
+            // FormDoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Name = "FormAccount";
-            this.Text = "Account";
+            this.ClientSize = new System.Drawing.Size(1083, 575);
+            this.Name = "FormDoanhThu";
+            this.Text = "Doanh Thu";
             this.Load += new System.EventHandler(this.FormAccount_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
     }
 }
