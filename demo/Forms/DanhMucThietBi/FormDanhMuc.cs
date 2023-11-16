@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace demo.Forms.DanhMucThietBi
 {
@@ -174,6 +175,20 @@ namespace demo.Forms.DanhMucThietBi
             dg_DanhMucSanPham.Rows[rowIndex].Selected = true;
             btn_xoaThietBi.Enabled = true;
             btn_suaThietBi.Enabled = true;
+            try
+            {
+                DataTable dt = (DataTable)dg_DanhMucSanPham.DataSource;
+                DataRow dtRow = dt.Rows[dg_DanhMucSanPham.SelectedCells[0].RowIndex];
+                string sql = $"select * from THIET_BI Where maTB = '{dtRow[columnMapping["maTB"]].ToString()}'";
+                DataTable selectedCell = conn.getTable(sql);
+                Byte[] byteImage = new Byte[0];
+                byteImage = (Byte[])(selectedCell.Rows[0]["anhThietBi"]);
+                MemoryStream stmByteImage = new MemoryStream(byteImage);
+                pictureBox_thietBi.Image = Image.FromStream(stmByteImage);
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
        
         private void btn_themThietBi_Click(object sender, EventArgs e)
@@ -184,7 +199,21 @@ namespace demo.Forms.DanhMucThietBi
 
         private void btn_xoaThietBi_Click(object sender, EventArgs e)
         {
-            
+            conn.openConnection();
+            string maTB = dg_DanhMucSanPham.CurrentRow.Cells[0].Value.ToString();
+            SqlCommand cmd = new SqlCommand("proc_XoaThietBi", conn.getConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@maTB", maTB));
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Xóa thành công", "Successed!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Xóa thất bại", "Falied!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            conn.closeConnection();
         }
 
         private void FormDanhMuc_Load(object sender, EventArgs e)

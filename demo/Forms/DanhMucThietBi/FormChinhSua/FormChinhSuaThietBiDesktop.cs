@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace demo.Forms.DanhMucThietBi.FormChinhSua
 {
@@ -41,7 +42,13 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
             string cauHinh = txt_cauHinh.Text;
             string mauSac = txt_mauSac.Text;
             string trongLuong = txt_trongLuong.Text;
-
+            string imageLink = txt_anhThietBi.Text;
+            byte[] imageData = null;
+            using (FileStream fileStream = new FileStream(imageLink, FileMode.Open, FileAccess.Read))
+            {
+                imageData = new Byte[fileStream.Length];
+                fileStream.Read(imageData, 0, (int)fileStream.Length);
+            }
             SqlCommand cmd = new SqlCommand("proc_SuaThietBiDesktop", conn.getConnection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@maTB", maTB));
@@ -51,6 +58,8 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
             cmd.Parameters.Add(new SqlParameter("@cauHinh", cauHinh));
             cmd.Parameters.Add(new SqlParameter("@trongLuong", trongLuong));
             cmd.Parameters.Add(new SqlParameter("@mauSac", mauSac));
+            cmd.Parameters.Add(new SqlParameter("@anhThietBi", imageData));
+
 
             DialogResult rs = MessageBox.Show("Bạn có muốn sửa thông tin thiết bị?", "Lưu ý", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (rs == DialogResult.OK)
@@ -68,6 +77,25 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
 
             }
             conn.closeConnection();
+        }
+
+        private void btn_chonAnh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                imageFileDialog.Title = "Open Image";
+                imageFileDialog.Filter = "Image file (*.jpeg; *.jpg; *.png)|*.jpeg; *.jpg; *.png";
+                if (imageFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    txt_anhThietBi.Text = imageFileDialog.FileName;
+                    pictureBox_anhThietBi.ImageLocation = imageFileDialog.FileName;
+                    imageFileDialog.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
         }
     }
 }

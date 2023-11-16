@@ -160,6 +160,9 @@
   <data name="keyboard32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\keyboard32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="plus32px_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus32px_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="shopping-cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shopping-cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -199,7 +202,7 @@
   <data name="computer32px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\computer32px2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="plus32px_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\plus32px_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="save32px_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save32px_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
