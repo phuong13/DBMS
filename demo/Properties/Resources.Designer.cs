@@ -19,7 +19,7 @@ namespace demo.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -103,6 +103,26 @@ namespace demo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap businessman {
+            get {
+                object obj = ResourceManager.GetObject("businessman", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap businessman1 {
+            get {
+                object obj = ResourceManager.GetObject("businessman1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap computer32px {
             get {
                 object obj = ResourceManager.GetObject("computer32px", resourceCulture);
@@ -166,6 +186,16 @@ namespace demo.Properties {
         internal static System.Drawing.Bitmap headphone32px {
             get {
                 object obj = ResourceManager.GetObject("headphone32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hình_ảnh_2023_11_20_175846690_transformed {
+            get {
+                object obj = ResourceManager.GetObject("hình_ảnh_2023-11-20_175846690-transformed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -346,6 +376,17 @@ namespace demo.Properties {
         internal static System.Drawing.Bitmap teamwork1 {
             get {
                 object obj = ResourceManager.GetObject("teamwork1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap toppng_com_lock_login_key_password_protected_safe_security_icon_login_password_343x370 {
+            get {
+                object obj = ResourceManager.GetObject("toppng.com-lock-login-key-password-protected-safe-security-icon-login-password-34" +
+                        "3x370", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
