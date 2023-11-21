@@ -15,9 +15,17 @@ namespace demo.Forms
 {
     public partial class FormKho : Form
     {
+        private Connection conn;
+        private Boolean sysRole = false;
+
+        public void setSysRole(Boolean sysRole)
+        {
+            this.sysRole = sysRole;
+        }
         public FormKho()
         {
             InitializeComponent();
+            conn = Connection.Instance(sysRole);
         }
 
         private void LoadTheme(Panel p)
@@ -33,7 +41,6 @@ namespace demo.Forms
                 }
             }
         }
-        Connection conn =new Connection();
         private void load_data_phieuNhap()
         {
             string sql = "select * from V_Kho";
@@ -54,10 +61,9 @@ namespace demo.Forms
 
         private void dataGridViewKho_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Connection connection = new Connection();
-            connection.getConnection.Open();
+            conn.OpenConnection();
             string maPhieuNhap = dataGridViewKho.CurrentRow.Cells[0].Value.ToString();
-            using (SqlCommand cmd = new SqlCommand("select * from func_XemPhieuNhapThietBi(@maPhieuNhap)", connection.getConnection))
+            using (SqlCommand cmd = new SqlCommand("select * from func_XemPhieuNhapThietBi(@maPhieuNhap)", conn.getConnection()))
             {
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.Add(new SqlParameter("@maPhieuNhap", maPhieuNhap));
@@ -66,7 +72,8 @@ namespace demo.Forms
                 DataTable dataTable = new DataTable();
                 dataTable.Load(reader);
                 dataGridViewKho.DataSource=dataTable;
-            }           
+            }
+            conn.CloseConnection();
         }
         private void button_back_Click(object sender, EventArgs e)
         {

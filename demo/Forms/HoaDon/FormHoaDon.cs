@@ -14,9 +14,17 @@ namespace demo.Forms
 {
     public partial class FormHoaDon : Form
     {
+        private Connection conn;
+        private Boolean sysRole = false;
+
+        public void setSysRole(Boolean sysRole)
+        {
+            this.sysRole = sysRole;
+        }
         public FormHoaDon()
         {
             InitializeComponent();
+            conn = Connection.Instance(sysRole);
         }
         private void LoadTheme(Panel p)
         {
@@ -31,7 +39,6 @@ namespace demo.Forms
                 }
             }
         }
-        Connection conn =new Connection();
         void load_data_hoadon()
         {
             button_Xoa.Enabled = true;
@@ -82,11 +89,9 @@ namespace demo.Forms
             button_Thanhtoan.Visible = false;
             button_xoaTB.Visible = true;
             button_Xoa.Visible = false;
-       
-            Connection connection = new Connection();
-            connection.getConnection.Open();
+            conn.OpenConnection();
             string maHD = dataGridViewHoaDon.CurrentRow.Cells[0].Value.ToString();
-            using (SqlCommand cmd = new SqlCommand("select * from func_XemChiTietHoaDon(@maHD)", connection.getConnection))
+            using (SqlCommand cmd = new SqlCommand("select * from func_XemChiTietHoaDon(@maHD)", conn.getConnection()))
             {
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.Add(new SqlParameter("@maHD", maHD));
@@ -96,15 +101,15 @@ namespace demo.Forms
                 dataTable.Load(reader);
                 dataGridViewHoaDon.DataSource = dataTable;
             }
+            conn.CloseConnection();
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
-            connection.getConnection.Open();
+            conn.OpenConnection();
 
             string maHD = dataGridViewHoaDon.CurrentRow.Cells[0].Value.ToString();
             
-            using (SqlCommand cmd = new SqlCommand("proc_XoaHoaDon", connection.getConnection))
+            using (SqlCommand cmd = new SqlCommand("proc_XoaHoaDon", conn.getConnection()))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@maHD", maHD));
@@ -129,12 +134,11 @@ namespace demo.Forms
 
         private void button_Thanhtoan_Click(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
-            connection.getConnection.Open();
+            conn.OpenConnection();
 
             string maHD = dataGridViewHoaDon.CurrentRow.Cells[0].Value.ToString();
            
-            using (SqlCommand cmd = new SqlCommand("proc_UpdateTrangThaiAndNgayThanhToan", connection.getConnection))
+            using (SqlCommand cmd = new SqlCommand("proc_UpdateTrangThaiAndNgayThanhToan", conn.getConnection()))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@maHD", maHD));
@@ -157,6 +161,7 @@ namespace demo.Forms
                     }
                 }
             }
+            conn.CloseConnection();
         }
 
         private void button_ThemTB_Click(object sender, EventArgs e)
@@ -175,12 +180,11 @@ namespace demo.Forms
 
         private void button_xoaTB_Click(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
-            connection.getConnection.Open();
+            conn.OpenConnection();
 
             string maHD = dataGridViewHoaDon.CurrentRow.Cells[0].Value.ToString();
             string maTB = dataGridViewHoaDon.CurrentRow.Cells[2].Value.ToString();
-            using (SqlCommand cmd = new SqlCommand("proc_XoaThietBiTrongHoaDon", connection.getConnection))
+            using (SqlCommand cmd = new SqlCommand("proc_XoaThietBiTrongHoaDon", conn.getConnection()))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@maHD", maHD));
@@ -204,6 +208,7 @@ namespace demo.Forms
 
                 }
             }
+            conn.CloseConnection();
         }
     }
 }

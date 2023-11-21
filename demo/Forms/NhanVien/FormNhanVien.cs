@@ -8,23 +8,31 @@ namespace demo.Forms
 {
     public partial class FormNhanVien : Form
     {
+        private Connection conn;
+        private Boolean sysRole = false;
+
+        public void setSysRole(Boolean sysRole)
+        {
+            this.sysRole = sysRole;
+        }
         public FormNhanVien()
         {
             InitializeComponent();
+            conn = Connection.Instance(sysRole);
 
         }
-        Connection conn = new Connection();
 
         public void load_data_employ()
         {
+            conn.OpenConnection();
             dataGridViewEmployees.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
             string sql = "select * from V_DSNV";
             dataGridViewEmployees.DataSource = conn.getTable(sql);
+            conn.CloseConnection();
         }
         private void FormEmployees_Load(object sender, EventArgs e)
         {
             LoadTheme(panelEdit);
-            conn.openConnection();
             load_data_employ();
         }
         private void LoadTheme(Panel p)
@@ -85,11 +93,10 @@ namespace demo.Forms
         }
         private void buttonXoa_Click(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
-            connection.getConnection.Open();
+            conn.OpenConnection();
 
             string maNV = dataGridViewEmployees.CurrentRow.Cells[0].Value.ToString();
-            using (SqlCommand cmd = new SqlCommand("proc_XoaNhanVien", connection.getConnection))
+            using (SqlCommand cmd = new SqlCommand("proc_XoaNhanVien", conn.getConnection()))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@MaNV", maNV));
@@ -111,6 +118,7 @@ namespace demo.Forms
 
                 }
             }
+            conn.CloseConnection();
         }
 
 

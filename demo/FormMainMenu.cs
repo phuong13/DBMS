@@ -15,15 +15,39 @@ namespace demo
 
     public partial class FormMainMenu : Form
     {
+
+        private Connection conn;
+
         private Button currentButton;
         private Random random;
         private int tempIndex;
         private Form activeForm;
+
+        private String username;
+        private String password;
+        private Boolean sysRole;
+
+        public event EventHandler Logout;
+        public Boolean isExit = true;
+
         //Constructor
         public FormMainMenu()
         {
             InitializeComponent();
             random = new Random();
+            conn = Connection.Instance(true);
+        }
+        public FormMainMenu(String username, String password)
+        {
+            InitializeComponent();
+            random = new Random();
+            this.username = username;
+            this.password = password;
+            this.sysRole = false;
+            if (username == "sa")
+            {
+                sysRole = true;
+            }
         }
         //Methods
         private Color SelectThemeColor()
@@ -88,43 +112,87 @@ namespace demo
         }
         private void button_danhmuc_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.DanhMucThietBi.FormDanhMuc(), sender);
+            Forms.DanhMucThietBi.FormDanhMuc fDanhMuc = new Forms.DanhMucThietBi.FormDanhMuc();
+            fDanhMuc.setSysRole(sysRole);
+            OpenChildForm(fDanhMuc, sender);
         }
 
         private void button_hoadon_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormHoaDon(), sender);
+            Forms.FormHoaDon fHoaDon = new Forms.FormHoaDon();
+            fHoaDon.setSysRole(sysRole);
+            OpenChildForm(fHoaDon, sender);
         }
 
         private void button_kho_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormKho(), sender);
+            Forms.FormKho fKho = new Forms.FormKho();
+            fKho.setSysRole(sysRole);
+            OpenChildForm(fKho, sender);
 
         }
 
         private void btn_nhanvien_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormNhanVien(), sender);
+            Forms.FormNhanVien fNhanVien = new Forms.FormNhanVien();
+            fNhanVien.setSysRole(sysRole);
+            OpenChildForm(fNhanVien, sender);
         }
 
         private void button_khachhang_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Customer.FormKhachHang(), sender);
+            Forms.Customer.FormKhachHang fKhachHang = new Forms.Customer.FormKhachHang();
+            fKhachHang.setSysRole(sysRole);
+            OpenChildForm(fKhachHang, sender);
         }
 
         private void button_doanhthu_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormDoanhThu(), sender);
+            Forms.FormDoanhThu fDoanhThu = new FormDoanhThu();
+            fDoanhThu.setSysRole(sysRole);
+            OpenChildForm(fDoanhThu, sender);
         }
 
         private void FormMainMenu_Load(object sender, EventArgs e)
         {
-            
+            if (this.sysRole == false)
+            {
+                button_nhanvien.Enabled = false;
+                button_account.Enabled = false;
+            }
         }
 
             private void label1_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void button_account_Click(object sender, EventArgs e)
+        {
+            FormTaiKhoan fTaiKhoan = new FormTaiKhoan();
+            fTaiKhoan.setSysRole(sysRole);
+            OpenChildForm(fTaiKhoan, sender);
+        }
+
+        private void btn_dangxuat_Click(object sender, EventArgs e)
+        {
+            Logout(this, new EventArgs());
+        }
+
+        private void FormMainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (isExit)
+                Application.Exit();
+        }
+
+        private void FormMainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (isExit) { 
+                if (MessageBox.Show("Bạn có muốn thoát chương trình?", "Lưu ý", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

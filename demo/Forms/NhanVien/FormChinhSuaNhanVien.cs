@@ -13,16 +13,21 @@ namespace demo.Forms
 {
     public partial class FormChinhSuaNhanVien : Form
     {
+        private Connection conn;
+        private Boolean sysRole = false;
 
+        public void setSysRole(Boolean sysRole)
+        {
+            this.sysRole = sysRole;
+        }
         public FormChinhSuaNhanVien()
         {
             InitializeComponent();
+            conn = Connection.Instance(sysRole);
         }
 
-        Connection conn = new Connection();
         private void FormEdit_Employee_Load(object sender, EventArgs e)
         {
-            conn.openConnection();
             textBoxMaNV.ReadOnly = true;
         }
 
@@ -38,9 +43,7 @@ namespace demo.Forms
 
         private void button_save_Click(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
-            connection.getConnection.Open();
-
+            conn.OpenConnection();
             string maNV = textBoxMaNV.Text.Trim();
             string hoTen = textBoxHoTen.Text.Trim();
             string sdt = textBoxSDT.Text.Trim();
@@ -48,7 +51,7 @@ namespace demo.Forms
             string maNQLValue = textBoxmaNQL.Text.Trim();
             DateTime ngaySinhValue = dateTimePicker_ngaysinh.Value;
 
-            using (SqlCommand cmd = new SqlCommand("proc_ChinhSuaNhanVien", connection.getConnection))
+            using (SqlCommand cmd = new SqlCommand("proc_ChinhSuaNhanVien", conn.getConnection()))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@maNV", maNV));
@@ -58,7 +61,7 @@ namespace demo.Forms
                 cmd.Parameters.Add(new SqlParameter("@gioiTinh", gioiTinhValue)); // Sử dụng gioiTinhValue đã lấy ở trên
                 cmd.Parameters.Add(new SqlParameter("@maNQL", maNQLValue)); // Sử dụng maNQLValue đã lấy ở trên
                 
-                DialogResult rs = MessageBox.Show("Are you sure??", "Edit Employee", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                DialogResult rs = MessageBox.Show("Bạn có muốn chỉnh sửa thông tin nhân viên?", "Chú ý", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (rs == DialogResult.OK)
                 {
                     try
@@ -74,6 +77,7 @@ namespace demo.Forms
                 }
             
             }
+            conn.CloseConnection();
         }
 
         private void button_huy_Click(object sender, EventArgs e)

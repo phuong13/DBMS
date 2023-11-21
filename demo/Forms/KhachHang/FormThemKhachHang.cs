@@ -13,16 +13,22 @@ namespace demo.Forms.Customer
 {
     public partial class FormThemKhachHang : Form
     {
+        private Connection conn;
+        private Boolean sysRole = false;
+
+        public void setSysRole(Boolean sysRole)
+        {
+            this.sysRole = sysRole;
+        }
         public FormThemKhachHang()
         {
             InitializeComponent();
+            conn = Connection.Instance(sysRole);
         }
 
-        Connection conn = new Connection();
 
         private void FormADD_Customer_Load(object sender, EventArgs e)
         {
-            conn.openConnection();
         }
         private bool IsAllDigits(string input)
         {
@@ -37,14 +43,13 @@ namespace demo.Forms.Customer
         }
         private void button_save_Click(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
-            connection.getConnection.Open();
+            conn.OpenConnection();
             string maNV = textBoxMaKH.Text.Trim();
             string hoTen = textBoxHoTen.Text.Trim();
             string sdt = textBoxSDT.Text.Trim();
             DateTime ngaySinhValue = dateTimePicker_ngaysinh.Value;
 
-            using (SqlCommand cmd = new SqlCommand("proc_ThemKhachHang", connection.getConnection))
+            using (SqlCommand cmd = new SqlCommand("proc_ThemKhachHang", conn.getConnection()))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@maKH", maNV));
@@ -53,7 +58,7 @@ namespace demo.Forms.Customer
                 cmd.Parameters.Add(new SqlParameter("@ngaySinh", ngaySinhValue));
 
                
-                DialogResult rs = MessageBox.Show("Are you sure??", "Add Customer", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                DialogResult rs = MessageBox.Show("Bạn có muốn thêm khách hàng?", "Chú ý", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (rs == DialogResult.OK)
                 {
                     try
@@ -68,6 +73,7 @@ namespace demo.Forms.Customer
                     }
                 }
             }
+            conn.CloseConnection();
         }
 
         private void button_huy_Click(object sender, EventArgs e)

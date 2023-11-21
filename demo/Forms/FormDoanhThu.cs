@@ -13,9 +13,17 @@ namespace demo.Forms
 {
     public partial class FormDoanhThu : Form
     {
+        private Connection conn;
+        private Boolean sysRole = false;
+
+        public void setSysRole(Boolean sysRole)
+        {
+            this.sysRole = sysRole;
+        }
         public FormDoanhThu()
         {
             InitializeComponent();
+            conn = Connection.Instance(sysRole);
         }
         private void LoadTheme()
         {
@@ -37,18 +45,17 @@ namespace demo.Forms
 
         private void btn_XemDoanhThu_Click(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
-            connection.getConnection.Open();
+            conn.OpenConnection();
             DateTime startDate = dateTimePicker_start.Value;
             DateTime endDate = dateTimePicker_end.Value;
-            using (SqlCommand command = new SqlCommand("SELECT dbo.func_DoanhThu(@startDate, @endDate)", connection.getConnection))
+            using (SqlCommand command = new SqlCommand("SELECT dbo.func_DoanhThu(@startDate, @endDate)", conn.getConnection()))
             {
                 command.Parameters.AddWithValue("@startDate", startDate);
                 command.Parameters.AddWithValue("@endDate", endDate);
                 decimal result = Convert.ToDecimal(command.ExecuteScalar());
                 textbox_doanhthu.Text = result.ToString();
             }
-
+            conn.CloseConnection();
         }
     }
 }

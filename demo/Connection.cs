@@ -10,56 +10,63 @@ namespace demo
 {
     public class Connection
     {
-        SqlConnection cnn = new SqlConnection("Data Source=.;Initial Catalog=ThietBiViTinh;Persist Security Info=True;User ID=sa;Password=0898419007");
-        public SqlConnection getConnection
+        private static Connection _instance;
+        private static readonly object _lockObject = new object();
+
+        private string _connectionString;
+
+        private SqlConnection _connection;
+
+        public Connection(bool sysRole)
         {
-            get
+            // Tùy chỉnh chuỗi kết nối dựa trên giá trị sysRole
+            if (sysRole)
             {
-                return cnn;
+                _connectionString = "Data Source=.;Initial Catalog=ThietBiViTinh;User Id=sa;Password=1234567890;";
+            }
+            else
+            {
+                _connectionString = "Data Source=.;Initial Catalog=ThietBiViTinh;User Id=stafflogin;Password=nv123456;";
+            }
+            this._connection = new SqlConnection(_connectionString);
+        }
+
+        public static Connection Instance(bool sysRole)
+        {
+            lock (_lockObject)
+            {
+                // Nếu chưa có một thể hiện của lớp, tạo mới
+                if (_instance == null)
+                {
+                    _instance = new Connection(sysRole);
+                }
+                return _instance;
             }
         }
-        SqlConnection cnnAdmin = new SqlConnection("Data Source=.;Initial Catalog=ThietBiViTinh;Integrated Security=True");
-        public SqlConnection getConnectionAdmin
+        public void OpenConnection()
         {
-            get
+            _connection = new SqlConnection(_connectionString);
+            _connection.Open();
+        }
+
+        public void CloseConnection()
+        {
+            if (_connection != null && _connection.State == System.Data.ConnectionState.Open)
             {
-                return cnnAdmin;
+                _connection.Close();
             }
         }
 
-        public void openConnection()
+        public SqlConnection getConnection()
         {
-            if (cnn.State == ConnectionState.Closed)
-            {
-                cnn.Open();
-            }
-        }
-        public void openConnectionAdmin()
-        {
-            if (cnnAdmin.State == ConnectionState.Closed)
-            {
-                cnnAdmin.Open();
-            }
+            return _connection;
         }
 
-        public void closeConnection()
-        {
-            if (cnn.State == ConnectionState.Open)
-            {
-                cnn.Close();
-            }
-        }
-        public void closeConnectionAdmin()
-        {
-            if (cnnAdmin.State == ConnectionState.Open)
-            {
-                cnnAdmin.Close();
-            }
-        }
         public DataTable getTable(string sql)
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter ds = new SqlDataAdapter(sql, cnn);
+            SqlDataAdapter ds = new SqlDataAdapter(sql, _connection);
+            CloseConnection();
             ds.Fill(dt);
             return dt;
         }

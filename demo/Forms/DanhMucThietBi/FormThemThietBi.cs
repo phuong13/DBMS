@@ -14,11 +14,18 @@ namespace demo.Forms.DanhMucThietBi
 {
     public partial class FormThemThietBi : Form
     {
+        private Connection conn;
+        private Boolean sysRole = false;
+
+        public void setSysRole(Boolean sysRole)
+        {
+            this.sysRole = sysRole;
+        }
         public FormThemThietBi()
         {
             InitializeComponent();
+            conn = Connection.Instance(sysRole);
         }
-        Connection conn = new Connection();
         private Dictionary<string, string[]> items = new Dictionary<string, string[]>();
         Dictionary<string, string> columnMapping = new Dictionary<string, string>
         {
@@ -68,12 +75,12 @@ namespace demo.Forms.DanhMucThietBi
             {
                 AddTextBox(columnMapping[value], $"txt_{value}");
             }
-            conn.openConnection();
-            SqlCommand cmd = new SqlCommand($"SELECT [dbo].[func_GetAndIncrementMaTB]()", conn.getConnection);
+            conn.OpenConnection();
+            SqlCommand cmd = new SqlCommand($"SELECT [dbo].[func_GetAndIncrementMaTB]()", conn.getConnection());
             cmd.CommandType = CommandType.Text;
             string maTB = cmd.ExecuteScalar().ToString();
             (this.FindForm().Controls.Find("txt_maTB", true).FirstOrDefault() as TextBox).Text = maTB;
-            conn.closeConnection();
+            conn.CloseConnection();
         }
         private void AddTextBox(string labelText, string textboxName)
         {
@@ -98,7 +105,7 @@ namespace demo.Forms.DanhMucThietBi
 
         private void btn_luu_Click(object sender, EventArgs e)
         {
-            conn.openConnection();
+            conn.OpenConnection();
             var parent = this.FindForm();
 
             string tenTB = (parent.Controls.Find("txt_tenThietBi", true).FirstOrDefault() as TextBox).Text;
@@ -116,7 +123,7 @@ namespace demo.Forms.DanhMucThietBi
             string[] values = ((KeyValuePair<string, string[]>)cbox_thietBi.SelectedItem).Value;
             string key = ((KeyValuePair<string, string[]>)cbox_thietBi.SelectedItem).Key;
             SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn.getConnection;
+            cmd.Connection = conn.getConnection();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@maTB", maTB));
             cmd.Parameters.Add(new SqlParameter("@tenThietBi", tenTB));
@@ -279,7 +286,7 @@ namespace demo.Forms.DanhMucThietBi
                     }
                     break;
             }
-            conn.closeConnection();
+            conn.CloseConnection();
         }
 
         private void btn_chonAnh_Click(object sender, EventArgs e)

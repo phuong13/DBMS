@@ -14,12 +14,19 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
 {
     public partial class FormChinhSuaThietBiTaiNghe : Form
     {
+        private Connection conn;
+        private Boolean sysRole = false;
+
+        public void setSysRole(Boolean sysRole)
+        {
+            this.sysRole = sysRole;
+        }
         public FormChinhSuaThietBiTaiNghe()
         {
             InitializeComponent();
+            conn = Connection.Instance(sysRole);
         }
-
-        Connection conn = new Connection();
+        
 
         public void setData(string maTB, string tenThietBi, string kieuKetNoi, string kieuTaiNghe, string donGia, string mauSac, string soLuong)
         {
@@ -34,7 +41,7 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
 
         private void btn_luu_Click(object sender, EventArgs e)
         {
-            conn.openConnection();
+            conn.OpenConnection();
 
             string maTB = txt_maTB.Text;
             string tenThietBi = txt_TenThietBi.Text;
@@ -50,7 +57,7 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
                 imageData = new Byte[fileStream.Length];
                 fileStream.Read(imageData, 0, (int)fileStream.Length);
             }
-            SqlCommand cmd = new SqlCommand("proc_SuaThietBiTaiNghe", conn.getConnection);
+            SqlCommand cmd = new SqlCommand("proc_SuaThietBiTaiNghe", conn.getConnection());
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@maTB", maTB));
             cmd.Parameters.Add(new SqlParameter("@tenThietBi", tenThietBi));
@@ -76,7 +83,7 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
                 }
 
             }
-            conn.closeConnection();
+            conn.CloseConnection();
         }
 
         private void btn_huy_Click(object sender, EventArgs e)

@@ -13,26 +13,33 @@ namespace demo.Forms
 {
     public partial class FormThemNhanVien : Form
     {
+        private Connection conn;
+        private Boolean sysRole = false;
+
+        public void setSysRole(Boolean sysRole)
+        {
+            this.sysRole = sysRole;
+        }
         public FormThemNhanVien()
         {
             InitializeComponent();
+            conn = Connection.Instance(sysRole);
         }
-        Connection conn = new Connection();
 
         private void FormADD_Employee_Load(object sender, EventArgs e)
         {
-            conn.openConnection();
+            conn.OpenConnection();
             comboBox_gioitinh.SelectedIndex = 0;
             string sql = "select maNV from NHAN_VIEN";
             comboBox_maNQL.DataSource = conn.getTable(sql);
             comboBox_maNQL.DisplayMember = "maNV";
+            conn.CloseConnection();
         }
   
         //SAVE Button
         private void button_save_Click(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
-            connection.getConnection.Open();
+            conn.OpenConnection();
 
             string maNV = textBoxMaNV.Text.Trim();
             string hoTen = textBoxHoTen.Text.Trim();
@@ -41,7 +48,7 @@ namespace demo.Forms
             string maNQLValue = comboBox_maNQL.Text.Trim();
             DateTime ngaySinhValue = dateTimePicker_ngaysinh.Value;
 
-            using (SqlCommand cmd = new SqlCommand("proc_ThemNhanVien", connection.getConnection))
+            using (SqlCommand cmd = new SqlCommand("proc_ThemNhanVien", conn.getConnection()))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@maNV", maNV));
@@ -51,7 +58,7 @@ namespace demo.Forms
                 cmd.Parameters.Add(new SqlParameter("@gioiTinh", gioiTinhValue));
                 cmd.Parameters.Add(new SqlParameter("@maNQL", maNQLValue));
                
-                DialogResult rs = MessageBox.Show("Are you sure??", "Add Employee", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                DialogResult rs = MessageBox.Show("Bạn có thêm nhân viên?", "Chú ý", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (rs == DialogResult.OK)
                 {
                     try
@@ -66,6 +73,7 @@ namespace demo.Forms
                     }
                 }
             }
+            conn.CloseConnection();
         }
 
         private void button_huy_Click(object sender, EventArgs e)

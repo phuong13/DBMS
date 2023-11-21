@@ -13,11 +13,18 @@ namespace demo.Forms.Customer
 {
     public partial class FormKhachHang : Form
     {
+        private Connection conn;
+        private Boolean sysRole = false;
+
+        public void setSysRole(Boolean sysRole)
+        {
+            this.sysRole = sysRole;
+        }
         public FormKhachHang()
         {
             InitializeComponent();
+            conn = Connection.Instance(sysRole);
         }
-        Connection conn = new Connection();
         private void load_data_customer()
         {
             string sql = "select * from V_DSKH";
@@ -26,7 +33,6 @@ namespace demo.Forms.Customer
         private void FormCustomer_Load(object sender, EventArgs e)
         {
             LoadTheme(panelEdit);
-            conn.openConnection();
             load_data_customer();
         }
         private void LoadTheme(Panel p)
@@ -90,11 +96,10 @@ namespace demo.Forms.Customer
         }
         private void buttonXoa_Click(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
-            connection.getConnection.Open();
+            conn.OpenConnection();
 
             string maKH = dataGridViewCustomer.CurrentRow.Cells[0].Value.ToString();
-            using (SqlCommand cmd = new SqlCommand("proc_XoaKhachHang", connection.getConnection))
+            using (SqlCommand cmd = new SqlCommand("proc_XoaKhachHang", conn.getConnection()))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@maKH", maKH));
@@ -115,6 +120,7 @@ namespace demo.Forms.Customer
                     }
                 }
             }
+            conn.CloseConnection();
         }
 
         private void dataGridViewCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)

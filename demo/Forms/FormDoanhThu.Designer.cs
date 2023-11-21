@@ -41,18 +41,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(281, 9);
+            this.label1.Location = new System.Drawing.Point(250, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(511, 65);
+            this.label1.Size = new System.Drawing.Size(427, 54);
             this.label1.TabIndex = 0;
             this.label1.Text = "Doanh Thu Cửa Hàng";
             // 
             // btn_XemDoanhThu
             // 
             this.btn_XemDoanhThu.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_XemDoanhThu.Location = new System.Drawing.Point(408, 265);
+            this.btn_XemDoanhThu.Location = new System.Drawing.Point(363, 212);
+            this.btn_XemDoanhThu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_XemDoanhThu.Name = "btn_XemDoanhThu";
-            this.btn_XemDoanhThu.Size = new System.Drawing.Size(258, 54);
+            this.btn_XemDoanhThu.Size = new System.Drawing.Size(229, 43);
             this.btn_XemDoanhThu.TabIndex = 1;
             this.btn_XemDoanhThu.Text = "Xem Doanh Thu";
             this.btn_XemDoanhThu.UseVisualStyleBackColor = true;
@@ -62,51 +63,54 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(160, 153);
+            this.label2.Location = new System.Drawing.Point(142, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 38);
+            this.label2.Size = new System.Drawing.Size(109, 32);
             this.label2.TabIndex = 3;
             this.label2.Text = "Từ ngày:";
             // 
             // dateTimePicker_start
             // 
             this.dateTimePicker_start.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_start.Location = new System.Drawing.Point(292, 156);
+            this.dateTimePicker_start.Location = new System.Drawing.Point(260, 125);
+            this.dateTimePicker_start.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker_start.Name = "dateTimePicker_start";
-            this.dateTimePicker_start.Size = new System.Drawing.Size(240, 34);
+            this.dateTimePicker_start.Size = new System.Drawing.Size(214, 30);
             this.dateTimePicker_start.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(557, 154);
+            this.label3.Location = new System.Drawing.Point(495, 123);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 38);
+            this.label3.Size = new System.Drawing.Size(109, 32);
             this.label3.TabIndex = 5;
             this.label3.Text = "Từ ngày:";
             // 
             // dateTimePicker_end
             // 
             this.dateTimePicker_end.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_end.Location = new System.Drawing.Point(689, 158);
+            this.dateTimePicker_end.Location = new System.Drawing.Point(612, 126);
+            this.dateTimePicker_end.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker_end.Name = "dateTimePicker_end";
-            this.dateTimePicker_end.Size = new System.Drawing.Size(242, 34);
+            this.dateTimePicker_end.Size = new System.Drawing.Size(216, 30);
             this.dateTimePicker_end.TabIndex = 6;
             // 
             // textbox_doanhthu
             // 
             this.textbox_doanhthu.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbox_doanhthu.Location = new System.Drawing.Point(408, 409);
+            this.textbox_doanhthu.Location = new System.Drawing.Point(363, 327);
+            this.textbox_doanhthu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textbox_doanhthu.Name = "textbox_doanhthu";
-            this.textbox_doanhthu.Size = new System.Drawing.Size(258, 45);
+            this.textbox_doanhthu.Size = new System.Drawing.Size(230, 39);
             this.textbox_doanhthu.TabIndex = 7;
             // 
             // FormDoanhThu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1083, 575);
+            this.ClientSize = new System.Drawing.Size(963, 460);
             this.Controls.Add(this.textbox_doanhthu);
             this.Controls.Add(this.dateTimePicker_end);
             this.Controls.Add(this.label3);
@@ -114,7 +118,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_XemDoanhThu);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormDoanhThu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Doanh Thu";
             this.Load += new System.EventHandler(this.FormAccount_Load);
             this.ResumeLayout(false);

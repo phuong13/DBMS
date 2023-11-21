@@ -14,9 +14,17 @@ namespace demo.Forms.DanhMucThietBi
 {
     public partial class FormDanhMuc : Form
     {
+        private Connection conn;
+        private Boolean sysRole = false;
+
+        public void setSysRole(Boolean sysRole)
+        {
+            this.sysRole = sysRole;
+        }
         public FormDanhMuc()
         {
             InitializeComponent();
+            conn = Connection.Instance(sysRole);
         }
         private string currentType = "";
         private Color themeColor;
@@ -95,7 +103,6 @@ namespace demo.Forms.DanhMucThietBi
                 }
             }
         }
-        Connection conn = new Connection();
 
         private void buttonLapTop_Click(object sender, EventArgs e)
         {
@@ -194,14 +201,15 @@ namespace demo.Forms.DanhMucThietBi
         private void btn_themThietBi_Click(object sender, EventArgs e)
         {
             FormThemThietBi f = new FormThemThietBi();
+            f.setSysRole(sysRole);
             f.ShowDialog();
         }
 
         private void btn_xoaThietBi_Click(object sender, EventArgs e)
         {
-            conn.openConnection();
+            conn.OpenConnection();
             string maTB = dg_DanhMucSanPham.CurrentRow.Cells[0].Value.ToString();
-            SqlCommand cmd = new SqlCommand("proc_XoaThietBi", conn.getConnection);
+            SqlCommand cmd = new SqlCommand("proc_XoaThietBi", conn.getConnection());
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@maTB", maTB));
             try
@@ -213,7 +221,7 @@ namespace demo.Forms.DanhMucThietBi
             {
                 MessageBox.Show("Xóa thất bại", "Falied!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            conn.closeConnection();
+            conn.CloseConnection();
         }
 
         private void FormDanhMuc_Load(object sender, EventArgs e)
@@ -249,11 +257,11 @@ namespace demo.Forms.DanhMucThietBi
         }
         private void load_sum(string func)
         {
-            conn.openConnection();
-            SqlCommand cmd = new SqlCommand($"select  dbo.{func}()", conn.getConnection);
+            conn.OpenConnection();
+            SqlCommand cmd = new SqlCommand($"select  dbo.{func}()", conn.getConnection());
             cmd.CommandType = CommandType.Text;
             textBox1.Text =cmd.ExecuteScalar().ToString();
-            conn.closeConnection();
+            conn.CloseConnection();
         }
 
         private void btn_suaThietBi_Click_1(object sender, EventArgs e)
@@ -280,6 +288,7 @@ namespace demo.Forms.DanhMucThietBi
                     trongLuong = dg_DanhMucSanPham.CurrentRow.Cells[columnMapping["trongLuong"]].Value.ToString();
                     FormChinhSua.FormChinhSuaThietBiLaptop f1 = new FormChinhSua.FormChinhSuaThietBiLaptop();
                     f1.setData(maTB, tenThietBi, cauHinh, mauSac, donGia, trongLuong, soLuong);
+                    f1.setSysRole(sysRole);
                     f1.FormClosed += new FormClosedEventHandler(FromChinhSuaLaptop_Closed);
                     f1.ShowDialog();
                     break;
@@ -289,6 +298,7 @@ namespace demo.Forms.DanhMucThietBi
                     trongLuong = dg_DanhMucSanPham.CurrentRow.Cells[columnMapping["trongLuong"]].Value.ToString();
                     FormChinhSua.FormChinhSuaThietBiDesktop f2 = new FormChinhSua.FormChinhSuaThietBiDesktop();
                     f2.setData(maTB, tenThietBi, cauHinh, mauSac, donGia, trongLuong, soLuong);
+                    f2.setSysRole(sysRole);
                     f2.FormClosed += new FormClosedEventHandler(FromChinhSuaDesktop_Closed);
                     f2.ShowDialog();
                     break;
@@ -298,6 +308,7 @@ namespace demo.Forms.DanhMucThietBi
                     mauSac = dg_DanhMucSanPham.CurrentRow.Cells[columnMapping["mauSac"]].Value.ToString();
                     FormChinhSua.FormChinhSuaThietBiBanPhim f3 = new FormChinhSua.FormChinhSuaThietBiBanPhim();
                     f3.setData(maTB, tenThietBi, layout, mauSac, donGia, kieuKetNoi, soLuong);
+                    f3.setSysRole(sysRole);
                     f3.FormClosed += new FormClosedEventHandler(FromChinhSuaBanPhim_Closed);
                     f3.ShowDialog();
                     break;
@@ -307,6 +318,7 @@ namespace demo.Forms.DanhMucThietBi
                     mauSac = dg_DanhMucSanPham.CurrentRow.Cells[columnMapping["mauSac"]].Value.ToString();
                     FormChinhSua.FormChinhSuaThietBiChuot f4 = new FormChinhSua.FormChinhSuaThietBiChuot();
                     f4.setData(maTB, tenThietBi, trongLuong, mauSac, donGia, kieuKetNoi, soLuong);
+                    f4.setSysRole(sysRole);
                     f4.FormClosed += new FormClosedEventHandler(FromChinhSuaChuot_Closed);
                     f4.ShowDialog();
                     break;
@@ -316,6 +328,7 @@ namespace demo.Forms.DanhMucThietBi
                     mauSac = dg_DanhMucSanPham.CurrentRow.Cells[columnMapping["mauSac"]].Value.ToString();
                     FormChinhSua.FormChinhSuaThietBiTaiNghe f5 = new FormChinhSua.FormChinhSuaThietBiTaiNghe();
                     f5.setData(maTB, tenThietBi, kieuKetNoi, kieuTaiNghe, donGia, mauSac, soLuong);
+                    f5.setSysRole(sysRole);
                     f5.FormClosed += new FormClosedEventHandler(FromChinhSuaTaiNghe_Closed);
                     f5.ShowDialog();
                     break;
@@ -327,6 +340,7 @@ namespace demo.Forms.DanhMucThietBi
                     mauSac = dg_DanhMucSanPham.CurrentRow.Cells[columnMapping["mauSac"]].Value.ToString();
                     FormChinhSua.FormChinhSuaThietBiManHinh f6 = new FormChinhSua.FormChinhSuaThietBiManHinh();
                     f6.setData(maTB, tenThietBi, doPhanGiai, tanSoQuet, kieuKetNoi, kichThuoc, mauSac, donGia, soLuong);
+                    f6.setSysRole(sysRole);
                     f6.FormClosed += new FormClosedEventHandler(FromChinhSuaManHinh_Closed);
                     f6.ShowDialog();
                     break;

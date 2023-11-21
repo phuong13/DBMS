@@ -13,19 +13,25 @@ namespace demo.Forms.HoaDon
 {
     public partial class FormThemThietBiVaoHoaDon : Form
     {
+        private Connection conn;
+        private Boolean sysRole = false;
+
+        public void setSysRole(Boolean sysRole)
+        {
+            this.sysRole = sysRole;
+        }
         public FormThemThietBiVaoHoaDon()
         {
             InitializeComponent();
+            conn = Connection.Instance(sysRole);
         }
-        Connection conn =new Connection();
         private void Save_button_Click(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
-            connection.openConnection();
+            conn.OpenConnection();
             string maHD = textBox_maHD.Text;
             string maTB = comboBox_maTB.Text;
             int soLuongValue = int.Parse(textBox_soLuong.Text);
-            using (SqlCommand cmd = new SqlCommand("proc_ThemThietBiVaoHoaDon", connection.getConnection))
+            using (SqlCommand cmd = new SqlCommand("proc_ThemThietBiVaoHoaDon", conn.getConnection()))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@maHD", maHD));
@@ -49,6 +55,7 @@ namespace demo.Forms.HoaDon
                     }
                 }
             }
+            conn.CloseConnection();
         }
 
         private void Cancel_button_Click(object sender, EventArgs e)
@@ -62,10 +69,11 @@ namespace demo.Forms.HoaDon
         }
         private void FormThemThietBiVaoHoaDon_Load(object sender, EventArgs e)
         {
-            conn.openConnection();
+            conn.OpenConnection();
             string sql1 = "select * from THIET_BI";
             comboBox_maTB.DataSource = conn.getTable(sql1);
             comboBox_maTB.DisplayMember = "maTB";
+            conn.CloseConnection();
         }
 
         private void comboBox_maTB_SelectedIndexChanged(object sender, EventArgs e)
