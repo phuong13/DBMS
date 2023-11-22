@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDoanhThu));
             this.label1 = new System.Windows.Forms.Label();
             this.btn_XemDoanhThu = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,10 +51,10 @@
             // btn_XemDoanhThu
             // 
             this.btn_XemDoanhThu.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_XemDoanhThu.Location = new System.Drawing.Point(363, 212);
+            this.btn_XemDoanhThu.Location = new System.Drawing.Point(363, 199);
             this.btn_XemDoanhThu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_XemDoanhThu.Name = "btn_XemDoanhThu";
-            this.btn_XemDoanhThu.Size = new System.Drawing.Size(229, 43);
+            this.btn_XemDoanhThu.Size = new System.Drawing.Size(252, 51);
             this.btn_XemDoanhThu.TabIndex = 1;
             this.btn_XemDoanhThu.Text = "Xem Doanh Thu";
             this.btn_XemDoanhThu.UseVisualStyleBackColor = true;
@@ -63,7 +64,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(142, 122);
+            this.label2.Location = new System.Drawing.Point(254, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 32);
             this.label2.TabIndex = 3;
@@ -72,38 +73,38 @@
             // dateTimePicker_start
             // 
             this.dateTimePicker_start.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_start.Location = new System.Drawing.Point(260, 125);
+            this.dateTimePicker_start.Location = new System.Drawing.Point(385, 81);
             this.dateTimePicker_start.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker_start.Name = "dateTimePicker_start";
-            this.dateTimePicker_start.Size = new System.Drawing.Size(214, 30);
+            this.dateTimePicker_start.Size = new System.Drawing.Size(318, 30);
             this.dateTimePicker_start.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(495, 123);
+            this.label3.Location = new System.Drawing.Point(254, 125);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 32);
+            this.label3.Size = new System.Drawing.Size(125, 32);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Từ ngày:";
+            this.label3.Text = "Đến ngày:";
             // 
             // dateTimePicker_end
             // 
             this.dateTimePicker_end.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_end.Location = new System.Drawing.Point(612, 126);
+            this.dateTimePicker_end.Location = new System.Drawing.Point(385, 127);
             this.dateTimePicker_end.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker_end.Name = "dateTimePicker_end";
-            this.dateTimePicker_end.Size = new System.Drawing.Size(216, 30);
+            this.dateTimePicker_end.Size = new System.Drawing.Size(314, 30);
             this.dateTimePicker_end.TabIndex = 6;
             // 
             // textbox_doanhthu
             // 
             this.textbox_doanhthu.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbox_doanhthu.Location = new System.Drawing.Point(363, 327);
+            this.textbox_doanhthu.Location = new System.Drawing.Point(363, 306);
             this.textbox_doanhthu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textbox_doanhthu.Name = "textbox_doanhthu";
-            this.textbox_doanhthu.Size = new System.Drawing.Size(230, 39);
+            this.textbox_doanhthu.Size = new System.Drawing.Size(252, 39);
             this.textbox_doanhthu.TabIndex = 7;
             // 
             // FormDoanhThu
@@ -118,6 +119,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_XemDoanhThu);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormDoanhThu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

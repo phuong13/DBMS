@@ -53,7 +53,7 @@ namespace demo.Forms
                 command.Parameters.AddWithValue("@startDate", startDate);
                 command.Parameters.AddWithValue("@endDate", endDate);
                 decimal result = Convert.ToDecimal(command.ExecuteScalar());
-                textbox_doanhthu.Text = result.ToString();
+                textbox_doanhthu.Text = result.ToString("#,##0 VND");
             }
             conn.CloseConnection();
         }

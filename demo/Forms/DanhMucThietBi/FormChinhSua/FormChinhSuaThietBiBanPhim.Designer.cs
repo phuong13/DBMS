@@ -29,9 +29,11 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChinhSuaThietBiBanPhim));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_huy = new System.Windows.Forms.Button();
+            this.btn_luu = new System.Windows.Forms.Button();
             this.txt_soLuong = new System.Windows.Forms.TextBox();
             this.lbl_soLuong = new System.Windows.Forms.Label();
             this.txt_kieuKetNoi = new System.Windows.Forms.TextBox();
@@ -50,7 +52,6 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
             this.btn_chonAnh = new System.Windows.Forms.Button();
             this.imageFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox_anhThietBi = new System.Windows.Forms.PictureBox();
-            this.btn_luu = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_anhThietBi)).BeginInit();
             this.SuspendLayout();
@@ -102,6 +103,21 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
             this.btn_huy.Text = "Hủy";
             this.btn_huy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_huy.UseVisualStyleBackColor = true;
+            // 
+            // btn_luu
+            // 
+            this.btn_luu.AutoSize = true;
+            this.btn_luu.Image = global::demo.Properties.Resources.save32px_02;
+            this.btn_luu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_luu.Location = new System.Drawing.Point(241, 334);
+            this.btn_luu.Name = "btn_luu";
+            this.btn_luu.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
+            this.btn_luu.Size = new System.Drawing.Size(101, 51);
+            this.btn_luu.TabIndex = 14;
+            this.btn_luu.Text = "Lưu";
+            this.btn_luu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_luu.UseVisualStyleBackColor = true;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
             // txt_soLuong
             // 
@@ -246,21 +262,6 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
             this.pictureBox_anhThietBi.TabIndex = 11;
             this.pictureBox_anhThietBi.TabStop = false;
             // 
-            // btn_luu
-            // 
-            this.btn_luu.AutoSize = true;
-            this.btn_luu.Image = global::demo.Properties.Resources.save32px_02;
-            this.btn_luu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_luu.Location = new System.Drawing.Point(241, 334);
-            this.btn_luu.Name = "btn_luu";
-            this.btn_luu.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
-            this.btn_luu.Size = new System.Drawing.Size(101, 51);
-            this.btn_luu.TabIndex = 14;
-            this.btn_luu.Text = "Lưu";
-            this.btn_luu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_luu.UseVisualStyleBackColor = true;
-            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
-            // 
             // FormChinhSuaThietBiBanPhim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -271,6 +272,7 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
             this.Controls.Add(this.pictureBox_anhThietBi);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormChinhSuaThietBiBanPhim";
             this.Text = "FormChinhSuaThietBiBanPhim";
             this.Load += new System.EventHandler(this.FormChinhSuaThietBiBanPhim_Load);

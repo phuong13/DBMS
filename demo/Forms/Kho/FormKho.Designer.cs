@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKho));
             this.dataGridViewKho = new System.Windows.Forms.DataGridView();
             this.buttonThem = new System.Windows.Forms.Button();
             this.panelEdit = new System.Windows.Forms.Panel();
@@ -61,12 +62,12 @@
             this.dataGridViewKho.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewKho.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewKho.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewKho.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridViewKho.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridViewKho.Name = "dataGridViewKho";
             this.dataGridViewKho.ReadOnly = true;
             this.dataGridViewKho.RowHeadersWidth = 62;
             this.dataGridViewKho.RowTemplate.Height = 28;
-            this.dataGridViewKho.Size = new System.Drawing.Size(1151, 586);
+            this.dataGridViewKho.Size = new System.Drawing.Size(1023, 469);
             this.dataGridViewKho.TabIndex = 4;
             this.dataGridViewKho.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKho_CellClick);
             this.dataGridViewKho.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKho_CellDoubleClick);
@@ -75,12 +76,15 @@
             // 
             this.buttonThem.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonThem.Location = new System.Drawing.Point(1019, 0);
+            this.buttonThem.Image = global::demo.Properties.Resources.plus32px_02;
+            this.buttonThem.Location = new System.Drawing.Point(905, 0);
             this.buttonThem.Margin = new System.Windows.Forms.Padding(2);
             this.buttonThem.Name = "buttonThem";
-            this.buttonThem.Size = new System.Drawing.Size(130, 98);
+            this.buttonThem.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.buttonThem.Size = new System.Drawing.Size(116, 78);
             this.buttonThem.TabIndex = 2;
             this.buttonThem.Text = "Thêm";
+            this.buttonThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonThem.UseVisualStyleBackColor = true;
             this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
             // 
@@ -91,22 +95,25 @@
             this.panelEdit.Controls.Add(this.button_back);
             this.panelEdit.Controls.Add(this.buttonThem);
             this.panelEdit.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelEdit.Location = new System.Drawing.Point(0, 586);
+            this.panelEdit.Location = new System.Drawing.Point(0, 469);
             this.panelEdit.Margin = new System.Windows.Forms.Padding(2);
             this.panelEdit.Name = "panelEdit";
-            this.panelEdit.Size = new System.Drawing.Size(1151, 100);
+            this.panelEdit.Size = new System.Drawing.Size(1023, 80);
             this.panelEdit.TabIndex = 3;
             // 
             // button_xoa
             // 
             this.button_xoa.Dock = System.Windows.Forms.DockStyle.Right;
             this.button_xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_xoa.Location = new System.Drawing.Point(889, 0);
+            this.button_xoa.Image = global::demo.Properties.Resources.cross32px;
+            this.button_xoa.Location = new System.Drawing.Point(803, 0);
             this.button_xoa.Margin = new System.Windows.Forms.Padding(2);
             this.button_xoa.Name = "button_xoa";
-            this.button_xoa.Size = new System.Drawing.Size(130, 98);
+            this.button_xoa.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.button_xoa.Size = new System.Drawing.Size(102, 78);
             this.button_xoa.TabIndex = 4;
             this.button_xoa.Text = "Xóa";
+            this.button_xoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_xoa.UseVisualStyleBackColor = true;
             this.button_xoa.Click += new System.EventHandler(this.button_xoa_Click);
             // 
@@ -119,18 +126,20 @@
             this.button_back.Location = new System.Drawing.Point(0, 0);
             this.button_back.Margin = new System.Windows.Forms.Padding(2);
             this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(106, 98);
+            this.button_back.Size = new System.Drawing.Size(94, 78);
             this.button_back.TabIndex = 3;
             this.button_back.UseVisualStyleBackColor = true;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
             // FormKho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1151, 686);
+            this.ClientSize = new System.Drawing.Size(1023, 549);
             this.Controls.Add(this.dataGridViewKho);
             this.Controls.Add(this.panelEdit);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormKho";
             this.Text = "Kho";
             this.Load += new System.EventHandler(this.FormStock_Load);

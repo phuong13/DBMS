@@ -107,12 +107,23 @@ namespace demo.Forms.DanhMucThietBi
         {
             conn.OpenConnection();
             var parent = this.FindForm();
+            string tenTB = "";
+            string tgbh = "";
+            string maTB = "";
+            int soLuong = 0;
+            int donGia = 0;
 
-            string tenTB = (parent.Controls.Find("txt_tenThietBi", true).FirstOrDefault() as TextBox).Text;
-            string maTB = (parent.Controls.Find("txt_maTB", true).FirstOrDefault() as TextBox).Text;
-            string tgbh = (parent.Controls.Find("txt_tgbh", true).FirstOrDefault() as TextBox).Text;
-            int soLuong = Convert.ToInt32((parent.Controls.Find("txt_soLuong", true).FirstOrDefault() as TextBox).Text);
-            int donGia = Convert.ToInt32((parent.Controls.Find("txt_donGia", true).FirstOrDefault() as TextBox).Text);
+            tenTB = (parent.Controls.Find("txt_tenThietBi", true).FirstOrDefault() as TextBox).Text;
+            maTB = (parent.Controls.Find("txt_maTB", true).FirstOrDefault() as TextBox).Text;
+            tgbh = (parent.Controls.Find("txt_tgbh", true).FirstOrDefault() as TextBox).Text;
+            if ((parent.Controls.Find("txt_soLuong", true).FirstOrDefault() as TextBox).Text != "")
+            {
+                soLuong = Convert.ToInt32((parent.Controls.Find("txt_soLuong", true).FirstOrDefault() as TextBox).Text);
+            }
+            if ((parent.Controls.Find("txt_donGia", true).FirstOrDefault() as TextBox).Text != "")
+            {
+                donGia = Convert.ToInt32((parent.Controls.Find("txt_donGia", true).FirstOrDefault() as TextBox).Text);
+            }
             string imageLink = txt_anhThietBi.Text;
             byte[] imageData = null;
             using (FileStream fileStream = new FileStream(imageLink, FileMode.Open, FileAccess.Read))

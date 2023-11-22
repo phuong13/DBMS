@@ -29,6 +29,7 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChinhSuaThietBiManHinh));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox = new System.Windows.Forms.GroupBox();
             this.txt_donGia = new System.Windows.Forms.TextBox();
@@ -312,6 +313,7 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
             this.Controls.Add(this.pictureBox_anhThietBi);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormChinhSuaThietBiManHinh";
             this.Text = "FormChinhSuaThietBiManHinh";
             this.groupBox.ResumeLayout(false);

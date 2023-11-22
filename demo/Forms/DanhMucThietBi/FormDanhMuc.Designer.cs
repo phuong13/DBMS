@@ -69,9 +69,9 @@
             this.panel_DanhMuc.Controls.Add(this.buttonLapTop);
             this.panel_DanhMuc.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_DanhMuc.Location = new System.Drawing.Point(0, 0);
-            this.panel_DanhMuc.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.panel_DanhMuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_DanhMuc.Name = "panel_DanhMuc";
-            this.panel_DanhMuc.Size = new System.Drawing.Size(1400, 77);
+            this.panel_DanhMuc.Size = new System.Drawing.Size(1167, 64);
             this.panel_DanhMuc.TabIndex = 0;
             // 
             // buttonManHinh
@@ -81,11 +81,11 @@
             this.buttonManHinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonManHinh.Image = global::demo.Properties.Resources.monitor32px;
             this.buttonManHinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonManHinh.Location = new System.Drawing.Point(843, 0);
-            this.buttonManHinh.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.buttonManHinh.Location = new System.Drawing.Point(702, 0);
+            this.buttonManHinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonManHinh.Name = "buttonManHinh";
-            this.buttonManHinh.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.buttonManHinh.Size = new System.Drawing.Size(181, 77);
+            this.buttonManHinh.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonManHinh.Size = new System.Drawing.Size(151, 64);
             this.buttonManHinh.TabIndex = 6;
             this.buttonManHinh.Text = "Màn Hình";
             this.buttonManHinh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -98,11 +98,11 @@
             this.buttonTaiNghe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTaiNghe.Image = global::demo.Properties.Resources.headphone32px;
             this.buttonTaiNghe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonTaiNghe.Location = new System.Drawing.Point(668, 0);
-            this.buttonTaiNghe.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.buttonTaiNghe.Location = new System.Drawing.Point(556, 0);
+            this.buttonTaiNghe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonTaiNghe.Name = "buttonTaiNghe";
-            this.buttonTaiNghe.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.buttonTaiNghe.Size = new System.Drawing.Size(175, 77);
+            this.buttonTaiNghe.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonTaiNghe.Size = new System.Drawing.Size(146, 64);
             this.buttonTaiNghe.TabIndex = 5;
             this.buttonTaiNghe.Text = "Tai Nghe";
             this.buttonTaiNghe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -115,10 +115,10 @@
             this.buttonChuot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonChuot.Image = global::demo.Properties.Resources.mouse32px_02;
             this.buttonChuot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonChuot.Location = new System.Drawing.Point(538, 0);
-            this.buttonChuot.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.buttonChuot.Location = new System.Drawing.Point(448, 0);
+            this.buttonChuot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonChuot.Name = "buttonChuot";
-            this.buttonChuot.Size = new System.Drawing.Size(130, 77);
+            this.buttonChuot.Size = new System.Drawing.Size(108, 64);
             this.buttonChuot.TabIndex = 4;
             this.buttonChuot.Text = "Chuột";
             this.buttonChuot.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -131,11 +131,11 @@
             this.buttonBanPhim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBanPhim.Image = global::demo.Properties.Resources.keyboard32px_02;
             this.buttonBanPhim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBanPhim.Location = new System.Drawing.Point(358, 0);
-            this.buttonBanPhim.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.buttonBanPhim.Location = new System.Drawing.Point(298, 0);
+            this.buttonBanPhim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBanPhim.Name = "buttonBanPhim";
-            this.buttonBanPhim.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.buttonBanPhim.Size = new System.Drawing.Size(180, 77);
+            this.buttonBanPhim.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonBanPhim.Size = new System.Drawing.Size(150, 64);
             this.buttonBanPhim.TabIndex = 3;
             this.buttonBanPhim.Text = "Bàn Phím";
             this.buttonBanPhim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -148,11 +148,11 @@
             this.buttonDeskTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDeskTop.Image = global::demo.Properties.Resources.computer32px_03;
             this.buttonDeskTop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDeskTop.Location = new System.Drawing.Point(144, 0);
-            this.buttonDeskTop.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.buttonDeskTop.Location = new System.Drawing.Point(120, 0);
+            this.buttonDeskTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDeskTop.Name = "buttonDeskTop";
-            this.buttonDeskTop.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.buttonDeskTop.Size = new System.Drawing.Size(214, 77);
+            this.buttonDeskTop.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonDeskTop.Size = new System.Drawing.Size(178, 64);
             this.buttonDeskTop.TabIndex = 2;
             this.buttonDeskTop.Text = "Máy tính bàn";
             this.buttonDeskTop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -167,10 +167,10 @@
             this.buttonLapTop.Image = ((System.Drawing.Image)(resources.GetObject("buttonLapTop.Image")));
             this.buttonLapTop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonLapTop.Location = new System.Drawing.Point(0, 0);
-            this.buttonLapTop.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.buttonLapTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLapTop.Name = "buttonLapTop";
-            this.buttonLapTop.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.buttonLapTop.Size = new System.Drawing.Size(144, 77);
+            this.buttonLapTop.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonLapTop.Size = new System.Drawing.Size(120, 64);
             this.buttonLapTop.TabIndex = 1;
             this.buttonLapTop.Text = "Laptop";
             this.buttonLapTop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -183,20 +183,19 @@
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.txt_searchProduct);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 77);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.panel2.Location = new System.Drawing.Point(0, 64);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1400, 38);
+            this.panel2.Size = new System.Drawing.Size(1167, 32);
             this.panel2.TabIndex = 1;
             // 
             // button1
             // 
             this.button1.Image = global::demo.Properties.Resources.magnifying_glass_16px;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(221, 4);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(184, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 28);
+            this.button1.Size = new System.Drawing.Size(86, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "Tìm kiếm";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -204,10 +203,10 @@
             // 
             // txt_searchProduct
             // 
-            this.txt_searchProduct.Location = new System.Drawing.Point(14, 5);
-            this.txt_searchProduct.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txt_searchProduct.Location = new System.Drawing.Point(12, 4);
+            this.txt_searchProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_searchProduct.Name = "txt_searchProduct";
-            this.txt_searchProduct.Size = new System.Drawing.Size(296, 26);
+            this.txt_searchProduct.Size = new System.Drawing.Size(247, 22);
             this.txt_searchProduct.TabIndex = 0;
             // 
             // panel3
@@ -218,10 +217,9 @@
             this.panel3.Controls.Add(this.btn_xoaThietBi);
             this.panel3.Controls.Add(this.btn_themThietBi);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 605);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(0, 504);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1400, 96);
+            this.panel3.Size = new System.Drawing.Size(1167, 80);
             this.panel3.TabIndex = 3;
             // 
             // btn_suaThietBi
@@ -231,11 +229,10 @@
             this.btn_suaThietBi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_suaThietBi.Image = global::demo.Properties.Resources.edit32px;
             this.btn_suaThietBi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_suaThietBi.Location = new System.Drawing.Point(920, 0);
-            this.btn_suaThietBi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_suaThietBi.Location = new System.Drawing.Point(790, 0);
             this.btn_suaThietBi.Name = "btn_suaThietBi";
-            this.btn_suaThietBi.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.btn_suaThietBi.Size = new System.Drawing.Size(201, 96);
+            this.btn_suaThietBi.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_suaThietBi.Size = new System.Drawing.Size(145, 80);
             this.btn_suaThietBi.TabIndex = 6;
             this.btn_suaThietBi.Text = "Chỉnh sửa";
             this.btn_suaThietBi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -248,10 +245,10 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(118, 23);
+            this.label1.Location = new System.Drawing.Point(98, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 25);
+            this.label1.Size = new System.Drawing.Size(114, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tổng thiết bị";
             // 
@@ -259,10 +256,10 @@
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(83, 50);
+            this.textBox1.Location = new System.Drawing.Point(69, 42);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(214, 31);
+            this.textBox1.Size = new System.Drawing.Size(179, 27);
             this.textBox1.TabIndex = 4;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -273,11 +270,10 @@
             this.btn_xoaThietBi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_xoaThietBi.Image = global::demo.Properties.Resources.cross32px;
             this.btn_xoaThietBi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_xoaThietBi.Location = new System.Drawing.Point(1121, 0);
-            this.btn_xoaThietBi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_xoaThietBi.Location = new System.Drawing.Point(935, 0);
             this.btn_xoaThietBi.Name = "btn_xoaThietBi";
-            this.btn_xoaThietBi.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.btn_xoaThietBi.Size = new System.Drawing.Size(136, 96);
+            this.btn_xoaThietBi.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_xoaThietBi.Size = new System.Drawing.Size(113, 80);
             this.btn_xoaThietBi.TabIndex = 2;
             this.btn_xoaThietBi.Text = "Xóa";
             this.btn_xoaThietBi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -291,11 +287,10 @@
             this.btn_themThietBi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_themThietBi.Image = global::demo.Properties.Resources.plus32px_02;
             this.btn_themThietBi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_themThietBi.Location = new System.Drawing.Point(1257, 0);
-            this.btn_themThietBi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_themThietBi.Location = new System.Drawing.Point(1048, 0);
             this.btn_themThietBi.Name = "btn_themThietBi";
-            this.btn_themThietBi.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.btn_themThietBi.Size = new System.Drawing.Size(143, 96);
+            this.btn_themThietBi.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_themThietBi.Size = new System.Drawing.Size(119, 80);
             this.btn_themThietBi.TabIndex = 0;
             this.btn_themThietBi.Text = "Thêm";
             this.btn_themThietBi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -307,18 +302,16 @@
             // 
             this.panel_thongTinThietBi.Controls.Add(this.pictureBox_thietBi);
             this.panel_thongTinThietBi.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel_thongTinThietBi.Location = new System.Drawing.Point(0, 115);
-            this.panel_thongTinThietBi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_thongTinThietBi.Location = new System.Drawing.Point(0, 96);
             this.panel_thongTinThietBi.Name = "panel_thongTinThietBi";
-            this.panel_thongTinThietBi.Size = new System.Drawing.Size(395, 490);
+            this.panel_thongTinThietBi.Size = new System.Drawing.Size(329, 408);
             this.panel_thongTinThietBi.TabIndex = 5;
             // 
             // pictureBox_thietBi
             // 
-            this.pictureBox_thietBi.Location = new System.Drawing.Point(14, 61);
-            this.pictureBox_thietBi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox_thietBi.Location = new System.Drawing.Point(12, 51);
             this.pictureBox_thietBi.Name = "pictureBox_thietBi";
-            this.pictureBox_thietBi.Size = new System.Drawing.Size(360, 360);
+            this.pictureBox_thietBi.Size = new System.Drawing.Size(300, 300);
             this.pictureBox_thietBi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_thietBi.TabIndex = 0;
             this.pictureBox_thietBi.TabStop = false;
@@ -330,29 +323,30 @@
             this.dg_DanhMucSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dg_DanhMucSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_DanhMucSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dg_DanhMucSanPham.Location = new System.Drawing.Point(395, 115);
-            this.dg_DanhMucSanPham.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dg_DanhMucSanPham.Location = new System.Drawing.Point(329, 96);
+            this.dg_DanhMucSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dg_DanhMucSanPham.Name = "dg_DanhMucSanPham";
             this.dg_DanhMucSanPham.ReadOnly = true;
             this.dg_DanhMucSanPham.RowHeadersWidth = 51;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dg_DanhMucSanPham.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dg_DanhMucSanPham.RowTemplate.Height = 24;
-            this.dg_DanhMucSanPham.Size = new System.Drawing.Size(1005, 490);
+            this.dg_DanhMucSanPham.Size = new System.Drawing.Size(838, 408);
             this.dg_DanhMucSanPham.TabIndex = 2;
             this.dg_DanhMucSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_DanhMucSanPham_CellClick);
             // 
             // FormDanhMuc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1400, 701);
+            this.ClientSize = new System.Drawing.Size(1167, 584);
             this.Controls.Add(this.dg_DanhMucSanPham);
             this.Controls.Add(this.panel_thongTinThietBi);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel_DanhMuc);
-            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormDanhMuc";
             this.Text = "Danh Mục Sản Phẩm";
             this.Load += new System.EventHandler(this.FormDanhMuc_Load);

@@ -157,8 +157,8 @@ namespace demo
         {
             if (this.sysRole == false)
             {
-                button_nhanvien.Enabled = false;
-                button_account.Enabled = false;
+                button_nhanvien.Visible = false;
+                button_account.Visible = false;
             }
         }
 

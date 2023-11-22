@@ -29,6 +29,7 @@ namespace demo.Forms.DanhMucThietBi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormThemThietBi));
             this.panel_textBoxContainer = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.cbox_thietBi = new System.Windows.Forms.ComboBox();
@@ -69,22 +70,33 @@ namespace demo.Forms.DanhMucThietBi
             // btn_luu
             // 
             this.btn_luu.AutoSize = true;
-            this.btn_luu.Location = new System.Drawing.Point(565, 403);
+            this.btn_luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_luu.Image = global::demo.Properties.Resources.save32px_02;
+            this.btn_luu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_luu.Location = new System.Drawing.Point(528, 403);
             this.btn_luu.Name = "btn_luu";
-            this.btn_luu.Size = new System.Drawing.Size(75, 27);
+            this.btn_luu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_luu.Size = new System.Drawing.Size(99, 59);
             this.btn_luu.TabIndex = 3;
             this.btn_luu.Text = "Lưu";
+            this.btn_luu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_luu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_luu.UseVisualStyleBackColor = true;
             this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
             // btn_huy
             // 
             this.btn_huy.AutoSize = true;
-            this.btn_huy.Location = new System.Drawing.Point(657, 403);
+            this.btn_huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_huy.Image = global::demo.Properties.Resources.cross32px;
+            this.btn_huy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_huy.Location = new System.Drawing.Point(633, 403);
             this.btn_huy.Name = "btn_huy";
-            this.btn_huy.Size = new System.Drawing.Size(75, 27);
+            this.btn_huy.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_huy.Size = new System.Drawing.Size(99, 59);
             this.btn_huy.TabIndex = 4;
             this.btn_huy.Text = "Hủy";
+            this.btn_huy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_huy.UseVisualStyleBackColor = true;
             this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
@@ -132,6 +144,7 @@ namespace demo.Forms.DanhMucThietBi
             this.Controls.Add(this.cbox_thietBi);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel_textBoxContainer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormThemThietBi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormThemThietBi";

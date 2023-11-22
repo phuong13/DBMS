@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhanVien));
             this.buttonXoa = new System.Windows.Forms.Button();
             this.buttonChinhsua = new System.Windows.Forms.Button();
             this.buttonThem = new System.Windows.Forms.Button();
@@ -48,11 +49,15 @@
             this.buttonXoa.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonXoa.Enabled = false;
             this.buttonXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonXoa.Location = new System.Drawing.Point(1268, 0);
+            this.buttonXoa.Image = global::demo.Properties.Resources.cross32px;
+            this.buttonXoa.Location = new System.Drawing.Point(1061, 0);
+            this.buttonXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonXoa.Name = "buttonXoa";
-            this.buttonXoa.Size = new System.Drawing.Size(130, 98);
+            this.buttonXoa.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.buttonXoa.Size = new System.Drawing.Size(104, 82);
             this.buttonXoa.TabIndex = 0;
             this.buttonXoa.Text = "Xóa";
+            this.buttonXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonXoa.UseVisualStyleBackColor = true;
             this.buttonXoa.Click += new System.EventHandler(this.buttonXoa_Click);
             // 
@@ -61,11 +66,15 @@
             this.buttonChinhsua.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonChinhsua.Enabled = false;
             this.buttonChinhsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonChinhsua.Location = new System.Drawing.Point(1108, 0);
+            this.buttonChinhsua.Image = global::demo.Properties.Resources.edit32px;
+            this.buttonChinhsua.Location = new System.Drawing.Point(916, 0);
+            this.buttonChinhsua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonChinhsua.Name = "buttonChinhsua";
-            this.buttonChinhsua.Size = new System.Drawing.Size(160, 98);
+            this.buttonChinhsua.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.buttonChinhsua.Size = new System.Drawing.Size(145, 82);
             this.buttonChinhsua.TabIndex = 1;
             this.buttonChinhsua.Text = "Chỉnh sửa";
+            this.buttonChinhsua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonChinhsua.UseVisualStyleBackColor = true;
             this.buttonChinhsua.Click += new System.EventHandler(this.buttonChinhsua_Click);
             // 
@@ -73,11 +82,15 @@
             // 
             this.buttonThem.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonThem.Location = new System.Drawing.Point(978, 0);
+            this.buttonThem.Image = global::demo.Properties.Resources.plus32px_02;
+            this.buttonThem.Location = new System.Drawing.Point(801, 0);
+            this.buttonThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonThem.Name = "buttonThem";
-            this.buttonThem.Size = new System.Drawing.Size(130, 98);
+            this.buttonThem.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.buttonThem.Size = new System.Drawing.Size(115, 82);
             this.buttonThem.TabIndex = 2;
             this.buttonThem.Text = "Thêm";
+            this.buttonThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonThem.UseVisualStyleBackColor = true;
             this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
             // 
@@ -94,11 +107,10 @@
             this.Column_maNQL});
             this.dataGridViewEmployees.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewEmployees.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewEmployees.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewEmployees.Name = "dataGridViewEmployees";
             this.dataGridViewEmployees.RowHeadersWidth = 62;
             this.dataGridViewEmployees.RowTemplate.Height = 28;
-            this.dataGridViewEmployees.Size = new System.Drawing.Size(1400, 701);
+            this.dataGridViewEmployees.Size = new System.Drawing.Size(1167, 584);
             this.dataGridViewEmployees.TabIndex = 0;
             this.dataGridViewEmployees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmployees_CellClick);
             this.dataGridViewEmployees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmployees_CellContentClick);
@@ -158,20 +170,21 @@
             this.panelEdit.Controls.Add(this.buttonChinhsua);
             this.panelEdit.Controls.Add(this.buttonXoa);
             this.panelEdit.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelEdit.Location = new System.Drawing.Point(0, 601);
+            this.panelEdit.Location = new System.Drawing.Point(0, 500);
+            this.panelEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelEdit.Name = "panelEdit";
-            this.panelEdit.Size = new System.Drawing.Size(1400, 100);
+            this.panelEdit.Size = new System.Drawing.Size(1167, 84);
             this.panelEdit.TabIndex = 1;
             // 
             // FormNhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1400, 701);
+            this.ClientSize = new System.Drawing.Size(1167, 584);
             this.Controls.Add(this.panelEdit);
             this.Controls.Add(this.dataGridViewEmployees);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormNhanVien";
             this.Text = "Nhân Viên";
             this.Load += new System.EventHandler(this.FormEmployees_Load);

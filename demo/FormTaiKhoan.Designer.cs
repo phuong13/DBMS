@@ -29,8 +29,11 @@ namespace demo
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTaiKhoan));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dg_taiKhoan = new System.Windows.Forms.DataGridView();
+            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_username = new System.Windows.Forms.Label();
             this.txt_username = new System.Windows.Forms.TextBox();
             this.txt_password = new System.Windows.Forms.TextBox();
@@ -40,8 +43,6 @@ namespace demo
             this.btn_xoa = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel_edit = new System.Windows.Forms.Panel();
-            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_taiKhoan)).BeginInit();
             this.panel2.SuspendLayout();
@@ -73,6 +74,20 @@ namespace demo
             this.dg_taiKhoan.TabIndex = 0;
             this.dg_taiKhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_taiKhoan_CellClick);
             this.dg_taiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // username
+            // 
+            this.username.DataPropertyName = "username";
+            this.username.HeaderText = "Tên tài khoản";
+            this.username.MinimumWidth = 6;
+            this.username.Name = "username";
+            // 
+            // password
+            // 
+            this.password.DataPropertyName = "password";
+            this.password.HeaderText = "Mật khẩu";
+            this.password.MinimumWidth = 6;
+            this.password.Name = "password";
             // 
             // lbl_username
             // 
@@ -169,26 +184,13 @@ namespace demo
             this.panel_edit.Size = new System.Drawing.Size(239, 65);
             this.panel_edit.TabIndex = 8;
             // 
-            // username
-            // 
-            this.username.DataPropertyName = "username";
-            this.username.HeaderText = "Tên tài khoản";
-            this.username.MinimumWidth = 6;
-            this.username.Name = "username";
-            // 
-            // password
-            // 
-            this.password.DataPropertyName = "password";
-            this.password.HeaderText = "Mật khẩu";
-            this.password.MinimumWidth = 6;
-            this.password.Name = "password";
-            // 
             // FormTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 374);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormTaiKhoan";
             this.Text = "Quản lý tài khoản";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormTaiKhoan_FormClosed);
