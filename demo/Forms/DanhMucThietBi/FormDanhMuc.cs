@@ -114,6 +114,7 @@ namespace demo.Forms.DanhMucThietBi
             currentType = "laptop";
             load_sum("func_sumThietBiLaptop");
             ActivateButton(buttonLapTop);
+            pictureBox_thietBi.Image = null;
         }
 
         private void buttonDeskTop_Click(object sender, EventArgs e)
@@ -126,6 +127,7 @@ namespace demo.Forms.DanhMucThietBi
             currentType = "desktop";
             load_sum("func_sumThietBiDesktop");
             ActivateButton(buttonDeskTop);
+            pictureBox_thietBi.Image = null;
         }
 
         private void buttonBanPhim_Click(object sender, EventArgs e)
@@ -138,6 +140,7 @@ namespace demo.Forms.DanhMucThietBi
             currentType = "banPhim";
             load_sum("func_sumThietBiBanPhim");
             ActivateButton(buttonBanPhim);
+            pictureBox_thietBi.Image = null;
         }
 
         private void buttonChuot_Click(object sender, EventArgs e)
@@ -150,6 +153,7 @@ namespace demo.Forms.DanhMucThietBi
             currentType = "chuot";
             load_sum("func_sumThietBiChuot");
             ActivateButton(buttonChuot);
+            pictureBox_thietBi.Image = null;
         }
 
         private void buttonTaiNghe_Click(object sender, EventArgs e)
@@ -162,6 +166,7 @@ namespace demo.Forms.DanhMucThietBi
             currentType = "taiNghe";
             load_sum("func_sumThietBiTaiNghe");
             ActivateButton(buttonTaiNghe);
+            pictureBox_thietBi.Image = null;
         }
 
         private void buttonManHinh_Click(object sender, EventArgs e)
@@ -174,6 +179,7 @@ namespace demo.Forms.DanhMucThietBi
             currentType = "manHinh";
             load_sum("func_sumThietBiManHinh");
             ActivateButton(buttonManHinh);
+            pictureBox_thietBi.Image = null;
         }
 
         private void dg_DanhMucSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
