@@ -100,12 +100,13 @@
             // 
             // textbox_doanhthu
             // 
-            this.textbox_doanhthu.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textbox_doanhthu.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_doanhthu.Location = new System.Drawing.Point(363, 306);
             this.textbox_doanhthu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textbox_doanhthu.Name = "textbox_doanhthu";
-            this.textbox_doanhthu.Size = new System.Drawing.Size(252, 39);
+            this.textbox_doanhthu.Size = new System.Drawing.Size(252, 34);
             this.textbox_doanhthu.TabIndex = 7;
+            this.textbox_doanhthu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FormDoanhThu
             // 
