@@ -93,7 +93,7 @@ namespace demo
             // 
             this.lbl_username.AutoSize = true;
             this.lbl_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_username.Location = new System.Drawing.Point(488, 33);
+            this.lbl_username.Location = new System.Drawing.Point(450, 32);
             this.lbl_username.Name = "lbl_username";
             this.lbl_username.Size = new System.Drawing.Size(86, 20);
             this.lbl_username.TabIndex = 1;
@@ -102,24 +102,24 @@ namespace demo
             // txt_username
             // 
             this.txt_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_username.Location = new System.Drawing.Point(580, 30);
+            this.txt_username.Location = new System.Drawing.Point(542, 29);
             this.txt_username.Name = "txt_username";
-            this.txt_username.Size = new System.Drawing.Size(160, 27);
+            this.txt_username.Size = new System.Drawing.Size(237, 27);
             this.txt_username.TabIndex = 2;
             // 
             // txt_password
             // 
             this.txt_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_password.Location = new System.Drawing.Point(580, 68);
+            this.txt_password.Location = new System.Drawing.Point(542, 67);
             this.txt_password.Name = "txt_password";
-            this.txt_password.Size = new System.Drawing.Size(160, 27);
+            this.txt_password.Size = new System.Drawing.Size(237, 27);
             this.txt_password.TabIndex = 4;
             // 
             // lbl_password
             // 
             this.lbl_password.AutoSize = true;
             this.lbl_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_password.Location = new System.Drawing.Point(488, 71);
+            this.lbl_password.Location = new System.Drawing.Point(450, 70);
             this.lbl_password.Name = "lbl_password";
             this.lbl_password.Size = new System.Drawing.Size(82, 20);
             this.lbl_password.TabIndex = 3;
@@ -128,11 +128,15 @@ namespace demo
             // btn_them
             // 
             this.btn_them.AutoSize = true;
-            this.btn_them.Location = new System.Drawing.Point(161, 28);
+            this.btn_them.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_them.Image = global::demo.Properties.Resources.plus32px_02;
+            this.btn_them.Location = new System.Drawing.Point(212, 17);
             this.btn_them.Name = "btn_them";
-            this.btn_them.Size = new System.Drawing.Size(75, 30);
+            this.btn_them.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btn_them.Size = new System.Drawing.Size(113, 48);
             this.btn_them.TabIndex = 5;
             this.btn_them.Text = "Thêm";
+            this.btn_them.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_them.UseVisualStyleBackColor = true;
             this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
@@ -140,11 +144,15 @@ namespace demo
             // 
             this.btn_sua.AutoSize = true;
             this.btn_sua.Enabled = false;
-            this.btn_sua.Location = new System.Drawing.Point(84, 28);
+            this.btn_sua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sua.Image = global::demo.Properties.Resources.edit32px;
+            this.btn_sua.Location = new System.Drawing.Point(106, 17);
             this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(75, 30);
+            this.btn_sua.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btn_sua.Size = new System.Drawing.Size(100, 48);
             this.btn_sua.TabIndex = 6;
             this.btn_sua.Text = "Sửa";
+            this.btn_sua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_sua.UseVisualStyleBackColor = true;
             this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
@@ -152,11 +160,15 @@ namespace demo
             // 
             this.btn_xoa.AutoSize = true;
             this.btn_xoa.Enabled = false;
-            this.btn_xoa.Location = new System.Drawing.Point(3, 28);
+            this.btn_xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_xoa.Image = global::demo.Properties.Resources.cross32px;
+            this.btn_xoa.Location = new System.Drawing.Point(0, 17);
             this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(75, 30);
+            this.btn_xoa.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btn_xoa.Size = new System.Drawing.Size(100, 48);
             this.btn_xoa.TabIndex = 7;
             this.btn_xoa.Text = "Xóa";
+            this.btn_xoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_xoa.UseVisualStyleBackColor = true;
             this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
@@ -179,9 +191,9 @@ namespace demo
             this.panel_edit.Controls.Add(this.btn_xoa);
             this.panel_edit.Controls.Add(this.btn_sua);
             this.panel_edit.Controls.Add(this.btn_them);
-            this.panel_edit.Location = new System.Drawing.Point(501, 101);
+            this.panel_edit.Location = new System.Drawing.Point(454, 101);
             this.panel_edit.Name = "panel_edit";
-            this.panel_edit.Size = new System.Drawing.Size(239, 65);
+            this.panel_edit.Size = new System.Drawing.Size(325, 92);
             this.panel_edit.TabIndex = 8;
             // 
             // FormTaiKhoan
