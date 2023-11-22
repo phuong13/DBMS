@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainMenu));
             this.panel_menu = new System.Windows.Forms.Panel();
             this.panel_logo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lblTiltle = new System.Windows.Forms.Label();
             this.panel_childForm = new System.Windows.Forms.Panel();
@@ -43,6 +42,7 @@
             this.button_kho = new System.Windows.Forms.Button();
             this.button_hoadon = new System.Windows.Forms.Button();
             this.button_danhmuc = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel_menu.SuspendLayout();
             this.panel_logo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -77,19 +77,6 @@
             this.panel_logo.Name = "panel_logo";
             this.panel_logo.Size = new System.Drawing.Size(183, 92);
             this.panel_logo.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(31, 31);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nhóm 18";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panelTitleBar
             // 
@@ -291,6 +278,15 @@
             this.button_danhmuc.UseVisualStyleBackColor = true;
             this.button_danhmuc.Click += new System.EventHandler(this.button_danhmuc_Click);
             // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Image = global::demo.Properties.Resources.online_shop_icon_64px;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(183, 92);
+            this.label1.TabIndex = 0;
+            // 
             // FormMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -309,7 +305,6 @@
             this.Load += new System.EventHandler(this.FormMainMenu_Load);
             this.panel_menu.ResumeLayout(false);
             this.panel_logo.ResumeLayout(false);
-            this.panel_logo.PerformLayout();
             this.panelTitleBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -328,9 +323,9 @@
         private System.Windows.Forms.Label lblTiltle;
         private System.Windows.Forms.Panel panel_childForm;
         private System.Windows.Forms.Button button_doanhthu;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_account;
         private System.Windows.Forms.Button btn_dangxuat;
+        private System.Windows.Forms.Label label1;
     }
 }
 

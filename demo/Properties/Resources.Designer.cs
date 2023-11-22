@@ -303,6 +303,26 @@ namespace demo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap online_shop_icon_32px {
+            get {
+                object obj = ResourceManager.GetObject("online-shop-icon-32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap online_shop_icon_64px {
+            get {
+                object obj = ResourceManager.GetObject("online-shop-icon-64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap plus_symbol_button_32px {
             get {
                 object obj = ResourceManager.GetObject("plus-symbol-button-32px", resourceCulture);

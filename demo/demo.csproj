@@ -410,5 +410,11 @@
   <ItemGroup>
     <None Include="Resources\dangxuat32px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\online-shop-icon-32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\online-shop-icon-64px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
