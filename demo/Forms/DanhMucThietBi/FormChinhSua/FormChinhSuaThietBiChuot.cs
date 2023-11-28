@@ -24,7 +24,6 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
         public FormChinhSuaThietBiChuot()
         {
             InitializeComponent();
-            conn = Connection.Instance(sysRole);
         }
 
         public void setData(string maTB, string tenThietBi, string trongLuong, string mauSac, string donGia, string kieuKetNoi, string soLuong)
@@ -112,6 +111,11 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormChinhSuaThietBiChuot_Load(object sender, EventArgs e)
+        {
+            conn = new Connection(sysRole);
         }
     }
 }

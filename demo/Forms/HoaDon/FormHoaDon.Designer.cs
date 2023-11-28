@@ -35,10 +35,16 @@
             this.button_them = new System.Windows.Forms.Button();
             this.button_Xoa = new System.Windows.Forms.Button();
             this.panelEdit = new System.Windows.Forms.Panel();
+            this.button_inHoaDon = new System.Windows.Forms.Button();
             this.button_xoaTB = new System.Windows.Forms.Button();
             this.button_ThemTB = new System.Windows.Forms.Button();
             this.button_Thanhtoan = new System.Windows.Forms.Button();
             this.button_back = new System.Windows.Forms.Button();
+            this.col_maHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_tenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_triGiaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_trangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHoaDon)).BeginInit();
             this.panelEdit.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +61,12 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_maHD,
+            this.col_tenKH,
+            this.col_sdt,
+            this.col_triGiaHD,
+            this.col_trangThai});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,6 +123,7 @@
             // panelEdit
             // 
             this.panelEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelEdit.Controls.Add(this.button_inHoaDon);
             this.panelEdit.Controls.Add(this.button_xoaTB);
             this.panelEdit.Controls.Add(this.button_ThemTB);
             this.panelEdit.Controls.Add(this.button_Thanhtoan);
@@ -123,6 +136,20 @@
             this.panelEdit.Name = "panelEdit";
             this.panelEdit.Size = new System.Drawing.Size(1400, 80);
             this.panelEdit.TabIndex = 8;
+            // 
+            // button_inHoaDon
+            // 
+            this.button_inHoaDon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button_inHoaDon.Enabled = false;
+            this.button_inHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_inHoaDon.Location = new System.Drawing.Point(244, 0);
+            this.button_inHoaDon.Margin = new System.Windows.Forms.Padding(2);
+            this.button_inHoaDon.Name = "button_inHoaDon";
+            this.button_inHoaDon.Size = new System.Drawing.Size(150, 78);
+            this.button_inHoaDon.TabIndex = 8;
+            this.button_inHoaDon.Text = "In Hóa Đơn";
+            this.button_inHoaDon.UseVisualStyleBackColor = true;
+            this.button_inHoaDon.Click += new System.EventHandler(this.button_inHoaDon_Click);
             // 
             // button_xoaTB
             // 
@@ -185,6 +212,46 @@
             this.button_back.UseVisualStyleBackColor = true;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
+            // col_maHD
+            // 
+            this.col_maHD.DataPropertyName = "maHD";
+            this.col_maHD.HeaderText = "Mã hóa đơn";
+            this.col_maHD.MinimumWidth = 6;
+            this.col_maHD.Name = "col_maHD";
+            this.col_maHD.ReadOnly = true;
+            // 
+            // col_tenKH
+            // 
+            this.col_tenKH.DataPropertyName = "tenKH";
+            this.col_tenKH.HeaderText = "Tên khách hàng";
+            this.col_tenKH.MinimumWidth = 6;
+            this.col_tenKH.Name = "col_tenKH";
+            this.col_tenKH.ReadOnly = true;
+            // 
+            // col_sdt
+            // 
+            this.col_sdt.DataPropertyName = "sdt";
+            this.col_sdt.HeaderText = "Số điện thoại";
+            this.col_sdt.MinimumWidth = 6;
+            this.col_sdt.Name = "col_sdt";
+            this.col_sdt.ReadOnly = true;
+            // 
+            // col_triGiaHD
+            // 
+            this.col_triGiaHD.DataPropertyName = "triGiaHD";
+            this.col_triGiaHD.HeaderText = "Trị giá hóa đơn";
+            this.col_triGiaHD.MinimumWidth = 6;
+            this.col_triGiaHD.Name = "col_triGiaHD";
+            this.col_triGiaHD.ReadOnly = true;
+            // 
+            // col_trangThai
+            // 
+            this.col_trangThai.DataPropertyName = "trangThai";
+            this.col_trangThai.HeaderText = "Trạng thái";
+            this.col_trangThai.MinimumWidth = 6;
+            this.col_trangThai.Name = "col_trangThai";
+            this.col_trangThai.ReadOnly = true;
+            // 
             // FormHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -212,5 +279,11 @@
         private System.Windows.Forms.Button button_Thanhtoan;
         private System.Windows.Forms.Button button_ThemTB;
         private System.Windows.Forms.Button button_xoaTB;
+        private System.Windows.Forms.Button button_inHoaDon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_maHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_tenKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_sdt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_triGiaHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_trangThai;
     }
 }

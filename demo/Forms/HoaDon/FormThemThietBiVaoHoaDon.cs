@@ -23,7 +23,6 @@ namespace demo.Forms.HoaDon
         public FormThemThietBiVaoHoaDon()
         {
             InitializeComponent();
-            conn = Connection.Instance(sysRole);
         }
         private void Save_button_Click(object sender, EventArgs e)
         {
@@ -69,6 +68,7 @@ namespace demo.Forms.HoaDon
         }
         private void FormThemThietBiVaoHoaDon_Load(object sender, EventArgs e)
         {
+            conn = new Connection(sysRole);
             conn.OpenConnection();
             string sql1 = "select * from THIET_BI";
             comboBox_maTB.DataSource = conn.getTable(sql1);

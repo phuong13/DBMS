@@ -193,6 +193,16 @@ namespace demo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eye16px {
+            get {
+                object obj = ResourceManager.GetObject("eye16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap headphone32px {
             get {
                 object obj = ResourceManager.GetObject("headphone32px", resourceCulture);

@@ -23,7 +23,6 @@ namespace demo.Forms.Customer
         public FormKhachHang()
         {
             InitializeComponent();
-            conn = Connection.Instance(sysRole);
         }
         private void load_data_customer()
         {
@@ -32,6 +31,7 @@ namespace demo.Forms.Customer
         }
         private void FormCustomer_Load(object sender, EventArgs e)
         {
+            conn = new Connection(sysRole);
             LoadTheme(panelEdit);
             load_data_customer();
         }

@@ -23,11 +23,11 @@ namespace demo.Forms
         public FormThemNhanVien()
         {
             InitializeComponent();
-            conn = Connection.Instance(sysRole);
         }
 
         private void FormADD_Employee_Load(object sender, EventArgs e)
         {
+            conn = new Connection(sysRole);
             conn.OpenConnection();
             comboBox_gioitinh.SelectedIndex = 0;
             string sql = "select maNV from NHAN_VIEN";
@@ -40,7 +40,6 @@ namespace demo.Forms
         private void button_save_Click(object sender, EventArgs e)
         {
             conn.OpenConnection();
-
             string maNV = textBoxMaNV.Text.Trim();
             string hoTen = textBoxHoTen.Text.Trim();
             string sdt = textBoxSDT.Text.Trim();
@@ -79,6 +78,11 @@ namespace demo.Forms
         private void button_huy_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

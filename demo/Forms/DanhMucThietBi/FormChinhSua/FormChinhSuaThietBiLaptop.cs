@@ -25,7 +25,6 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
         public FormChinhSuaThietBiLaptop()
         {
             InitializeComponent();
-            conn = Connection.Instance(sysRole);
         }
         public void setData(string maTB, string tenThietBi, string cauHinh, string mauSac, string donGia, string trongLuong, string soLuong)
         {
@@ -107,6 +106,11 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
+        }
+
+        private void FormChinhSuaThietBiLaptop_Load(object sender, EventArgs e)
+        {
+            conn = new Connection(sysRole);
         }
     }
 }

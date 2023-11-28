@@ -24,10 +24,10 @@ namespace demo.Forms.HoaDon
         public FormThemHoaDon()
         {
             InitializeComponent();
-            conn = Connection.Instance(sysRole);
         }
         private void FormThemHoaDon_Load(object sender, EventArgs e)
         {
+            conn = new Connection(sysRole);
             conn.OpenConnection();
             string sql1 = "select * from THIET_BI";
             comboBox_maTB.DataSource = conn.getTable(sql1);

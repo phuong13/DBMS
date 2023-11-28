@@ -24,7 +24,6 @@ namespace demo.Forms.DanhMucThietBi
         public FormThemThietBi()
         {
             InitializeComponent();
-            conn = Connection.Instance(sysRole);
         }
         private Dictionary<string, string[]> items = new Dictionary<string, string[]>();
         Dictionary<string, string> columnMapping = new Dictionary<string, string>
@@ -47,6 +46,7 @@ namespace demo.Forms.DanhMucThietBi
 
         private void FormThemThietBi_Load(object sender, EventArgs e)
         {
+            conn = new Connection(sysRole);
             items.Add("laptop", new[] { "cauHinh", "trongLuong", "mauSac" });
             items.Add("desktop", new[] { "cauHinh", "trongLuong", "mauSac" });
             items.Add("banPhim", new[] { "kieuKetNoi", "layout", "mauSac" });

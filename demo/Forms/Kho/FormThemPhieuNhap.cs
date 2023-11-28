@@ -23,10 +23,10 @@ namespace demo.Forms.Kho
         public FormThemPhieuNhap()
         {
             InitializeComponent();
-            conn = Connection.Instance(sysRole);
         }
         private void FormThemPhieuNhap_Load(object sender, EventArgs e)
         {
+            conn = new Connection(sysRole);
             conn.OpenConnection();
             string sql = "select * from THIET_BI ";
             comboBox_maTB.DataSource = conn.getTable(sql);

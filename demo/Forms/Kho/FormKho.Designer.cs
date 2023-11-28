@@ -34,8 +34,9 @@
             this.dataGridViewKho = new System.Windows.Forms.DataGridView();
             this.buttonThem = new System.Windows.Forms.Button();
             this.panelEdit = new System.Windows.Forms.Panel();
-            this.button_xoa = new System.Windows.Forms.Button();
             this.button_back = new System.Windows.Forms.Button();
+            this.col_maPhieuNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_ngayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKho)).BeginInit();
             this.panelEdit.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +53,9 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewKho.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewKho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewKho.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_maPhieuNhap,
+            this.col_ngayNhap});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -91,7 +95,6 @@
             // panelEdit
             // 
             this.panelEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelEdit.Controls.Add(this.button_xoa);
             this.panelEdit.Controls.Add(this.button_back);
             this.panelEdit.Controls.Add(this.buttonThem);
             this.panelEdit.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -100,22 +103,6 @@
             this.panelEdit.Name = "panelEdit";
             this.panelEdit.Size = new System.Drawing.Size(1023, 80);
             this.panelEdit.TabIndex = 3;
-            // 
-            // button_xoa
-            // 
-            this.button_xoa.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button_xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_xoa.Image = global::demo.Properties.Resources.cross32px;
-            this.button_xoa.Location = new System.Drawing.Point(803, 0);
-            this.button_xoa.Margin = new System.Windows.Forms.Padding(2);
-            this.button_xoa.Name = "button_xoa";
-            this.button_xoa.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.button_xoa.Size = new System.Drawing.Size(102, 78);
-            this.button_xoa.TabIndex = 4;
-            this.button_xoa.Text = "Xóa";
-            this.button_xoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_xoa.UseVisualStyleBackColor = true;
-            this.button_xoa.Click += new System.EventHandler(this.button_xoa_Click);
             // 
             // button_back
             // 
@@ -130,6 +117,22 @@
             this.button_back.TabIndex = 3;
             this.button_back.UseVisualStyleBackColor = true;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
+            // 
+            // col_maPhieuNhap
+            // 
+            this.col_maPhieuNhap.DataPropertyName = "maPhieuNhap";
+            this.col_maPhieuNhap.HeaderText = "Mã phiếu nhập";
+            this.col_maPhieuNhap.MinimumWidth = 6;
+            this.col_maPhieuNhap.Name = "col_maPhieuNhap";
+            this.col_maPhieuNhap.ReadOnly = true;
+            // 
+            // col_ngayNhap
+            // 
+            this.col_ngayNhap.DataPropertyName = "ngayNhap";
+            this.col_ngayNhap.HeaderText = "Ngày nhập";
+            this.col_ngayNhap.MinimumWidth = 6;
+            this.col_ngayNhap.Name = "col_ngayNhap";
+            this.col_ngayNhap.ReadOnly = true;
             // 
             // FormKho
             // 
@@ -155,6 +158,7 @@
         private System.Windows.Forms.Button buttonThem;
         private System.Windows.Forms.Panel panelEdit;
         private System.Windows.Forms.Button button_back;
-        private System.Windows.Forms.Button button_xoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_maPhieuNhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_ngayNhap;
     }
 }

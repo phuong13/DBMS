@@ -23,11 +23,11 @@ namespace demo.Forms
         public FormChinhSuaNhanVien()
         {
             InitializeComponent();
-            conn = Connection.Instance(sysRole);
         }
 
         private void FormEdit_Employee_Load(object sender, EventArgs e)
         {
+            conn = new Connection(sysRole);
             textBoxMaNV.ReadOnly = true;
         }
 

@@ -24,9 +24,8 @@ namespace demo.Forms.DanhMucThietBi
         public FormDanhMuc()
         {
             InitializeComponent();
-            conn = Connection.Instance(sysRole);
         }
-        private string currentType = "";
+        private string currentType = "laptop";
         private Color themeColor;
         private Button currentButton;
         Dictionary<string, string> columnMapping = new Dictionary<string, string>
@@ -232,6 +231,7 @@ namespace demo.Forms.DanhMucThietBi
 
         private void FormDanhMuc_Load(object sender, EventArgs e)
         {
+            conn = new Connection(sysRole);
             dg_DanhMucSanPham.AllowUserToAddRows = false;
             LoadTheme(panel3);
             dg_DanhMucSanPham.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
@@ -351,6 +351,49 @@ namespace demo.Forms.DanhMucThietBi
                     f6.ShowDialog();
                     break;
             }
+        }
+
+        private void txt_searchProduct_TextChanged(object sender, EventArgs e)
+        {
+            conn.OpenConnection();
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn.getConnection();
+                String sqlQuery = "select * from ";
+                switch (currentType)
+                {
+                    case "laptop":
+                        sqlQuery += "V_DanhMucLaptop";
+                        break;
+                    case "desktop":
+                        sqlQuery += "V_DanhMucDesktop";
+                        break;
+                    case "banPhim":
+                        sqlQuery += "V_DanhMucBanPhim";
+                        break;
+                    case "chuot":
+                        sqlQuery += "V_DanhMucChuot";
+                        break;
+                    case "taiNghe":
+                        sqlQuery += "V_DanhMucTaiNghe";
+                        break;
+                    case "manHinh":
+                        sqlQuery += "V_DanhMucManHinh";
+                        break;
+                }
+                sqlQuery += $" where maTB LIKE '%{txt_searchProduct.Text}%' OR tenThietBi LIKE '%{txt_searchProduct.Text}%'";
+                cmd.CommandText = sqlQuery;
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                MappingCol(dt);
+                if (dt != null && dt.Rows.Count > 0)
+                {   
+                    dg_DanhMucSanPham.DataSource = dt;
+                }
+            }
+            conn.CloseConnection();
         }
     }
 }

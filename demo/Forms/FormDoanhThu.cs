@@ -23,7 +23,6 @@ namespace demo.Forms
         public FormDoanhThu()
         {
             InitializeComponent();
-            conn = Connection.Instance(sysRole);
         }
         private void LoadTheme()
         {
@@ -40,6 +39,7 @@ namespace demo.Forms
         }
         private void FormAccount_Load(object sender, EventArgs e)
         {
+            conn = new Connection(sysRole);
             LoadTheme();
         }
 

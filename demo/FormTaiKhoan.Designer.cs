@@ -43,18 +43,23 @@ namespace demo
             this.btn_xoa = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel_edit = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_taiKhoan)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel_edit.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dg_taiKhoan);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(412, 371);
+            this.panel1.Size = new System.Drawing.Size(1088, 547);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -70,7 +75,7 @@ namespace demo
             this.dg_taiKhoan.Name = "dg_taiKhoan";
             this.dg_taiKhoan.RowHeadersWidth = 51;
             this.dg_taiKhoan.RowTemplate.Height = 24;
-            this.dg_taiKhoan.Size = new System.Drawing.Size(412, 371);
+            this.dg_taiKhoan.Size = new System.Drawing.Size(714, 547);
             this.dg_taiKhoan.TabIndex = 0;
             this.dg_taiKhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_taiKhoan_CellClick);
             this.dg_taiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -93,7 +98,7 @@ namespace demo
             // 
             this.lbl_username.AutoSize = true;
             this.lbl_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_username.Location = new System.Drawing.Point(450, 32);
+            this.lbl_username.Location = new System.Drawing.Point(22, 20);
             this.lbl_username.Name = "lbl_username";
             this.lbl_username.Size = new System.Drawing.Size(86, 20);
             this.lbl_username.TabIndex = 1;
@@ -102,7 +107,7 @@ namespace demo
             // txt_username
             // 
             this.txt_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_username.Location = new System.Drawing.Point(542, 29);
+            this.txt_username.Location = new System.Drawing.Point(114, 17);
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(237, 27);
             this.txt_username.TabIndex = 2;
@@ -110,7 +115,7 @@ namespace demo
             // txt_password
             // 
             this.txt_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_password.Location = new System.Drawing.Point(542, 67);
+            this.txt_password.Location = new System.Drawing.Point(114, 55);
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(237, 27);
             this.txt_password.TabIndex = 4;
@@ -119,7 +124,7 @@ namespace demo
             // 
             this.lbl_password.AutoSize = true;
             this.lbl_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_password.Location = new System.Drawing.Point(450, 70);
+            this.lbl_password.Location = new System.Drawing.Point(22, 58);
             this.lbl_password.Name = "lbl_password";
             this.lbl_password.Size = new System.Drawing.Size(82, 20);
             this.lbl_password.TabIndex = 3;
@@ -174,16 +179,11 @@ namespace demo
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panel_edit);
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Controls.Add(this.lbl_username);
-            this.panel2.Controls.Add(this.txt_username);
-            this.panel2.Controls.Add(this.lbl_password);
-            this.panel2.Controls.Add(this.txt_password);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(816, 374);
+            this.panel2.Size = new System.Drawing.Size(1088, 547);
             this.panel2.TabIndex = 8;
             // 
             // panel_edit
@@ -191,16 +191,39 @@ namespace demo
             this.panel_edit.Controls.Add(this.btn_xoa);
             this.panel_edit.Controls.Add(this.btn_sua);
             this.panel_edit.Controls.Add(this.btn_them);
-            this.panel_edit.Location = new System.Drawing.Point(454, 101);
+            this.panel_edit.Location = new System.Drawing.Point(26, 89);
             this.panel_edit.Name = "panel_edit";
             this.panel_edit.Size = new System.Drawing.Size(325, 92);
             this.panel_edit.TabIndex = 8;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel_edit);
+            this.panel3.Controls.Add(this.lbl_username);
+            this.panel3.Controls.Add(this.txt_username);
+            this.panel3.Controls.Add(this.lbl_password);
+            this.panel3.Controls.Add(this.txt_password);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(714, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(374, 547);
+            this.panel3.TabIndex = 9;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.dg_taiKhoan);
+            this.panel4.Controls.Add(this.panel3);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1088, 547);
+            this.panel4.TabIndex = 10;
             // 
             // FormTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 374);
+            this.ClientSize = new System.Drawing.Size(1088, 547);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormTaiKhoan";
@@ -210,9 +233,11 @@ namespace demo
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dg_taiKhoan)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel_edit.ResumeLayout(false);
             this.panel_edit.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -232,5 +257,7 @@ namespace demo
         private System.Windows.Forms.Panel panel_edit;
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }

@@ -185,6 +185,7 @@
             this.label1.Size = new System.Drawing.Size(428, 24);
             this.label1.TabIndex = 33;
             this.label1.Text = "Nhân Viên";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboBox_maNQL
             // 

@@ -23,10 +23,10 @@ namespace demo.Forms.Customer
         public FormChinhSuaKhachHang()
         {
             InitializeComponent();
-            conn = Connection.Instance(sysRole);
         }
         private void FormEdit_Customer_Load(object sender, EventArgs e)
         {
+            conn = new Connection(sysRole);
             textBoxMaKH.ReadOnly = true;
         }
 

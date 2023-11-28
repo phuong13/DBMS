@@ -23,12 +23,12 @@ namespace demo.Forms.Customer
         public FormThemKhachHang()
         {
             InitializeComponent();
-            conn = Connection.Instance(sysRole);
         }
 
 
         private void FormADD_Customer_Load(object sender, EventArgs e)
         {
+            conn = new Connection(sysRole);
         }
         private bool IsAllDigits(string input)
         {

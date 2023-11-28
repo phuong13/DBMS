@@ -24,7 +24,6 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
         public FormChinhSuaThietBiTaiNghe()
         {
             InitializeComponent();
-            conn = Connection.Instance(sysRole);
         }
         
 
@@ -112,7 +111,7 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
 
         private void FormChinhSuaThietBiTaiNghe_Load(object sender, EventArgs e)
         {
-
+            conn = new Connection(sysRole);
         }
     }
 }

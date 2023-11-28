@@ -25,7 +25,6 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
         public FormChinhSuaThietBiBanPhim()
         {
             InitializeComponent();
-            conn = Connection.Instance(sysRole);
         }
 
         public void setData(string maTB, string tenThietBi, string layout, string mauSac, string donGia, string kieuKetNoi, string soLuong)
@@ -94,7 +93,7 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
 
         private void FormChinhSuaThietBiBanPhim_Load(object sender, EventArgs e)
         {
-
+            conn = new Connection(sysRole);
         }
 
         private void btn_chonAnh_Click(object sender, EventArgs e)

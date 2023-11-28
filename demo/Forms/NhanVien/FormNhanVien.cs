@@ -18,8 +18,6 @@ namespace demo.Forms
         public FormNhanVien()
         {
             InitializeComponent();
-            conn = Connection.Instance(sysRole);
-
         }
 
         public void load_data_employ()
@@ -32,6 +30,7 @@ namespace demo.Forms
         }
         private void FormEmployees_Load(object sender, EventArgs e)
         {
+            conn = new Connection(sysRole);
             LoadTheme(panelEdit);
             load_data_employ();
         }
@@ -62,6 +61,7 @@ namespace demo.Forms
         {
             FormThemNhanVien f = new FormThemNhanVien();
             f.FormClosed += new FormClosedEventHandler(FormADD_EmployeeClosed);
+            f.setSysRole(sysRole);
             f.ShowDialog();
         }
         private void FormADD_EmployeeClosed(object sender, FormClosedEventArgs e)
@@ -83,6 +83,7 @@ namespace demo.Forms
                 // Tạo form con và truyền dữ liệu
                 FormChinhSuaNhanVien f = new FormChinhSuaNhanVien();
                 f.SetData(maNV, hoTen, sdt, ngaySinh, gioiTinh, maNQL);
+                f.setSysRole(sysRole);
                 f.FormClosed += new FormClosedEventHandler(FormEDIT_EmployeeClosed);
                 f.ShowDialog();
             }

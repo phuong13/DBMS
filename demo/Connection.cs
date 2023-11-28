@@ -5,21 +5,17 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 namespace demo
 {
     public class Connection
     {
-        private static Connection _instance;
-        private static readonly object _lockObject = new object();
-
         private string _connectionString;
 
         private SqlConnection _connection;
 
         public Connection(bool sysRole)
         {
-            // Tùy chỉnh chuỗi kết nối dựa trên giá trị sysRole
             if (sysRole)
             {
                 _connectionString = "Data Source=.;Initial Catalog=ThietBiViTinh;User Id=sa;Password=1234567890;";
@@ -30,23 +26,12 @@ namespace demo
             }
             this._connection = new SqlConnection(_connectionString);
         }
-
-        public static Connection Instance(bool sysRole)
-        {
-            lock (_lockObject)
-            {
-                // Nếu chưa có một thể hiện của lớp, tạo mới
-                if (_instance == null)
-                {
-                    _instance = new Connection(sysRole);
-                }
-                return _instance;
-            }
-        }
         public void OpenConnection()
         {
-            _connection = new SqlConnection(_connectionString);
-            _connection.Open();
+            if (_connection != null && _connection.State == System.Data.ConnectionState.Closed)
+            {
+                _connection.Open();
+            }
         }
 
         public void CloseConnection()

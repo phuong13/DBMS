@@ -25,7 +25,7 @@ namespace demo
 
         private String username;
         private String password;
-        private Boolean sysRole;
+        private Boolean sysRole = false;
 
         public event EventHandler Logout;
         public Boolean isExit = true;
@@ -35,19 +35,15 @@ namespace demo
         {
             InitializeComponent();
             random = new Random();
-            conn = Connection.Instance(true);
+            conn = new Connection(sysRole);
         }
-        public FormMainMenu(String username, String password)
+        public FormMainMenu(String username, String password, Boolean fsysRole)
         {
             InitializeComponent();
             random = new Random();
             this.username = username;
             this.password = password;
-            this.sysRole = false;
-            if (username == "sa")
-            {
-                sysRole = true;
-            }
+            this.sysRole = fsysRole;
         }
         //Methods
         private Color SelectThemeColor()
@@ -157,8 +153,8 @@ namespace demo
         {
             if (this.sysRole == false)
             {
-                button_nhanvien.Visible = false;
-                button_account.Visible = false;
+                //button_nhanvien.Visible = false;
+                //button_account.Visible = false;
             }
         }
 

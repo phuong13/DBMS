@@ -14,7 +14,7 @@ namespace demo
     public partial class FormTaiKhoan : Form
     {
         private Connection conn;
-        private Boolean sysRole = false;
+        private Boolean sysRole;
 
         public void setSysRole(Boolean sysRole)
         {
@@ -23,7 +23,6 @@ namespace demo
         public FormTaiKhoan()
         {
             InitializeComponent();
-            conn = Connection.Instance(sysRole);
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -49,9 +48,9 @@ namespace demo
 
         private void FormTaiKhoan_Load(object sender, EventArgs e)
         {
+            conn = new Connection(sysRole);
             LoadTheme(panel_edit);
             Load_Datagridview();
-            conn.OpenConnection();
         }
         private void Load_Datagridview()
         {

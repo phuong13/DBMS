@@ -25,7 +25,6 @@ namespace demo.Forms
         public FormKho()
         {
             InitializeComponent();
-            conn = Connection.Instance(sysRole);
         }
 
         private void LoadTheme(Panel p)
@@ -49,6 +48,7 @@ namespace demo.Forms
         }
         private void FormStock_Load(object sender, EventArgs e)
         {
+            conn = new Connection(sysRole);
             LoadTheme(panelEdit);
             load_data_phieuNhap();
         }

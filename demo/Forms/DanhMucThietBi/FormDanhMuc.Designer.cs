@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDanhMuc));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_DanhMuc = new System.Windows.Forms.Panel();
             this.buttonManHinh = new System.Windows.Forms.Button();
             this.buttonTaiNghe = new System.Windows.Forms.Button();
@@ -208,6 +208,7 @@
             this.txt_searchProduct.Name = "txt_searchProduct";
             this.txt_searchProduct.Size = new System.Drawing.Size(247, 22);
             this.txt_searchProduct.TabIndex = 0;
+            this.txt_searchProduct.TextChanged += new System.EventHandler(this.txt_searchProduct_TextChanged);
             // 
             // panel3
             // 
@@ -318,18 +319,18 @@
             // 
             // dg_DanhMucSanPham
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dg_DanhMucSanPham.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dg_DanhMucSanPham.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dg_DanhMucSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dg_DanhMucSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_DanhMucSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dg_DanhMucSanPham.Location = new System.Drawing.Point(329, 96);
-            this.dg_DanhMucSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dg_DanhMucSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.dg_DanhMucSanPham.Name = "dg_DanhMucSanPham";
             this.dg_DanhMucSanPham.ReadOnly = true;
             this.dg_DanhMucSanPham.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dg_DanhMucSanPham.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dg_DanhMucSanPham.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dg_DanhMucSanPham.RowTemplate.Height = 24;
             this.dg_DanhMucSanPham.Size = new System.Drawing.Size(838, 408);
             this.dg_DanhMucSanPham.TabIndex = 2;

@@ -316,6 +316,7 @@ namespace demo.Forms.DanhMucThietBi.FormChinhSua
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormChinhSuaThietBiManHinh";
             this.Text = "FormChinhSuaThietBiManHinh";
+            this.Load += new System.EventHandler(this.FormChinhSuaThietBiManHinh_Load);
             this.groupBox.ResumeLayout(false);
             this.groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_anhThietBi)).EndInit();

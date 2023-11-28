@@ -16,6 +16,7 @@ namespace demo.Forms
     {
         private Connection conn;
         private Boolean sysRole = false;
+        private String selectedIndexMaHD = "";
 
         public void setSysRole(Boolean sysRole)
         {
@@ -24,7 +25,6 @@ namespace demo.Forms
         public FormHoaDon()
         {
             InitializeComponent();
-            conn = Connection.Instance(sysRole);
         }
         private void LoadTheme(Panel p)
         {
@@ -45,6 +45,7 @@ namespace demo.Forms
             button_xoaTB.Visible = false;
             button_ThemTB.Visible = false;
             button_Thanhtoan.Visible = true;
+            button_inHoaDon.Visible = true;
             button_them.Visible = true;
             string sql = "select * from V_XemHoaDon";
             DataTable dt = conn.getTable(sql);        
@@ -52,6 +53,7 @@ namespace demo.Forms
         }
         private void FormHoaDon_Load(object sender, EventArgs e)
         {
+            conn = new Connection(sysRole);
             LoadTheme(panelEdit);
             load_data_hoadon();
         }
@@ -60,6 +62,7 @@ namespace demo.Forms
         {
             int rowIndex = e.RowIndex;
             dataGridViewHoaDon.Rows[rowIndex].Selected = true;
+            button_inHoaDon.Enabled = true;
         }
 
         private void button_them_Click(object sender, EventArgs e)
@@ -87,6 +90,7 @@ namespace demo.Forms
             button_ThemTB.Visible = true;
             button_them.Visible = false;
             button_Thanhtoan.Visible = false;
+            button_inHoaDon.Visible = false;
             button_xoaTB.Visible = true;
             button_Xoa.Visible = false;
             conn.OpenConnection();
@@ -207,6 +211,34 @@ namespace demo.Forms
                     }
 
                 }
+            }
+            conn.CloseConnection();
+        }
+
+        private void button_inHoaDon_Click(object sender, EventArgs e)
+        {
+            conn.OpenConnection();
+            using (SqlCommand cmd = new SqlCommand()) {
+                cmd.CommandText = "Select HOA_DON.maHD, HOA_DON.nguoiLapHD, triGiaHD, CHI_TIET_HD.soLuong, THIET_BI.maTB, THIET_BI.tenThietBi, THIET_BI.donGia, THANH_TOAN.maKH, NHAN_VIEN.hoTen, HOA_DON.trangThai, THANH_TOAN.ngayThanhToan, KHACH_HANG.tenKH, KHACH_HANG.sdt"+
+                    " From HOA_DON Inner join NHAN_VIEN on HOA_DON.nguoiLapHD = NHAN_VIEN.maNV"+
+                    " inner join THANH_TOAN on HOA_DON.maHD = THANH_TOAN.maHD"+
+                    " inner join KHACH_HANG on THANH_TOAN.maKH = KHACH_HANG.maKH"+
+                    " inner join CHI_TIET_HD on HOA_DON.maHD = CHI_TIET_HD.maHD"+
+                    " inner join THIET_BI on CHI_TIET_HD.maTB = THIET_BI.maTB"+
+                    " WHERE HOA_DON.maHD = @maHD";
+                cmd.Connection = conn.getConnection();
+                cmd.Parameters.Clear();
+                selectedIndexMaHD = dataGridViewHoaDon.SelectedRows[0].Cells[0].Value.ToString();
+                cmd.Parameters.AddWithValue("@maHD", selectedIndexMaHD);
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+                DataTable dt = new DataTable("BangInHoaDon");
+                da.Fill(dt);
+                CrystalReport.hoaDonReport bangInHoaDon = new CrystalReport.hoaDonReport();
+                bangInHoaDon.SetDataSource(dt);
+                CrystalReport.hoaDonReportViewer f = new CrystalReport.hoaDonReportViewer();
+                f.crystalReportViewerHoaDon.ReportSource = bangInHoaDon;
+                f.ShowDialog();
             }
             conn.CloseConnection();
         }
