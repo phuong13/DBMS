@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using OfficeOpenXml;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace demo.Forms.DanhMucThietBi
 {
@@ -394,6 +396,48 @@ namespace demo.Forms.DanhMucThietBi
                 }
             }
             conn.CloseConnection();
+        }
+
+        private void ExportExcel(String path)
+        {
+            conn.OpenConnection();
+            Excel.Application app = new Excel.Application();
+            app.Application.Workbooks.Add(Type.Missing);
+            DataTable dt = conn.getTable("Select maTB, tenThietBi, tgbh, donGia, soLuong from THIET_BI");
+            MappingCol(dt);
+            for(int i = 0; i < dt.Columns.Count; i++)
+            {
+                app.Cells[1, i + 1] = dt.Columns[i].ColumnName;
+            }
+            for(int i = 0; i < dt.Rows.Count; i++)
+            {
+                for(int j = 0; j < dt.Columns.Count; j++)
+                {
+                    app.Cells[i + 2, j + 1] = dt.Rows[i].ItemArray[j];
+                }
+            }
+            app.Columns.AutoFit();
+            app.ActiveWorkbook.SaveCopyAs(path);
+            app.ActiveWorkbook.Saved = true;
+            conn.CloseConnection();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            saveFileExcel.Title = "Xuất danh sách thiết bị";
+            saveFileExcel.Filter = "Excel (*.xlsx)|*.xlsx|Excel 2003 (*.xls)|*.xls";
+            if (saveFileExcel.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    ExportExcel(saveFileExcel.FileName);
+                    MessageBox.Show("Xuất file thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                } catch (Exception ex)
+                {
+                    MessageBox.Show("Xuất file thất bại!\nLỗi: " + ex.Message, "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
         }
     }
 }

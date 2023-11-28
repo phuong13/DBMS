@@ -160,8 +160,8 @@
   <data name="businessman1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\businessman1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="thongke32px_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thongke32px_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eye16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="online-shop-icon-32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\online-shop-icon-32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -186,6 +186,9 @@
   </data>
   <data name="save32px_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save32px_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="headphone32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\headphone32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="online-shop-icon-64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\online-shop-icon-64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,8 +226,8 @@
   <data name="cross32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cross32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="headphone32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\headphone32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="thongke32px_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thongke32px_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ready-stock (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ready-stock (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,7 +241,10 @@
   <data name="computer32px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\computer32px2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eye16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eye16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="download32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\download32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="filedownload32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filedownload32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
