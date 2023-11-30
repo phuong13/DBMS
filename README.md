@@ -1,4 +1,5 @@
 <h1>QUẢN LÝ CỬA HÀNG THIẾT BỊ VI TÍNH</h1>
+<p>Link repo: https://github.com/phuong13/DBMS</p>
 <h3>Về dự án</h3>
 <p>Phần mềm được xây dựng cho nhân viên với chức năng tạo hóa đơn, quản lý danh mục thiết bị, thêm, sửa thông tin khách hàng.</p>
 <h3>Hướng dẫn cài đặt</h3>
