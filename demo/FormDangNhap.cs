@@ -17,6 +17,7 @@ namespace demo
         public FormDangNhap()
         {
             InitializeComponent();
+            txt_username.Focus();
         }
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
@@ -31,9 +32,6 @@ namespace demo
                 if (dr["isAdmin"].ToString() == "True") { 
                     fSysRole = true;
                 }
-               /* if (txt_username.Text.Contains("sa")) fSysRole = true;*/
-                    
-                MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                
                 FormMainMenu f = new FormMainMenu(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), fSysRole);
                 f.Show();
@@ -75,6 +73,21 @@ namespace demo
                 txt_password.UseSystemPasswordChar = true;
             }
         }
-        
+
+        private void txt_password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                guna2GradientButton1_Click(sender, e);
+            }
+        }
+
+        private void txt_username_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txt_password.Focus();
+            }
+        }
     }
 }
