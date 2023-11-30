@@ -26,8 +26,12 @@ namespace demo
                 $"and password='{txt_password.Text}'");
             if (dt.Rows.Count > 0)
             {
-                Boolean fSysRole = false;
-                if (txt_username.Text == "sa") fSysRole = true;
+                DataRow dr = dt.Rows[0];
+                bool fSysRole = false;
+                if (dr["isAdmin"].ToString() == "True") { 
+                    fSysRole = true;
+                }
+               /* if (txt_username.Text.Contains("sa")) fSysRole = true;*/
                     
                 MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                

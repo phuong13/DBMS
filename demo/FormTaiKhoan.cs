@@ -75,11 +75,14 @@ namespace demo
             conn.OpenConnection();
             string username = txt_username.Text;
             string password = txt_password.Text;
+            Boolean isAdmin = check_isAdmin.Checked;
             using (SqlCommand cmd = new SqlCommand("proc_ThemTaiKhoan", conn.getConnection()))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@username", username));
                 cmd.Parameters.Add(new SqlParameter("@password", password));
+                cmd.Parameters.Add(new SqlParameter("@isAdmin", isAdmin));
+
                 DialogResult rs = MessageBox.Show("Thêm tài khoản?", "Chú ý", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (rs == DialogResult.OK)
                 {
@@ -156,6 +159,11 @@ namespace demo
         private void FormTaiKhoan_FormClosed(object sender, FormClosedEventArgs e)
         {
             conn.CloseConnection();
+        }
+
+        private void check_isAdmin_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
