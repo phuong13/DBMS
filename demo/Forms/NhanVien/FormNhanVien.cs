@@ -49,12 +49,15 @@ namespace demo.Forms
         }
         private void dataGridViewEmployees_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            buttonChinhsua.Enabled = true;
-            buttonChinhsua.Font = new Font(buttonChinhsua.Font, FontStyle.Bold);
-            buttonXoa.Enabled = true;
-            buttonXoa.Font = new Font(buttonXoa.Font, FontStyle.Bold);
-            int rowIndex = e.RowIndex;
-            dataGridViewEmployees.Rows[rowIndex].Selected = true;
+            if (e.RowIndex >= 0)
+            {
+                buttonChinhsua.Enabled = true;
+                buttonChinhsua.Font = new Font(buttonChinhsua.Font, FontStyle.Bold);
+                buttonXoa.Enabled = true;
+                buttonXoa.Font = new Font(buttonXoa.Font, FontStyle.Bold);
+                int rowIndex = e.RowIndex;
+                dataGridViewEmployees.Rows[rowIndex].Selected = true;
+            }
         }
 
         private void buttonThem_Click(object sender, EventArgs e)

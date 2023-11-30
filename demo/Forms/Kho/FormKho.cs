@@ -55,8 +55,11 @@ namespace demo.Forms
 
         private void dataGridViewKho_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int rowIndex = e.RowIndex;
-            dataGridViewKho.Rows[rowIndex].Selected = true;
+            if (e.RowIndex >= 0)
+            {
+                int rowIndex = e.RowIndex;
+                dataGridViewKho.Rows[rowIndex].Selected = true;
+            }
         }
 
         private void dataGridViewKho_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

@@ -51,6 +51,7 @@ namespace demo
             conn = new Connection(sysRole);
             LoadTheme(panel_edit);
             Load_Datagridview();
+            
         }
         private void Load_Datagridview()
         {
@@ -63,12 +64,15 @@ namespace demo
             btn_sua.Enabled = true;
             btn_xoa.Enabled = true;
 
-            int rowIndex = e.RowIndex;
-            dg_taiKhoan.Rows[rowIndex].Selected = true;
+            if (e.RowIndex >= 0) {
+                int rowIndex = e.RowIndex;
+                dg_taiKhoan.Rows[rowIndex].Selected = true;
 
-            txt_username.Text = dg_taiKhoan.Rows[rowIndex].Cells["username"].FormattedValue.ToString();
-            txt_password.Text = dg_taiKhoan.Rows[rowIndex].Cells["password"].FormattedValue.ToString();
+                txt_username.Text = dg_taiKhoan.Rows[rowIndex].Cells["username"].FormattedValue.ToString();
+                txt_password.Text = dg_taiKhoan.Rows[rowIndex].Cells["password"].FormattedValue.ToString();
+            }
         }
+
 
         private void btn_them_Click(object sender, EventArgs e)
         {

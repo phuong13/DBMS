@@ -29,13 +29,18 @@ namespace demo
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTaiKhoan));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dg_taiKhoan = new System.Windows.Forms.DataGridView();
-            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.check_isAdmin = new System.Windows.Forms.CheckBox();
             this.panel_edit = new System.Windows.Forms.Panel();
             this.btn_xoa = new System.Windows.Forms.Button();
             this.btn_sua = new System.Windows.Forms.Button();
@@ -45,7 +50,8 @@ namespace demo
             this.lbl_password = new System.Windows.Forms.Label();
             this.txt_password = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.check_isAdmin = new System.Windows.Forms.CheckBox();
+            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_taiKhoan)).BeginInit();
@@ -77,33 +83,45 @@ namespace demo
             // dg_taiKhoan
             // 
             this.dg_taiKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_taiKhoan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dg_taiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_taiKhoan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.username,
             this.password});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_taiKhoan.DefaultCellStyle = dataGridViewCellStyle4;
             this.dg_taiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dg_taiKhoan.Location = new System.Drawing.Point(0, 0);
             this.dg_taiKhoan.Name = "dg_taiKhoan";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_taiKhoan.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dg_taiKhoan.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dg_taiKhoan.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dg_taiKhoan.RowTemplate.Height = 24;
             this.dg_taiKhoan.Size = new System.Drawing.Size(714, 547);
             this.dg_taiKhoan.TabIndex = 0;
             this.dg_taiKhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_taiKhoan_CellClick);
             this.dg_taiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // username
-            // 
-            this.username.DataPropertyName = "username";
-            this.username.HeaderText = "Tên tài khoản";
-            this.username.MinimumWidth = 6;
-            this.username.Name = "username";
-            // 
-            // password
-            // 
-            this.password.DataPropertyName = "password";
-            this.password.HeaderText = "Mật khẩu";
-            this.password.MinimumWidth = 6;
-            this.password.Name = "password";
             // 
             // panel3
             // 
@@ -118,6 +136,18 @@ namespace demo
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(374, 547);
             this.panel3.TabIndex = 9;
+            // 
+            // check_isAdmin
+            // 
+            this.check_isAdmin.AutoSize = true;
+            this.check_isAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_isAdmin.Location = new System.Drawing.Point(260, 88);
+            this.check_isAdmin.Name = "check_isAdmin";
+            this.check_isAdmin.Size = new System.Drawing.Size(91, 24);
+            this.check_isAdmin.TabIndex = 9;
+            this.check_isAdmin.Text = "Quản trị";
+            this.check_isAdmin.UseVisualStyleBackColor = true;
+            this.check_isAdmin.CheckedChanged += new System.EventHandler(this.check_isAdmin_CheckedChanged);
             // 
             // panel_edit
             // 
@@ -221,16 +251,23 @@ namespace demo
             this.panel2.Size = new System.Drawing.Size(1088, 547);
             this.panel2.TabIndex = 8;
             // 
-            // check_isAdmin
+            // username
             // 
-            this.check_isAdmin.AutoSize = true;
-            this.check_isAdmin.Location = new System.Drawing.Point(270, 88);
-            this.check_isAdmin.Name = "check_isAdmin";
-            this.check_isAdmin.Size = new System.Drawing.Size(81, 21);
-            this.check_isAdmin.TabIndex = 9;
-            this.check_isAdmin.Text = "Quản trị";
-            this.check_isAdmin.UseVisualStyleBackColor = true;
-            this.check_isAdmin.CheckedChanged += new System.EventHandler(this.check_isAdmin_CheckedChanged);
+            this.username.DataPropertyName = "username";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username.DefaultCellStyle = dataGridViewCellStyle2;
+            this.username.HeaderText = "Tên tài khoản";
+            this.username.MinimumWidth = 6;
+            this.username.Name = "username";
+            // 
+            // password
+            // 
+            this.password.DataPropertyName = "password";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.password.DefaultCellStyle = dataGridViewCellStyle3;
+            this.password.HeaderText = "Mật khẩu";
+            this.password.MinimumWidth = 6;
+            this.password.Name = "password";
             // 
             // FormTaiKhoan
             // 
@@ -268,10 +305,10 @@ namespace demo
         private System.Windows.Forms.Button btn_xoa;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel_edit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn username;
-        private System.Windows.Forms.DataGridViewTextBoxColumn password;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.CheckBox check_isAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn password;
     }
 }

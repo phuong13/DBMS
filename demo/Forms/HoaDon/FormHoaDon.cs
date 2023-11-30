@@ -60,9 +60,12 @@ namespace demo.Forms
 
         private void dataGridViewHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int rowIndex = e.RowIndex;
-            dataGridViewHoaDon.Rows[rowIndex].Selected = true;
-            button_inHoaDon.Enabled = true;
+            if (e.RowIndex >= 0)
+            {
+                int rowIndex = e.RowIndex;
+                dataGridViewHoaDon.Rows[rowIndex].Selected = true;
+                button_inHoaDon.Enabled = true;
+            }
         }
 
         private void button_them_Click(object sender, EventArgs e)

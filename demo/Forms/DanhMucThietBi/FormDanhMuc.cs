@@ -185,23 +185,26 @@ namespace demo.Forms.DanhMucThietBi
 
         private void dg_DanhMucSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int rowIndex = e.RowIndex;
-            dg_DanhMucSanPham.Rows[rowIndex].Selected = true;
-            btn_xoaThietBi.Enabled = true;
-            btn_suaThietBi.Enabled = true;
-            try
+            if (e.RowIndex >= 0)
             {
-                DataTable dt = (DataTable)dg_DanhMucSanPham.DataSource;
-                DataRow dtRow = dt.Rows[dg_DanhMucSanPham.SelectedCells[0].RowIndex];
-                string sql = $"select * from THIET_BI Where maTB = '{dtRow[columnMapping["maTB"]].ToString()}'";
-                DataTable selectedCell = conn.getTable(sql);
-                Byte[] byteImage = new Byte[0];
-                byteImage = (Byte[])(selectedCell.Rows[0]["anhThietBi"]);
-                MemoryStream stmByteImage = new MemoryStream(byteImage);
-                pictureBox_thietBi.Image = Image.FromStream(stmByteImage);
-            } catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                int rowIndex = e.RowIndex;
+                dg_DanhMucSanPham.Rows[rowIndex].Selected = true;
+                btn_xoaThietBi.Enabled = true;
+                btn_suaThietBi.Enabled = true;
+                try
+                {
+                    DataTable dt = (DataTable)dg_DanhMucSanPham.DataSource;
+                    DataRow dtRow = dt.Rows[dg_DanhMucSanPham.SelectedCells[0].RowIndex];
+                    string sql = $"select * from THIET_BI Where maTB = '{dtRow[columnMapping["maTB"]].ToString()}'";
+                    DataTable selectedCell = conn.getTable(sql);
+                    Byte[] byteImage = new Byte[0];
+                    byteImage = (Byte[])(selectedCell.Rows[0]["anhThietBi"]);
+                    MemoryStream stmByteImage = new MemoryStream(byteImage);
+                    pictureBox_thietBi.Image = Image.FromStream(stmByteImage);
+                } catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
        
